@@ -8,7 +8,7 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 ##Course Information
 
 Data science encapsulates the interdisciplinary activities required to
- create data-centric products and applicaitons that address specific
+ create data-centric products and applications that address specific
  scientific, socio-political or business questions.
  It has drawn tremendous attention from both academia and industry and
  is making deep inroads in industry, government, health and journalism.
@@ -16,7 +16,7 @@ Data science encapsulates the interdisciplinary activities required to
 This course focuses on (i) exploratory and statistical data analysis,
 (ii) data and information visualization, and (iii) the presentation
 and communication of analysis results.
-It will be heavily assignment-based and will draw extensively from applications 
+It will be centered around case studies and projects drawing extensively from applications.
 
 *	Instructor:  
 	[H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
@@ -29,7 +29,7 @@ It will be heavily assignment-based and will draw extensively from applications
 *	Lecture Meeting times  
 
 	Tuesday and Thursday, 2:00-3:15pm  
-	Room CSI 1121
+	Room CSI 2120  
 
 ##Tentative Course Organization
 
