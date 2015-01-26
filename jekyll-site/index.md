@@ -7,17 +7,6 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 
 ##Course Information
 
-Data science encapsulates the interdisciplinary activities required to
- create data-centric products and applications that address specific
- scientific, socio-political or business questions.
- It has drawn tremendous attention from both academia and industry and
- is making deep inroads in industry, government, health and journalism.
-
-This course focuses on (i) exploratory and statistical data analysis,
-(ii) data and information visualization, and (iii) the presentation
-and communication of analysis results.
-It will be centered around case studies and projects drawing extensively from applications.
-
 *	Instructor:  
 	[H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
 	Center for Bioinformatics and Computational Biology  
@@ -31,49 +20,30 @@ It will be centered around case studies and projects drawing extensively from ap
 	Tuesday and Thursday, 2:00-3:15pm  
 	Room CSI 2120  
 
-##Tentative Course Organization
+*	Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment
 
-- Preliminaries
+*	TA: Wikum Dinalankara  
+	<wikum@cs.umd.edu>  
+	Office Hours: TBD  
 
-	- What is Data Science? Who is a Data Scientist? The scope of Data
-	  Science: the open data movement, science, business, government,
-	  education, sport, and more
-	- Introduction to the R data analysis environment
-	- Formulating data-centric answers to scientific, business and
-      social questions
-	- Best practices: organizing projects, managing collaborations and
-  expectations
+*   Textbook information:
+	There is no required textbook. Readings will be posted in ELMS:
+	[{{ site.elms_url }}]({{ site.elms_url }})  
 
-- Exploratory Data Analysis
+*   Other links:	
+	We will use Piazza for official discussion and announcements:
+	[{{ site.piazza_url }} ]({{ site.piazza_url }})  
+	All other class business will be done in ELMS
+	[{{ site.elms_url }}]({{ site.elms_url }})  
 
-	- Data scraping, cleaning and summarization
-	- Visualization I: visualizing to explore
-	- Exploration in scale: introduction to map reduce
+##Syllabus
 
-- Computational and Statistical Data Analysis
+The official syllabus detailing class policies, calendar and other
+details can be found [here](syllabus.html)
 
-	- From exploration to inference: quantifying variation and
-      uncertainty
-	- Linear modeling: regression and prediction
-	- Going further in prediction: machine learning
-	- Visualization II: visualizing inferences and uncertainty
 
-- Mining massive datasets
 
-  - Regression and prediction at scale
-  - Mining time series and data streams
-  - Mining networks
-  - Large-scale clustering and other unsupervised methods
 
-- Communicating with data
-
-  - Writing with and about data: communicating the result of a data
-    analysis
-  - Visualization III: information visualization, visualizing for an
-    audience
-  - Putting it together: interactive data dissemination on the web
-    (d3.js and related technologies)
-	
   
 
   

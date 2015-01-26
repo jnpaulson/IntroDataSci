@@ -16,9 +16,6 @@ redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
 # my variables
-book_url: http://bioinformaticsalgorithms.com/
-book_videos_url: https://www.youtube.com/user/bioinfalgorithms/playlists
-piazza_url: https://piazza.com/class/hzenik658utiz
-canvas_url: https://umd.instructure.com/courses/1088932
-rosalind_trial_url: http://rosalind.info/classes/152
-rosalind_final_url: http://rosalind.info/classes/156
+piazza_url: "https://piazza.com/class/i5e39xpjr662in"
+elms_url: "https://myelms.umd.edu/courses/1130499"
+
