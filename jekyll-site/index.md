@@ -27,8 +27,8 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 	Office Hours: TBD  
 
 *   Textbook information:
-	There is no required textbook. Readings will be posted in ELMS:
-	[{{ site.elms_url }}]({{ site.elms_url }})  
+	There is no required textbook. See the [syllabus](syllabus.html)
+	for more information.
 
 *   Other links:	
 	We will use Piazza for official discussion and announcements:

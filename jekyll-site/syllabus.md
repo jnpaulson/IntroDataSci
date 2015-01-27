@@ -44,16 +44,25 @@ It will be centered around case studies and projects drawing extensively from ap
 
 *	Evaluation (see section below on logistics for details)
 
-	*    Data Projects (4) (40%)  
-	*    In-class work (15%)  
-	*    Written homework (15%)  
-	*    Presentations (10%)  
+	*    Data Projects (4) (40%)
+	*    In-class work (15%)
+	*    Written homework (15%)
+	*    Presentations (10%)
 	*    Class participation (5%)
 	*    Final project (15%)
 	
 *   Textbook information:
-	There is no required textbook. Readings will be posted in canvas:
-	[{{ site.elms_url }}]({{ site.elms_url }})
+    	There is no required textbook. However, we will be drawing heavily
+    	from these two sources:
+	*  [N. Zumel and J. Mount. Practical Data Science with R. Manning Publications Co. 2014](http://www.manning.com/zumel/). Readings
+	from this book are posted in canvas:
+	[{{ site.elms_url }}]({{ site.elms_url }}). Readings from this
+	book are listed as *Zumen & Mount*. 
+	*  [G. James, D. Witten, T. Hastie and R. Tibshirani. Introduction to Statistical Learning with Applications in R. Springer 2013.](http://www-bcf.usc.edu/~gareth/ISL/). A
+	   free PDF of this book can be downloaded at their
+	   site. Readings from this book are listed as *ISL*. 
+		   
+	Additional readings will be posted in ELMS [{{ site.elms_url }}]({{ site.elms_url}}).
 
 ####Expected outcomes 
 
