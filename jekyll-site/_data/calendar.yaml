@@ -59,7 +59,7 @@
       title: "R for Data Science Primer (2)"
   readings:
     -
-      title: "Zumen & Mount: pp. 18-34"
+      title: "Zumen & Mount: Ch. 2"
 -
   date: 2/10
   covers:
@@ -70,6 +70,10 @@
   covers:
     -
       title: "Data tyding (1)"
+  readings:
+    -
+      title: "Wickham, Tidy Data. JSS 2014"
+      link: { url: "http://www.jstatsoft.org/v59/i10/paper" }
 -
   date: 2/17
   covers:
@@ -79,7 +83,10 @@
   date: 2/19
   covers:
     -
-      title: "Exploratory Data Analysis"  
+      title: "Exploratory Data Analysis"
+  readings:
+    -
+      title: "Zumen & Mount: Ch. 3"
 -
   date: 2/24
   covers:
@@ -105,11 +112,17 @@
   covers:
     -
       title: "Quantifying variation and uncertainty"
+  readings:
+    -
+      title: "ISL Ch. 2"
 -
   date: 3/12
   covers:
     -
       title: "Linear models for prediction and regression (1)"
+  readings:
+    -
+      title: "ISL Ch. 3"
 -
   date: 3/17
   covers:
