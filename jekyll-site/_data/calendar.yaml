@@ -24,10 +24,11 @@
       title: "Course Introduction"
 -
   date: 1/29
-  status: present
+  status: done
   covers:
     -
       title: "What is Data Science"
+      materials: { link: "lectures/Intro.pdf", insite: }
   readings:
     -
       title: "Zumel & Mount: pp. xix-17"
