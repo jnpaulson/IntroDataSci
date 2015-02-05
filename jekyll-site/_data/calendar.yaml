@@ -49,6 +49,16 @@
     -
       title: "R for Data Science Primer (1)"
       materials: { link: "lectures/Rintro.pdf", insite: }
+  readings:
+    -
+      title: "Wickham: Advanced R, 'Foundations' and 'Functional Programming'"
+      link: { url: "http://adv-r.had.co.nz/" }
+-
+  date: 2/5
+  status: done
+  covers:
+    -
+      title: "R for Data Science Primer (2)"
     -
       title: "RMarkdown for arrest analysis (baltimore.Rmd)"
       materials: { link: "misc/baltimore.Rmd", insite: }
@@ -57,17 +67,7 @@
       materials: { link: "misc/BPD_Arrests.csv", insite: }
     -
       title: "CCTV data (CCTV_Locations.csv)"
-      materials: { link: "misc/CCTV_Locations.csv", insite: }
-  readings:
-    -
-      title: "Wickham: Advanced R, 'Foundations' and 'Functional Programming'"
-      link: { url: "http://adv-r.had.co.nz/" }
--
-  date: 2/5
-  status: present
-  covers:
-    -
-      title: "R for Data Science Primer (2)"
+      materials: { link: "misc/CCTV_Locations.csv", insite: }      
   readings:
     -
       title: "Zumen & Mount: Ch. 2"
