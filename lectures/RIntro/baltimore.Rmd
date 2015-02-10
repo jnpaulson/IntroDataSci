@@ -40,8 +40,18 @@ table(arrest_tab$sex)
 # what are the most common offenses
 head(sort(table(arrest_tab$incidentOffense),decreasing=TRUE))
 
+# what are the offenses that only happen once
+tab <- table(arrest_tab$incidentOffense)
+tab[tab == 1]
+
 # range of arrests after removing those w/ age==0
 range(arrest_tab$age[arrest_tab$age>0])
+```
+
+Offenses by sex
+
+```{r}
+tab <- table(arrest_tab$incidentOffense, arrest_tab$sex)
 ```
 
 Let's see a table of arrests by sex and race
