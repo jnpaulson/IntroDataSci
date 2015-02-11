@@ -73,11 +73,14 @@
       title: "Zumen & Mount: Ch. 2"
 -
   date: 2/10
+  status: done
   covers:
     -
       title: "Best practices for Data Science Projects"
+      materials: { link: "lectures/BestPractices.pdf", insite: }
 -
   date: 2/12
+  status: present
   covers:
     -
       title: "Data tyding (1)"
