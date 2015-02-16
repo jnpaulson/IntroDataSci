@@ -84,15 +84,23 @@
   covers:
     -
       title: "Data tyding (1)"
-  readings:
+      materials: { link: "lectures/Tidying1.html", insite: }
+    -
+      title: "RMarkdown for tidying examples (tidy_code.Rmd)"
+      materials: { link: "misc/tidy_code.Rmd" }
+   readings:
     -
       title: "Wickham, Tidy Data. JSS 2014"
       link: { url: "http://www.jstatsoft.org/v59/i10/paper" }
 -
   date: 2/17
+  status: present
   covers:
     -
       title: "Data tyding (2)"
+  readings:
+    -
+      title: "Zuman & Mount: Sec 4.1"
 -
   date: 2/19
   covers:

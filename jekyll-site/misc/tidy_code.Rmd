@@ -1,0 +1,100 @@
+---
+title: "TidyCode"
+output: html_document
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
+Workbook for data tidying lecture.
+First off: I cloned data for Hadley's paper from [github](https://github.com/hadley/tidyr)
+
+All datasets will be found in this directory afterwards:
+```{r}
+data_dir <- "tidyr/vignettes"
+```
+
+A tidy dataset
+----------------
+
+```{r}
+library(nycflights13)
+head(flights)
+```
+
+Headers as values
+------------------
+
+```{r}
+library(tidyr)
+library(dplyr)
+
+pew <- tbl_df(read.csv(file.path(data_dir, "pew.csv"), stringsAsFactors=FALSE, check.names=FALSE))
+pew
+```
+
+Gather values in columns into a table with `income` and `frequency` columns
+
+```{r}
+gather(pew, income, frequency, -religion)
+```
+
+Another example: Billboard songs
+```{r}
+billboard <- tbl_df(read.csv(file.path(data_dir, "billboard.csv"), stringsAsFactors=FALSE))
+billboard
+```
+
+```
+# Exercise
+```
+
+Multiple variables in one column
+--------------------------------------
+
+Tuberculosis case data
+```{r}
+tb <- tbl_df(read.csv(file.path(data_dir, "tb.csv"), stringsAsFactors = FALSE))
+tb
+```
+
+```{r}
+tb %>% 
+  gather(demo, n, -iso2, -year, na.rm=TRUE) %>%
+  separate(demo, c("sex", "age"), 1)
+```
+
+Multiple types in one table
+----------------------------
+
+Some more cleaning up
+
+```{r}
+billboard3 <- billboard %>%
+  gather(week, rank, wk1:wk76, na.rm=TRUE) %>%
+  mutate(
+    week = extract_numeric(week),
+    date = as.Date(date.entered) + 7 * (week - 1)) %>%
+  select(-date.entered)
+billboard3
+```
+
+Split into song and rank tables
+
+```{r}
+song <- billboard3 %>%
+  select(artist, track, year, time) %>% 
+  unique() %>%
+  mutate(song_id = row_number())
+song
+```
+
+For rank table, we first need the song id so join 
+```{r}
+# exercise
+#rank <- billboard3 %>% 
+#  left_join(song, c("artist", "track", "year", "time")) %>%
+  # fill in
+#rank
+```

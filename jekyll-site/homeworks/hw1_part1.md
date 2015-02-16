@@ -4,7 +4,7 @@ title: Homework 1 (Part 1)
 ---
 
 Posted: Feb. 10 2015  
-Last Update: Feb. 10 2015  
+Last Update: Feb. 12 2015  
 
 ## Part I: Intro to R 
 
@@ -33,3 +33,27 @@ of Homework 1 as a pull request (so we can all see each other's work).
 you updated (steps 3 or 6 above), you need to come up with something new.  
 4.  Feel free to use more data from the [OpenBaltimore data set](https://data.baltimorecity.gov/) if you want.  
 
+### Workflow
+
+{% highlight bash %}
+# fork your repository on github
+git clone https://github.com/<yourusername>/IntroDataSciBaltimore.git
+
+# modify baltimore.Rmd to do your analysis
+
+# if you add new data
+git add <path>
+
+# commit your changes (as often as you want)
+git commit -am "I've made some changes"
+
+# add my repo as remote (only need to do once)
+git remote add upstream https://github.com/hcorrada/IntroDataSciBaltimore.git
+
+# update from my repository (you may need to resolve conflicts)
+# you can do this step as many times as needed (most importantly before submitting your pull request)
+git pull upstream
+
+# push your changes to your github repository
+git push origin master
+{% endhighlight %}
