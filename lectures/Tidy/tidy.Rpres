@@ -131,10 +131,10 @@ Manipulation
 
 Common verbs:
 
-- Subsetting or removing observations based on some condition: 
-- Adding or modifying variables: 
-- Collapsing multiple values into a single value: 
-- Changing order of observations: 
+- Subsetting or removing observations based on some condition: filter
+- Adding or modifying variables: mutate
+- Collapsing multiple values into a single value: aggregate
+- Changing order of observations: sort
 
 Manipulation
 ======================================
