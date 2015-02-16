@@ -46,25 +46,29 @@ Subsetting Observations
 Selecting or filtering rows (observations) of a tidy
 data table by condition or sampling.
 
+![plot of chunk unnamed-chunk-2](wrangling-figure/unnamed-chunk-2-1.png) 
+
+
+```r
+# include only flights on United Airlines
+flights %>% filter(carrier == "UA")
+```
+
 Subsetting Variables
 ========================================
 Selecting or filtering columns (variables) of a tidy
 data table by condition 
 
+![plot of chunk unnamed-chunk-4](wrangling-figure/unnamed-chunk-4-1.png) 
+
+
+```r
+# select only month carrier and origin variables
+flights %>% select(month,carrier,origin)
+```
+
 Note: On tidy data tables, subsetting variables at random 
 is not commonly done
-
-Summarizing Data
-==========================================
-
-Summarize multiple observations (rows) for a variable (column) into 
-a single value
-
-Grouping Data
-=========================================
-
-Group observations (rows) with same value of one or
-more variables (columns)
 
 Creating New Variables
 =========================================
@@ -72,6 +76,54 @@ Creating New Variables
 Use existing variables to create new observations
 - Transformation of single variable
 - Functions of multiple variables
+
+![plot of chunk unnamed-chunk-6](wrangling-figure/unnamed-chunk-6-1.png) 
+
+Creating New Variables
+=========================================
+
+![plot of chunk unnamed-chunk-7](wrangling-figure/unnamed-chunk-7-1.png) 
+
+
+```r
+# add new variable with total delay
+flights %>% mutate(delay=dep_delay + arr_delay)
+```
+
+Summarizing Data
+==========================================
+
+Summarize multiple observations (rows) for a variable (column) into 
+a single value
+
+![plot of chunk unnamed-chunk-9](wrangling-figure/unnamed-chunk-9-1.png) 
+
+
+```r
+# compute mean total delay across all flights
+flights %>% 
+  mutate(delay = dep_delay + arr_delay) %>%
+  summarize(mean(delay, na.rm=TRUE))
+```
+
+Grouping Data
+=========================================
+
+Group observations (rows) with same value of one or
+more variables (columns). Usually used along
+`summarize` or `mutate`.
+
+![plot of chunk unnamed-chunk-11](wrangling-figure/unnamed-chunk-11-1.png) 
+
+
+```r
+# compute mean total delay per carrier
+flights %>%
+  mutate(delay = dep_delay + arr_delay) %>%
+  group_by(carrier) %>%
+  summarize(delay=mean(delay, na.rm=TRUE))
+```
+
 
 Missing Data
 ========================================

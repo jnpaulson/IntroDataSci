@@ -1,5 +1,9 @@
 ```{r, echo=FALSE}
 knitr::opts_chunk$set(cache=TRUE)
+library(png)
+library(grid)
+library(tidyr)
+library(dplyr)
 ```
 
 Data Wrangling
@@ -48,25 +52,33 @@ Subsetting Observations
 Selecting or filtering rows (observations) of a tidy
 data table by condition or sampling.
 
+```{r, fig.width=8, fig.height=4, echo=FALSE}
+img <- readPNG("subset.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+# include only flights on United Airlines
+flights %>% filter(carrier == "UA")
+```
+
 Subsetting Variables
 ========================================
 Selecting or filtering columns (variables) of a tidy
 data table by condition 
 
+```{r, fig.width=7, fig.height=3.5, echo=FALSE}
+img <- readPNG("select.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+# select only month carrier and origin variables
+flights %>% select(month,carrier,origin)
+```
+
 Note: On tidy data tables, subsetting variables at random 
 is not commonly done
-
-Summarizing Data
-==========================================
-
-Summarize multiple observations (rows) for a variable (column) into 
-a single value
-
-Grouping Data
-=========================================
-
-Group observations (rows) with same value of one or
-more variables (columns)
 
 Creating New Variables
 =========================================
@@ -74,6 +86,63 @@ Creating New Variables
 Use existing variables to create new observations
 - Transformation of single variable
 - Functions of multiple variables
+
+```{r, fig.width=8, fig.height=4, echo=FALSE}
+img <- readPNG("mutate.png")
+grid.raster(img)
+```
+
+Creating New Variables
+=========================================
+
+```{r, fig.width=8, fig.height=4, echo=FALSE}
+img <- readPNG("mutate.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+# add new variable with total delay
+flights %>% mutate(delay=dep_delay + arr_delay)
+```
+
+Summarizing Data
+==========================================
+
+Summarize multiple observations (rows) for a variable (column) into 
+a single value
+
+```{r, fig.width=8, fig.height=4, echo=FALSE}
+img <- readPNG("summarize.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+# compute mean total delay across all flights
+flights %>% 
+  mutate(delay = dep_delay + arr_delay) %>%
+  summarize(mean(delay, na.rm=TRUE))
+```
+
+Grouping Data
+=========================================
+
+Group observations (rows) with same value of one or
+more variables (columns). Usually used along
+`summarize` or `mutate`.
+
+```{r, fig.width=7, fig.height=3, echo=FALSE}
+img <- readPNG("groupby.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+# compute mean total delay per carrier
+flights %>%
+  mutate(delay = dep_delay + arr_delay) %>%
+  group_by(carrier) %>%
+  summarize(delay=mean(delay, na.rm=TRUE))
+```
+
 
 Missing Data
 ========================================
