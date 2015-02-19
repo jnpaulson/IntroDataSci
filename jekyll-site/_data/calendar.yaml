@@ -80,7 +80,7 @@
       materials: { link: "lectures/BestPractices.pdf", insite: }
 -
   date: 2/12
-  status: present
+  status: done
   covers:
     -
       title: "Data tyding (1)"
@@ -88,32 +88,35 @@
     -
       title: "RMarkdown for tidying examples (tidy_code.Rmd)"
       materials: { link: "misc/tidy_code.Rmd" }
-   readings:
+  readings:
     -
       title: "Wickham, Tidy Data. JSS 2014"
       link: { url: "http://www.jstatsoft.org/v59/i10/paper" }
 -
   date: 2/17
+  status: done
+  covers:
+    -
+      title: "UNIVERSITY CLOSED"
+-
+  date: 2/19
   status: present
   covers:
     -
       title: "Data tyding (2)"
+      materials: { link: "lectures/Wrangling.html", insite: }
   readings:
     -
       title: "Zuman & Mount: Sec 4.1"
 -
-  date: 2/19
+  date: 2/24
+  status: present
   covers:
     -
       title: "Exploratory Data Analysis"
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
--
-  date: 2/24
-  covers:
-    -
-      title: "Visual Exploratory Data Analysis"
 -
   date: 2/26
   covers:
