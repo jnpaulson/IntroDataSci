@@ -2,19 +2,8 @@
 
 Data Wrangling
 ========================================================
-author: Wikum Dinalankara and Hector Corrada Bravo
+author: Hector Corrada Bravo
 date: CMSC498T Spring 2015
-
-Catching up with Baltimore Analysis
-========================================================
-
-**Reminder**: You can check current status of Baltimore analysis
-here: [http://htmlpreview.github.io/?https://github.com/hcorrada/IntroDataSciBaltimore/blob/master/baltimore.html](http://htmlpreview.github.io/?https://github.com/hcorrada/IntroDataSciBaltimore/blob/master/baltimore.html)
-
-Some thoughts
-- Make sure your analysis is reproducible: i.e., your classmates must be able to add to it and have it run. I always update 
-the `html` file before merging your analysis. I will not accept pull requests that are not reproducible.
-- If you use new data in the analysis add it to the repository using `git add`
 
 Tidy Data
 ========================================================
@@ -27,7 +16,7 @@ For Today
 =====================================
 
 - Manipulating tidy data
-- Cleaning data
+- Missing data
 - Transforming data
 
 Manipulation
@@ -39,6 +28,19 @@ The `dplyr` package: one of the most beautiful tools created for data analysis
 - Built around tidy data principles
 - Uniform treatment of multiple backends (in memory files, partially loaded files, databases)
 - Pipes can be used to elegantly chain multiple manipulation operations
+- An introduction: http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
+
+Manipulation
+===================
+
+Single table verbs:
+- `filter()` and `slice()`
+- `arrange()`
+- `select()` and `rename()`
+- `distinct()`
+- `mutate()` and `transmutate()`
+- `summarize()` 
+- `sample_n()` and `sample_frac()`
 
 Subsetting Observations
 ========================================
@@ -125,6 +127,140 @@ flights %>%
   summarize(delay=mean(delay, na.rm=TRUE))
 ```
 
+Two-table verbs
+=========================================
+
+Efficient methods to combine data from multiple tables. Drawn from DB literature.
+
+Verbs differ on how non-matching observations are handled
+- `left_join()`
+- `right_join()`
+- `inner_join()`
+- `full_join()`
+
+Two-table verbs
+============================
+
+*Left Join*: All observations on left operand (LHS) are retained:
+
+![plot of chunk unnamed-chunk-13](wrangling-figure/unnamed-chunk-13-1.png) 
+
+![plot of chunk unnamed-chunk-14](wrangling-figure/unnamed-chunk-14-1.png) 
+
+
+```r
+flights %>%
+  left_join(airlines, by="carrier")
+```
+
+RHS variables for LHS observations with no matching RHS observations are coded as `NA`.
+
+Two-table verbs
+============================
+
+*Right Join*: All observations on right operand (RHS) are retained:
+
+![plot of chunk unnamed-chunk-16](wrangling-figure/unnamed-chunk-16-1.png) 
+
+![plot of chunk unnamed-chunk-17](wrangling-figure/unnamed-chunk-17-1.png) 
+
+
+```r
+flights %>%
+  right_join(airlines, by="carrier")
+```
+
+LHS variables for RHS observations with no matching LHS observations are coded as `NA`.
+
+Two-table verbs
+============================
+
+*Inner Join*: Only observations matching on both tables are retained
+
+![plot of chunk unnamed-chunk-19](wrangling-figure/unnamed-chunk-19-1.png) 
+
+![plot of chunk unnamed-chunk-20](wrangling-figure/unnamed-chunk-20-1.png) 
+
+
+```r
+flights %>%
+  inner_join(airlines, by="carrier")
+```
+
+Two-table verbs
+============================
+
+*Full Join*: All observations are retained, regardless of matching condition
+
+![plot of chunk unnamed-chunk-22](wrangling-figure/unnamed-chunk-22-1.png) 
+
+![plot of chunk unnamed-chunk-23](wrangling-figure/unnamed-chunk-23-1.png) 
+
+
+```r
+flights %>%
+  full_join(airlines, by="carrier")
+```
+
+All values coded as `NA` for non-matching observations as appropriate.
+
+Join Conditions
+==========================
+
+All of these joins are based on a matching condition:
+
+
+```r
+flights %>%
+  left_join(airlines, by="carrier")
+```
+
+specifies to join observations where `flights$carrier` equals `airlines$carrier`.
+
+Join Conditions
+==========================
+
+All of these joins are based on a matching condition:
+
+
+```r
+flights %>%
+  left_join(airlines)
+```
+
+By default this performs a *natural join* where all variables with the same name in both tables are used in join condition.
+
+
+```r
+flights %>%
+  left_join(airlines, by=c("carrier" = "name"))
+```
+
+Specifies `flights$carrier` must `airlines$name`.
+
+Filtering Joins
+==========================
+
+We've just seen *mutating joins* that create new tables.
+
+*Filtering joins* use join conditions to filter a specific table.
+
+
+```r
+flights %>% anti_join(airlines, by="carrier")
+```
+
+```
+Source: local data frame [0 x 16]
+
+Variables not shown: year (int), month (int), day (int), dep_time (int),
+  dep_delay (dbl), arr_time (int), arr_delay (dbl), carrier (chr), tailnum
+  (chr), flight (int), origin (chr), dest (chr), air_time (dbl), distance
+  (dbl), hour (dbl), minute (dbl)
+```
+
+Filters the `flights` table to only include flights from airlines that
+*are not* included in the `airlines` table.
 
 Final note on `dplyr`
 ========================================
@@ -296,7 +432,7 @@ Dealing with skewed data
 flights %>% ggplot(aes(dep_delay)) + geom_histogram(binwidth=30)
 ```
 
-![plot of chunk unnamed-chunk-20](wrangling-figure/unnamed-chunk-20-1.png) 
+![plot of chunk unnamed-chunk-36](wrangling-figure/unnamed-chunk-36-1.png) 
 
 Skewed Data
 =========================================

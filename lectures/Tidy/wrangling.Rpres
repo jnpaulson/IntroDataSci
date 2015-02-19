@@ -8,19 +8,8 @@ library(dplyr)
 
 Data Wrangling
 ========================================================
-author: Wikum Dinalankara and Hector Corrada Bravo
+author: Hector Corrada Bravo
 date: CMSC498T Spring 2015
-
-Catching up with Baltimore Analysis
-========================================================
-
-**Reminder**: You can check current status of Baltimore analysis
-here: [http://htmlpreview.github.io/?https://github.com/hcorrada/IntroDataSciBaltimore/blob/master/baltimore.html](http://htmlpreview.github.io/?https://github.com/hcorrada/IntroDataSciBaltimore/blob/master/baltimore.html)
-
-Some thoughts
-- Make sure your analysis is reproducible: i.e., your classmates must be able to add to it and have it run. I always update 
-the `html` file before merging your analysis. I will not accept pull requests that are not reproducible.
-- If you use new data in the analysis add it to the repository using `git add`
 
 Tidy Data
 ========================================================
@@ -33,7 +22,7 @@ For Today
 =====================================
 
 - Manipulating tidy data
-- Cleaning data
+- Missing data
 - Transforming data
 
 Manipulation
@@ -45,6 +34,19 @@ The `dplyr` package: one of the most beautiful tools created for data analysis
 - Built around tidy data principles
 - Uniform treatment of multiple backends (in memory files, partially loaded files, databases)
 - Pipes can be used to elegantly chain multiple manipulation operations
+- An introduction: http://cran.rstudio.com/web/packages/dplyr/vignettes/introduction.html
+
+Manipulation
+===================
+
+Single table verbs:
+- `filter()` and `slice()`
+- `arrange()`
+- `select()` and `rename()`
+- `distinct()`
+- `mutate()` and `transmutate()`
+- `summarize()` 
+- `sample_n()` and `sample_frac()`
 
 Subsetting Observations
 ========================================
@@ -144,6 +146,147 @@ flights %>%
   summarize(delay=mean(delay, na.rm=TRUE))
 ```
 
+Two-table verbs
+=========================================
+
+Efficient methods to combine data from multiple tables. Drawn from DB literature.
+
+Verbs differ on how non-matching observations are handled
+- `left_join()`
+- `right_join()`
+- `inner_join()`
+- `full_join()`
+
+Two-table verbs
+============================
+
+*Left Join*: All observations on left operand (LHS) are retained:
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+img <- readPNG("join_lhs.png")
+grid.raster(img)
+```
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+img <- readPNG("left_join.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+flights %>%
+  left_join(airlines, by="carrier")
+```
+
+RHS variables for LHS observations with no matching RHS observations are coded as `NA`.
+
+Two-table verbs
+============================
+
+*Right Join*: All observations on right operand (RHS) are retained:
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+img <- readPNG("join_lhs.png")
+grid.raster(img)
+```
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+img <- readPNG("right_join.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+flights %>%
+  right_join(airlines, by="carrier")
+```
+
+LHS variables for RHS observations with no matching LHS observations are coded as `NA`.
+
+Two-table verbs
+============================
+
+*Inner Join*: Only observations matching on both tables are retained
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+img <- readPNG("join_lhs.png")
+grid.raster(img)
+```
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+img <- readPNG("inner_join.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+flights %>%
+  inner_join(airlines, by="carrier")
+```
+
+Two-table verbs
+============================
+
+*Full Join*: All observations are retained, regardless of matching condition
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+img <- readPNG("join_lhs.png")
+grid.raster(img)
+```
+
+```{r, fig.width=6.5, fig.height=2.5, echo=FALSE}
+img <- readPNG("full_join.png")
+grid.raster(img)
+```
+
+```{r, eval=FALSE}
+flights %>%
+  full_join(airlines, by="carrier")
+```
+
+All values coded as `NA` for non-matching observations as appropriate.
+
+Join Conditions
+==========================
+
+All of these joins are based on a matching condition:
+
+```{r, eval=FALSE}
+flights %>%
+  left_join(airlines, by="carrier")
+```
+
+specifies to join observations where `flights$carrier` equals `airlines$carrier`.
+
+Join Conditions
+==========================
+
+All of these joins are based on a matching condition:
+
+```{r, eval=FALSE}
+flights %>%
+  left_join(airlines)
+```
+
+By default this performs a *natural join* where all variables with the same name in both tables are used in join condition.
+
+```{r, eval=FALSE}
+flights %>%
+  left_join(airlines, by=c("carrier" = "name"))
+```
+
+Specifies `flights$carrier` must `airlines$name`.
+
+Filtering Joins
+==========================
+
+We've just seen *mutating joins* that create new tables.
+
+*Filtering joins* use join conditions to filter a specific table.
+
+```{r}
+flights %>% anti_join(airlines, by="carrier")
+```
+
+Filters the `flights` table to only include flights from airlines that
+*are not* included in the `airlines` table.
 
 Final note on `dplyr`
 ========================================
