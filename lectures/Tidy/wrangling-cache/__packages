@@ -3,3 +3,5 @@ knitr
 png
 tidyr
 dplyr
+ggplot2
+nycflights13
