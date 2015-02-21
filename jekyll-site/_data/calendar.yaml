@@ -117,6 +117,10 @@
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
+  workdue:
+    -
+      title: "Wrangling quiz"
+      link: {url: "https://myelms.umd.edu/courses/1130499/quizzes/1079169"}
 -
   date: 2/26
   covers:
