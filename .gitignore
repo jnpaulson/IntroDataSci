@@ -1,0 +1,8 @@
+*-cache*
+*-figure*
+*.cache*
+*.pandoc*
+*_files*
+*.rstudio*
+*.gitconfig*
+

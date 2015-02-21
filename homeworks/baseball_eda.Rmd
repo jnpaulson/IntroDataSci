@@ -1,0 +1,110 @@
+---
+title: "baseball"
+output: html_document
+---
+
+Look at dollars per win and dollars per run, for each team across time.
+
+Redo the team by payroll table.
+
+- sum salaries by year
+
+
+```{r}
+library(dplyr)
+library(Lahman)
+data(Salaries)
+
+salaries <- tbl_df(Salaries)
+payroll <- salaries %>%
+  group_by(teamID, yearID) %>%
+  summarize(payroll=sum(salary))
+```
+
+Now join to get number of games won, runs scored and rank and keep only data from 1995 on
+```{r}
+data(Teams)
+teams <- tbl_df(Teams)
+team_tab <- payroll %>%
+  left_join(teams, by=c("teamID", "yearID")) %>%
+  select(teamID, franchID, yearID, payroll, wins=W, runs_scored=R, runs_allowed=RA, rank=Rank) %>%
+  filter(yearID >= 1995)
+```
+
+Plot payroll vs. wins for the years 2000, 2005 and 2010
+
+```{r}
+library(ggplot2)
+team_tab %>% filter(yearID==2000) %>%
+  ggplot(aes(x=payroll, y=wins, label=teamID)) +
+    geom_text() +
+    geom_smooth() 
+```
+
+```{r}
+team_tab %>% filter(yearID==2005) %>%
+  ggplot(aes(x=payroll, y=wins, label=teamID)) +
+    geom_text() +
+    geom_smooth() 
+```
+
+```{r}
+team_tab %>% filter(yearID==2010) %>%
+  ggplot(aes(x=payroll, y=wins, label=teamID)) +
+    geom_text() +
+    geom_smooth() 
+```
+
+Calculate dollars per win, and per run
+
+```{r}
+team_tab2 <- team_tab %>% 
+  mutate(dollars_per_win = payroll / wins) %>%
+  mutate(dollars_per_run = payroll / runs_scored) %>%
+  mutate(win_expectation = (runs_scored^2) / (runs_scored^2 + runs_allowed^2)) %>%
+  mutate(dollars_per_expected_win = payroll / (win_expectation * 162))
+```
+
+Now plot dollars per win for each year, for each team
+
+```{r}
+team_tab2 %>%
+  ggplot(aes(x=yearID, y=dollars_per_win)) +
+  geom_line(aes(group=franchID))
+```
+
+Now plot dollars per expected win for each year, for each team
+
+```{r}
+team_tab2 %>%
+  ggplot(aes(x=yearID, y=dollars_per_expected_win)) +
+  geom_line(aes(group=franchID))
+```
+
+Now center dollars per expected win for each year
+
+```{r}
+dew_tab <- team_tab2 %>%
+  group_by(yearID) %>%
+  summarize(median_DEW=median(dollars_per_expected_win))
+
+team_dew_tab <- team_tab2 %>%
+  left_join(dew_tab, by="yearID") %>%
+  mutate(relative_dew = dollars_per_expected_win - median_DEW) %>%
+  mutate(expected_wins = win_expectation * 162) %>%
+  select(franchID, yearID, relative_dew, expected_wins) 
+```
+plot relative dew
+```{r}
+team_dew_tab %>%
+  filter(teamID %in% c("OAK", "KCA", "NYN", "NYA", "BOS")) %>%
+  ggplot(aes(x=yearID, y=relative_dew)) +
+  geom_line(aes(group=franchID, color=franchID))  
+```
+
+```{r}
+team_dew_tab %>%
+  filter(teamID %in% c("OAK", "KCA", "NYN", "NYA", "BOS")) %>%
+  ggplot(aes(x=yearID, y=relative_dew)) +
+  geom_point(aes(color=franchID, size=expected_wins))
+```

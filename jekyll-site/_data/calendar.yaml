@@ -131,6 +131,13 @@
   covers:
     -
       title: "Data summarisation and aggregation at scale (2)"
+  workdue:
+    -
+      title: "HW1 Part 1"
+      link: { url: "homeworks/hw1_part1.html", insite: }
+    -
+      title: "HW1 Part 2"
+      link: { url: "homeworks/hw1_part2.html", insite: }
 -
   date: 3/5
   covers:
