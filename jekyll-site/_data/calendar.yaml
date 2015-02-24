@@ -113,7 +113,7 @@
   status: present
   covers:
     -
-      title: "Exploratory Data Analysis"
+      title: "Exploratory Data Analysis (1)"
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
@@ -123,14 +123,19 @@
       link: {url: "https://myelms.umd.edu/courses/1130499/quizzes/1079169"}
 -
   date: 2/26
+  status: present
   covers:
     -
-      title: "Data summarisation and aggregation at scale (1)"
+      title: "Exploratory Data Analysis (2): Visualization"
+  readings:
+    -
+      title: "Zumen & Mount: Ch. 3"
 -
   date: 3/3
+  status: present
   covers:
     -
-      title: "Data summarisation and aggregation at scale (2)"
+      title: "Data summarisation and aggregation at scale"
   workdue:
     -
       title: "HW1 Part 1"
