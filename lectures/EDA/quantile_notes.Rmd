@@ -1,0 +1,17 @@
+---
+title: "QQPlot Notes"
+output: html_document
+---
+
+The quantile-quantile plot is a commonly used method to visually understand shape of specific measurements and observations. 
+
+The central concept is characterizing observations for a given measurement (or variable) based on *quantiles*. To understand *quantile* we must first introduce the notion of an *empirical distribution*.
+
+First, let's assume we have made $n$ observations of a given variable $x_1,x_2,\ldots,x_n$. 
+
+Let's start simply: the **median** is a value $m$ such that half of the observations are smaller and half of the observations are larger. 
+
+Use notation $x_{(1)}$ for smallest, $x_{(2)}$ for second smallest, $x_{(i)}$ for the $i$th ranked observation and $x_{(n)}$ for the largest.
+
+**Question** How would you specify the median using this notation?
+
