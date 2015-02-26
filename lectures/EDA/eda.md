@@ -86,7 +86,7 @@ We can check that using a Quantile-Quantile (Q-Q) plot
 
 ```r
 qqnorm(flights$dep_delay)
-qqline(flights$dep_delay)
+qqnorm(flights$minute)
 ```
 
 Transforming Data
