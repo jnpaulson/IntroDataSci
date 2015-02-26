@@ -161,6 +161,26 @@ library(nycflights13)
 flights %>% ggplot(aes(dep_delay)) + geom_histogram(binwidth=30)
 ```
 
+Transforming Data
+=========================================
+
+Dealing with skewed data
+
+```{r echo=FALSE}
+library(dplyr)
+library(ggplot2)
+library(nycflights13)
+```
+
+```{r, fig.width=20}
+library(magrittr)
+flights %>% 
+  sample_n(100) %>% 
+  magrittr::extract2("dep_delay") %T>% 
+  qqnorm %>% 
+  qqline
+```
+
 Skewed Data
 =========================================
 
@@ -178,4 +198,5 @@ When a multiplicative process makes sense, then a logarithmic transform is appro
   - Started Log: shift all values so they are positive, apply `log2`
   - Signed Log: $sign(x) \times log2(abs(x))$, but set all $|x| < 1$ to $1$.
   
+Try them out! Explore result with Q-Q plots!
 
