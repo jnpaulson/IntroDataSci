@@ -67,7 +67,8 @@ E.g., change the geometric representation
 batting %>% 
   filter(yearID == "2010") %>%
   ggplot(aes(x=AB, y=R, label=teamID)) +
-    geom_text()
+    geom_text() +
+    geom_point()
 ```
 
 Simple example
@@ -165,7 +166,7 @@ when arranging data.
 batting %>%
   filter(yearID %in% c("1995", "2000", "2010")) %>%
   ggplot(aes(x=AB, y=R, size=HR)) +
-  facet_grid(.~yearID) +
+  facet_grid(lgID~yearID) +
   geom_point() + 
   geom_smooth(method=lm)
 ```
@@ -185,6 +186,11 @@ batting %>%
   geom_point() + 
   geom_smooth(method=lm)
 ```
+
+Link
+======
+http://catalog.umd.edu/F/BKBIQXGLRMJUEVDRE17SLUQIIGMPFYVSN4M8TN13UGKYFJ5R13-01494?local_base=gl&func=find-c&ccl_term=sys%3D003921336&pds_handle=GUEST
+===
 
 Summary
 =============
