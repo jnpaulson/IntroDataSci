@@ -5,7 +5,7 @@ title: "Project 1, Part II: Moneyball"
 
 **Due**: March 3rd, 2015  
 **Posted**: Feb 21st, 2015  
-**Last Update**: Feb 26th, 2015  
+**Last Update**: Feb 28th, 2015  
 
 In this project you will apply your data wrangling and exploratory data analysis
 skills to baseball. In particular, we want to know how well did Moneyball work
@@ -108,6 +108,9 @@ $$
 
 ## How to submit.
 
-Write an Rmarkdown file with the code you used to solve each problem, and the answers to each question. Knit as a pdf file (instead of html) and submit to ELMS.
+Write an Rmarkdown file with the code you used to solve each problem,
+and the answers to each question. Knit as a pdf file (instead of html)
+and submit to ELMS: [https://myelms.umd.edu/courses/1130499/assignments/3672079](https://myelms.umd.edu/courses/1130499/assignments/3672079)
+
 
 Remember to submit [Part I](homeworks/hw1_part1.html) through github.

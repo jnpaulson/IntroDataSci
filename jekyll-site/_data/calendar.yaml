@@ -143,11 +143,11 @@
       title: "Data summarisation and aggregation at scale"
   workdue:
     -
-      title: "HW1 Part 1"
-      link: { url: "homeworks/hw1_part1.html", insite: }
+      title: "Project I, Part 1"
+      link: { url: "homeworks/project1_part1.html", insite: }
     -
-      title: "HW1 Part 2"
-      link: { url: "homeworks/hw1_part2.html", insite: }
+      title: "Project I, Part 2"
+      link: { url: "homeworks/project1_part2.html", insite: }
 -
   date: 3/5
   covers:
