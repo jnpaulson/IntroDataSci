@@ -24,7 +24,7 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 
 *	TA: Wikum Dinalankara  
 	<wikum@cs.umd.edu>  
-	Office Hours: TBD  
+	Office Hours: Wednesdays 3:00pm-5:00pm 
 
 *   Textbook information:
 	There is no required textbook. See the [syllabus](syllabus.html)
