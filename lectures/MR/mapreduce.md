@@ -8,7 +8,7 @@ For today
 
 1. Project questions
 2. Log transform
-3. Parallelism, mapreduce and spark
+3. Parallelism, Map-Reduce and Spark
 
 Transforming Data
 =========================================
@@ -108,16 +108,18 @@ Manipulation and summarization at scale
 
 Efficiency of implementation of this type of parallelism depends on underlying architecture.
 
-- Shared memory
-- Shared XX
+- Shared memory vs. Shared storage vs. Shared nothing
+- For massive datasets, last is usually preferred
+  - Fault tolerance most important consideration
 
 Map-reduce
 =========================================
 
-Map-Reduce is an implementation idea for a shared XX architecture. 
+Map-Reduce is an implementation idea for a shared nothing architecture. 
 Main features:
   - Distributed storage
   - Data proximity (perform operaations on data that is physically close)
+  - Fault tolerance
   
 Map-reduce
 =========================================
