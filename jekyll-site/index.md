@@ -21,10 +21,11 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 	Room CSI 2120  
 
 *	Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment
+     (email)  
 
 *	TA: Wikum Dinalankara  
 	<wikum@cs.umd.edu>  
-	Office Hours: Wednesdays 3:00pm-5:00pm 
+	Office Hours: Wednesdays 3:00pm-5:00pm BSB 3120C
 
 *   Textbook information:
 	There is no required textbook. See the [syllabus](syllabus.html)
