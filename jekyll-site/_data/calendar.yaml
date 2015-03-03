@@ -124,7 +124,7 @@
       link: {url: "https://myelms.umd.edu/courses/1130499/quizzes/1079169"}
 -
   date: 2/26
-  status: present
+  status: done
   covers:
     -
       title: "The q-q plot"
@@ -141,6 +141,7 @@
   covers:
     -
       title: "Data summarisation and aggregation at scale"
+      materials: { link: "lectures/MapReduce.html", insite: }
   workdue:
     -
       title: "Project I, Part 1"
