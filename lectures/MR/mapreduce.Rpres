@@ -296,3 +296,8 @@ Final Notes
 - Strong support in Python, initial support with SparkR
 - Spark programming guide: [https://spark.apache.org/docs/latest/programming-guide.html](https://spark.apache.org/docs/latest/programming-guide.html)
 - More info on SparkR: [http://amplab-extras.github.io/SparkR-pkg/](http://amplab-extras.github.io/SparkR-pkg/)
+- To play around with SparkR use my updated Docker image:
+
+```{shell}
+docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio hcorrada/cmsc498
+```
