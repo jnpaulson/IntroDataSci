@@ -137,7 +137,7 @@
       title: "Zumen & Mount: Ch. 3"
 -
   date: 3/3
-  status: present
+  status: done
   covers:
     -
       title: "Data summarisation and aggregation at scale"
@@ -151,11 +151,13 @@
       link: { url: "homeworks/project1_part2.html", insite: }
 -
   date: 3/5
+  status: present
   covers:
     -
       title: "Wrap-up unit 1 and project discussion" 
 -
   date: 3/10
+  status: present
   covers:
     -
       title: "Quantifying variation and uncertainty"
