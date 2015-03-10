@@ -3,6 +3,8 @@ layout: default
 title: Setting up R
 ---
 
+Last Update: 3/10/2015
+
 We will use [Rocker](https://github.com/rocker-org/rocker), a project built on top of
 [Docker](https://www.docker.com/) to manage our software installation. This will provide you with a working installation of R, and the Rstudio IDE, along with a lot
 of packages providing analysis tools and datasets we will use throughout the semester. You
@@ -89,4 +91,21 @@ the `-v` argument to the docker call. You can read more about it [here](https://
 
 We will most likely fork the `ropensci` container for the purposes of this class. You will probably need to re-install another container.
 
+#Class image
+
+We will be working from a docker image that extends the `ropensci`
+container. To use this please use the following command:
+
+{% highlight bash %}
+docker run -d -p 8787:8787 -v <local_path>:/home/rstudio hcorrada/introdatascidocker
+{% endhighlight %}
+
+Here `<local_path>` corresponds to a path in your local machine that
+will be mapped to the home directory in the docker container running
+rstudio.
+
+You can find more information about this docker container
+[here](https://registry.hub.docker.com/u/hcorrada/introdatascidocker/)
+
+I will announce updates to the image on piazza.
 
