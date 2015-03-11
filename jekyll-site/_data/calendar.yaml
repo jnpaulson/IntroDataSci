@@ -166,7 +166,10 @@
   status: present
   covers:
     -
-      title: "Quantifying variation and uncertainty"
+      title: "Introduction to Statistical Learning"
+    -
+      title: "Some background"
+      materials: { link: "lectures/StatLearnBackground.html", insite: }
   readings:
     -
       title: "ISL Ch. 2"
