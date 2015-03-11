@@ -170,6 +170,10 @@
   readings:
     -
       title: "ISL Ch. 2"
+  workdue:
+    -
+      title: "ISL Ch. 2 reading prep quiz"
+      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1081113" }
 -
   date: 3/17
   covers:
