@@ -179,22 +179,25 @@
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1081113" }
 -
   date: 3/17
+  status: done
   covers:
     -
       title: "No class, Spring Break"
 -
   date: 3/19
+  status: done
   covers:
     -
       title: "No class, Spring Break"
 -
   date: 3/24
+  status: present
   covers:
     -
       title: "Linear models for prediction and regression"
   readings:
     -
-      title: "ISL Ch. 3"
+      title: "ISL Ch. 3 and 4"
 -
   date: 3/26
   covers:
