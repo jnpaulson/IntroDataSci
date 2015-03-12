@@ -77,3 +77,5 @@ Note: In this case, we could use a $t$-test if the sample is small.
 
 This inferential approach is used in any situation where a population average is of interest and we can only obtain a random sample. It is also used when randomization is used.
 
+For more information on notation, and conventions on Linear Algebra see end of Chapter 1 of "An Introduction to Statistical Learning" by James et al.
+
