@@ -5,4 +5,4 @@
 *_files*
 *.rstudio*
 *.gitconfig*
-
+*_cache*

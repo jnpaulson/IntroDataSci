@@ -167,6 +167,7 @@
   covers:
     -
       title: "Introduction to Statistical Learning"
+      materials: { link: "lectures/IntroStatLearn.html", insite: }
     -
       title: "Some background"
       materials: { link: "lectures/StatLearnBackground.html", insite: }

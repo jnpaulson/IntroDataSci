@@ -351,18 +351,17 @@ lm.test.rss <- rss(predict(lmfit, newdata=test.df), test.df$y)
 knn15.test.rss <- rss(knnReg(train.df$x, test.df$x, train.df$y, k=15), test.df$y)
 knn1.test.rss <- rss(knnReg(train.df$x, test.df$x, train.df$y, k=1), test.df$y)
 
-res <- cbind(c("LM", "KNN 15", "KNN 1"),
-             `train error`=sprintf("%.2f\n", c(lm.train.rss, knn15.train.rss, knn1.train.rss)/1e3),
-             `test error`=sprintf("%.2f\n", c(lm.test.rss, knn15.test.rss, knn1.test.rss)/1e3))
+res <- data.frame(Method=c("Linear", "K=15", "K=1"),
+  `Train set`=c(lm.train.rss, knn15.train.rss, knn1.train.rss)/1e3,
+  `Test set`=c(lm.test.rss, knn15.test.rss, knn1.test.rss)/1e3)
 ```
 
 We can see how good our predictions are using RSS again.
 
-Method    Train set	  Test set
--------	 ----------	 ---------
-Linear        99.70	     93.58
-K=15          67.41          75.32
-K=1            0.00         149.10
+```{r, results="asis", echo=FALSE, cache=FALSE}
+knitr::kable(res, digits=2)
+```
+
 
 Notice RSS is worse in test set than in the training set for the KNN methods. Especially for KNN=1. The
 spikes we had in the estimate to predict the training data perfectly
@@ -379,7 +378,7 @@ enough. Not being flexible is related to being biased.
 The next figure shows the RSS in the test and training sets for KNN
 with varying k. Notice that for small $k$ we are clearly overfitting.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, results='hide'}
 ks <- ceiling(seq(1,50,len=10))
 knnrss <- matrix(0.0, nr=length(ks), nc=2)
 for (i in seq_along(ks)) {
