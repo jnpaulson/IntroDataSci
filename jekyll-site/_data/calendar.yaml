@@ -195,15 +195,22 @@
   status: present
   covers:
     -
-      title: "Linear models for prediction and regression"
+      title: "Linear models for regression and classification (1)"
   readings:
     -
       title: "ISL Ch. 3 and 4"
+  workdue:
+    -
+      title: "ISL Ch. 3 reading prep quiz"
+      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082257" }
 -
   date: 3/26
   covers:
     -
-      title: "Visualizing uncertainty, model estimates, and checking model assumptions"
+      title: "Linear models for regression and classification (2)"
+  readings:
+    -
+      title: "ISL Ch. 3 and 4"
 -
   date: 3/31
   covers:
