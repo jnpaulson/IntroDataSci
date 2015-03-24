@@ -196,6 +196,7 @@
   covers:
     -
       title: "Linear models for regression and classification (1)"
+      materials: { link: "lectures/Regression.pdf", insite: }
   readings:
     -
       title: "ISL Ch. 3 and 4"
