@@ -206,12 +206,17 @@
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082257" }
 -
   date: 3/26
+  status: present
   covers:
     -
       title: "Linear models for regression and classification (2)"
   readings:
     -
       title: "ISL Ch. 3 and 4"
+  workdue:
+    -
+      title: "ISL Ch. 4 reading prep quiz"
+      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082468" }
 -
   date: 3/31
   covers:
