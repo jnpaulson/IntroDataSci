@@ -32,4 +32,6 @@ datasets, questions and tutorials.
 * [Gapminder](http://www.gapminder.org/data/)
 * [Global Health Observatory](http://www.who.int/gho/database/en/): World Health Organization's data repository.
 * [UCI Machine Learning Repository](http://archive.ics.uci.edu/ml/): contains many datasets useful for testing and benchmarking learning algorithms.
-* [StatLib](http://lib.stat.cmu.edu/): Statistical software and dataset portal maintained by CMU.
+* [StatLib](http://lib.stat.cmu.edu/): Statistical software and
+dataset portal maintained by CMU.
+* Another large list of repositories: [http://www.inside-r.org/howto/finding-data-internet](http://www.inside-r.org/howto/finding-data-internet)

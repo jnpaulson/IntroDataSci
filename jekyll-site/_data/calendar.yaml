@@ -206,10 +206,11 @@
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082257" }
 -
   date: 3/26
-  status: present
+  status: done
   covers:
     -
       title: "Linear models for regression and classification (2)"
+      materials: { link: "lectures/Classification.html", insite: }
   readings:
     -
       title: "ISL Ch. 3 and 4"
@@ -218,25 +219,29 @@
       title: "ISL Ch. 4 reading prep quiz"
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082468" }
 -
-  date: 3/31
+  date: 3/30
+  status: present
   covers:
     -
-      title: "Machine Learning I: Non-linear methods, GAMs and Kernels"
+      title: "Evaluation performance via resampling"
+  readings:
+    -
+      title: "ISL Ch. 5"
 -
   date: 4/2
   covers:
     -
-      title: "Machine Learning II: Resampling, ensembles and tree-based methods"
+      title: "Machine Learning I: Non-linear methods, GAMs and Kernels"
 -
   date: 4/7
   covers:
     -
-      title: "Analysis at scale: regression and prediction"  
+      title: "Machine Learning II: Resampling, ensembles and tree-based methods"
 -
   date: 4/9
   covers:
     -
-      title: "Analysis at scale: time series and streams"
+      title: "Analysis at scale: regression and prediction"  
 -
   date: 4/14
   covers:
