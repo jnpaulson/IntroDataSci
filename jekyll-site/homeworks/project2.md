@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Project 2, Regression and Prediction"
+title: "Project 2, Regression and Classification"
 ---
 
 **Due**: April 7th, 2015  
 **Posted**: March 29th, 2015  
 **Last Update**: March 29th, 2015  
 
-In this project you will work on your regression and prediction
+In this project you will work on your regression and classification
 abilities.
 
 
@@ -23,7 +23,7 @@ I have included this package into the class Docker image. You should get it once
 Please [download this R markdown file](gapminder.Rmd), and complete as
 required. Knit into a pdf (or html) file and submit as directed below.
 
-### Prediction Analysis
+### Classification Analysis
 
 Do Question 10 in Chapter 4 and Question 7 in Chapter 5 from
 ISLR. These are on the `Weekly` dataset (also
