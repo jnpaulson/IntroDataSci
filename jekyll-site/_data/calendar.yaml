@@ -223,35 +223,50 @@
   status: present
   covers:
     -
-      title: "Evaluation performance via resampling"
+      title: "Evaluating performance via resampling"
   readings:
     -
       title: "ISL Ch. 5"
 -
   date: 4/2
-  covers:
+  status: present
+  covers: 
     -
-      title: "Machine Learning I: Non-linear methods, GAMs and Kernels"
+      title: "Machine Learning I: Resampling, ensembles and tree-based methods"
+  readings:
+    -
+      title: "ISL Ch. 8"
 -
   date: 4/7
+  status: present
   covers:
     -
-      title: "Machine Learning II: Resampling, ensembles and tree-based methods"
+      title: "Machine Learning II: The Support Vector Machine"
+  readings:
+    -
+      title: "ISL Ch. 9"
+  workdue:
+    -
+      title: "Project II"
+      link: { url: "homeworks/project2.html", insite: }
 -
   date: 4/9
   covers:
     -
-      title: "Analysis at scale: regression and prediction"  
+      title: "Machine Learning III: clustering and unsupervised data reduction"
+  readings:
+    -
+      title: "ISL Ch. 10"
 -
   date: 4/14
   covers:
     -
-      title: "Analysis at scale: networks"  
+      title: "Analysis at scale: regression and prediction"  
 -
   date: 4/16
   covers:
     -
-      title: "Analysis at scale: clustering and unsupervised data reduction"    
+      title: "Analysis at scale: networks"  
 -
   date: 4/21
   covers:
