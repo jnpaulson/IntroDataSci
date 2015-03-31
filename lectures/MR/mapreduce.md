@@ -22,7 +22,7 @@ Dealing with skewed data
 flights %>% ggplot(aes(dep_delay)) + geom_histogram(binwidth=30)
 ```
 
-![plot of chunk unnamed-chunk-2](mapreduce-figure/unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](MapReduce-figure/unnamed-chunk-2-1.png) 
 
 Transforming Data
 =========================================
@@ -41,7 +41,7 @@ flights %>%
   qqline
 ```
 
-![plot of chunk unnamed-chunk-4](mapreduce-figure/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](MapReduce-figure/unnamed-chunk-4-1.png) 
 
 Skewed Data
 =========================================
@@ -75,7 +75,7 @@ flights %>%
   qqline()
 ```
 
-![plot of chunk unnamed-chunk-5](mapreduce-figure/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](MapReduce-figure/unnamed-chunk-5-1.png) 
 
 Skewed Data
 ==============================
@@ -92,7 +92,7 @@ flights %>%
   qqline()
 ```
 
-![plot of chunk unnamed-chunk-6](mapreduce-figure/unnamed-chunk-6-1.png) 
+![plot of chunk unnamed-chunk-6](MapReduce-figure/unnamed-chunk-6-1.png) 
 
 Manipulation and summarization at scale
 =========================================
@@ -143,7 +143,7 @@ Basic computation paradigm is based on two operations:
 Map-reduce
 =========================================
 
-![plot of chunk unnamed-chunk-7](mapreduce-figure/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-7](MapReduce-figure/unnamed-chunk-7-1.png) 
 
 - Most efficient when computations organized in an acyclic graph.
   - Move data from stable storage to computing process
@@ -152,7 +152,7 @@ Map-reduce
 Map-reduce
 =========================================
 
-![plot of chunk unnamed-chunk-8](mapreduce-figure/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-8](MapReduce-figure/unnamed-chunk-8-1.png) 
 
 - Runtime benefits:
   - resource allocation
