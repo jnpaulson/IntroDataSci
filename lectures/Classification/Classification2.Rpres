@@ -207,7 +207,7 @@ lda_log_ratio <- function(balance, lda_stats) {
   scaled_balance <- centered_balance / sqrt(lda_stats$sigma2[1])
   
   # compute log normal density and add log class prior
-  lprobs <- dnorm(scaled_balance, log=TRUE) + rep(lda_stats$class_prior, each=n)
+  lprobs <- dnorm(scaled_balance, log=TRUE) + log(rep(lda_stats$class_prior, each=n))
   
   # compute log ratio of class probabilities
   lprobs <- matrix(lprobs, nc=2)
@@ -275,7 +275,7 @@ qda_log_ratio <- function(balance, qda_stats) {
   scaled_balance <- centered_balance / rep(sqrt(qda_stats$class_sigma), each=n)
   
   # compute log normal density and add log class prior
-  lprobs <- dnorm(scaled_balance, log=TRUE) + rep(qda_stats$class_prior, each=n)
+  lprobs <- dnorm(scaled_balance, log=TRUE) + log(rep(qda_stats$class_prior, each=n))
   
   # compute log ratio of class probabilities
   lprobs <- matrix(lprobs, nc=2)
