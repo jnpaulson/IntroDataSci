@@ -220,7 +220,7 @@
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082468" }
 -
   date: 3/31
-  status: present
+  status: done
   covers:
     -
       title: "Linear models for regression and classification (3)"
@@ -234,6 +234,7 @@
   covers:
     -
       title: "Evaluating performance via resampling"
+      materials: { link: "lectures/Evaluation.html", insite: }
   readings:
     -
       title: "ISL Ch. 5"
