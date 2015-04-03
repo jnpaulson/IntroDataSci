@@ -3,9 +3,9 @@ layout: default
 title: "Project 2, Regression and Classification"
 ---
 
-**Due**: April 7th, 2015  
+**Due**: April 9th, 2015  
 **Posted**: March 29th, 2015  
-**Last Update**: March 29th, 2015  
+**Last Update**: April 3rd, 2015  
 
 In this project you will work on your regression and classification
 abilities.

@@ -247,18 +247,19 @@
   readings:
     -
       title: "ISL Ch. 8"
-  workdue:
-    -
-      title: "Project II"
-      link: { url: "homeworks/project2.html", insite: }
 -
   date: 4/9
+  status: present
   covers:
     -
       title: "Machine Learning II: The Support Vector Machine"
   readings:
     -
       title: "ISL Ch. 9"
+  workdue:
+    -
+      title: "Project II"
+      link: { url: "homeworks/project2.html", insite: }
 -
   date: 4/14
   covers:
