@@ -1,0 +1,203 @@
+TreeMethods
+========================================================
+author: Hector Corrada Bravo
+date: CMSC498T Intro Data Science
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
+Tree-Based Methods
+====================
+
+Very popular, well-known and studied methods in Statistical Learning
+
+- Decision Tree Models
+- Random Forests
+
+Regression Trees
+==================
+
+```{r, echo=FALSE}
+library(tree)
+library(ISLR)
+library(RColorBrewer)
+palette(brewer.pal(8, "Dark2"))
+data(Auto)
+
+
+with(Auto, plot(horsepower, mpg, pch=19, cex=1.4))
+legend("topright", pch=19, col=1:3, legend=1:3)
+```
+
+***
+
+```{r, echo=FALSE}
+tree <- tree(mpg~horsepower, data=Auto)
+plot(tree)
+text(tree, pretty=0, cex=1.3)
+```
+
+Regression Trees
+==================
+
+```{r, echo=FALSE, cache=FALSE, results="hide"}
+library(RColorBrewer)
+palette(brewer.pal(8, "Dark2"))
+
+with(Auto, plot(horsepower, mpg, pch=19, cex=1.4))
+#abline(h=subset(tree$frame, grepl("leaf", tree$frame$var))$yval)
+abline(v=as.numeric(gsub("<", "", subset(tree$frame, !grepl("leaf", tree$frame$var))$splits[,"cutleft"])))
+
+process_node <- function(i, left, right) {
+ if (tree$frame$var[i] == "<leaf>") {
+   val <- as.numeric(tree$frame$yval[i])
+   segments(left, val, right, val, col="red", lwd=5)
+ } else {
+   val <- as.numeric(gsub("<","",tree$frame$splits[i, "cutleft"]))
+   i <- process_node(i+1, left, val)
+   i <- process_node(i+1, val, right)
+ }
+ i
+}
+
+process_node(1, .85*min(Auto$horsepower), 1.05*max(Auto$horsepower))
+```
+
+***
+
+```{r, echo=FALSE}
+tree <- tree(mpg~horsepower, data=Auto)
+plot(tree)
+text(tree, pretty=0, cex=1.3)
+```
+
+Prediction by space partitioning
+=================================
+
+Prediction by partitioning feature (predictor) space.
+
+1. Partition space into $J$ non-overlapping regions, $R_1, R_2, \ldots, R_J$.
+2. For every observation that falls within region $R_j$, predict response as mean of response for training observations in $R_j$.
+
+**Regression Trees create partition recursively**
+
+Regression Trees
+===================
+
+1. Find predictor $j$ and value $s$ that minimize RSS:
+
+$$
+\sum_{i:\, x_i \in R_1(j,s))} (y_i - \hat{y}_{R_1})^2 +
+\sum_{i:\, x_i \in R_2(j,s))} (y_i - \hat{y}_{R_2})^2
+$$
+
+Where $R_1$ and $R_2$ are regions resulting from splitting observations on predictor $j$ and value $s$:
+
+$$
+R_1(j,s) = \{X|X_j < s\} \mathrm{ and } R_2(j,s) \{X|X_j \geq s\}
+$$
+
+$\hat{y}_{R_j}$ is the mean of the response $Y$ of observations in $R_j$.
+
+Regression Trees
+=================
+
+![](8.3.png)
+
+Regression Trees
+=================
+
+```{r, echo=FALSE}
+with(Auto, {
+     plot(horsepower, weight, cex=mpg/median(mpg), pch=19)
+
+    qs <- quantile(mpg, p=seq(0,1, len=5))
+    legend("bottomright", pch=19, legend=qs, pt.cex=qs/median(mpg))
+})
+```
+
+***
+
+```{r, echo=FALSE}
+tree <- tree(mpg~horsepower+weight, data=Auto)
+plot(tree)
+text(tree, pretty=0)
+```
+
+Regression Trees
+=================
+
+```{r, echo=FALSE, cache=FALSE}
+process_node <- function(i, j, left, right, bottom, top, dat) {
+  var <- as.character(tree$frame$var[i])
+  is_leaf <- grepl("leaf", var)
+  
+  if (is_leaf) {
+    val <- as.numeric(tree$frame$yval[i])
+    dat[j,] <- c(j, left, right, bottom, top, val)
+    j <- j + 1
+  } else {
+    val <- as.numeric(gsub("<","",tree$frame$splits[i, "cutleft"]))
+    if (var == "horsepower") {
+      res <- process_node(i+1, j, left, val, bottom, top, dat)
+      i <- res$i; j <- res$j; dat <- res$dat
+      res <- process_node(i+1, j, val, right, bottom, top, dat)
+      i <- res$i; j <- res$j; dat <- res$dat
+    } else {
+      res <- process_node(i+1, j, left, right, bottom, val, dat)
+      i <- res$i; j <- res$j; dat <- res$dat
+      res <- process_node(i+1, j, left, right, val, top, dat)
+      i <- res$i; j <- res$j; dat <- res$dat
+    }
+  }
+  list(i=i, j=j, dat=dat)
+}
+
+nleaves <- sum(grepl("leaf", tree$frame$var))
+region_dat <- data.frame(j=integer(nleaves),
+                  left=numeric(nleaves),
+                  right=numeric(nleaves),
+                  bottom=numeric(nleaves),
+                  top=numeric(nleaves),
+                  val=numeric(nleaves))
+
+res <- process_node(1, 1, .85*min(Auto$horsepower), 1.05*max(Auto$horsepower), .85*min(Auto$weight), 1.05*max(Auto$weight), region_dat)
+region_dat <- res$dat
+
+with(Auto, {
+     plot(horsepower, weight, cex=mpg/median(mpg), pch=19)
+
+    qs <- quantile(mpg, p=seq(0,1, len=5))
+    legend("bottomright", pch=19, legend=qs, pt.cex=qs/median(mpg))
+})
+
+with(region_dat, {
+  segments(left, bottom, right, bottom)
+  segments(left, top, right, top)
+  segments(left, bottom, left, top)
+  segments(right, bottom, right, top)
+  text(.5*(left+right), .5*(top+bottom), labels=j, cex=4, col="red")
+})
+```
+
+***
+
+```{r, echo=FALSE}
+plot(tree)
+text(tree, pretty=0)
+```
+
+Regression Trees
+=================
+
+In R, built with similar API as linear models
+
+```{r, eval=FALSE}
+library(tree)
+library(ISLR)
+data(Auto)
+
+tree_fit <- tree(mpg~horsepower+weight, data=Auto)
+predict(tree_fit)
+```
