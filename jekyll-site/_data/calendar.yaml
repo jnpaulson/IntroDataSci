@@ -243,7 +243,8 @@
   status: present
   covers: 
     -
-      title: "Machine Learning I: Resampling, ensembles and tree-based methods"
+      title: "Machine Learning I: tree-based methods"
+      materials: { link: "lectures/TreeMethods.html", insite: }
   readings:
     -
       title: "ISL Ch. 8"
