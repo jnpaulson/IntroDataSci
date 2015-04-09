@@ -25,7 +25,7 @@ required. Knit into a pdf (or html) file and submit as directed below.
 
 ### Handing in
 
-Please submit knitted file `gapminder.pdf` and to ELMS
+Please submit knitted file `gapminder.pdf` to ELMS
 [here](https://myelms.umd.edu/courses/1130499/assignments/3691353).
 
 
