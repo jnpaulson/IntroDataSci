@@ -119,5 +119,7 @@ significantly better than the SVM with "polynomial" kernel?
 
 ###Hading in
 Submit your answers (including both code and text as appropriate) as
-a knitted R markdown file (call it `project3.pdf`).
+a knitted R markdown file (call it `project3.pdf`) to ELMS:
+[https://myelms.umd.edu/courses/1130499/assignments/3700437](https://myelms.umd.edu/courses/1130499/assignments/3700437)
+
 
