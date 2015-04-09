@@ -240,6 +240,12 @@
       title: "ISL Ch. 5"
 -
   date: 4/7
+  status: done
+  covers:
+    -
+      title: "CANCELLED: Campus Closed"
+-
+  date: 4/9
   status: present
   covers: 
     -
@@ -249,7 +255,17 @@
     -
       title: "ISL Ch. 8"
 -
-  date: 4/9
+  date: 4/10
+  status: present
+  covers:
+    -
+      title: "THIS IS NOT A LECTURE DAY"
+  workdue:
+    -
+      title: "Project II"
+      link: { url: "homeworks/project2.html", insite: }  
+-
+  date: 4/14
   status: present
   covers:
     -
@@ -257,12 +273,8 @@
   readings:
     -
       title: "ISL Ch. 9"
-  workdue:
-    -
-      title: "Project II"
-      link: { url: "homeworks/project2.html", insite: }
 -
-  date: 4/14
+  date: 4/16
   covers:
     -
       title: "Machine Learning III: clustering and unsupervised data reduction"
@@ -270,15 +282,10 @@
     -
       title: "ISL Ch. 10"
 -
-  date: 4/16
-  covers:
-    -
-      title: "Analysis at scale: regression and prediction"  
--
   date: 4/21
   covers:
     -
-      title: "Analysis at scale: networks"  
+      title: "Analysis at scale: regression and classification"  
 -
   date: 4/23
   covers:
