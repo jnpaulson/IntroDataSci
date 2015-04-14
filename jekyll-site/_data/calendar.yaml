@@ -230,7 +230,7 @@
       title: "ISL Ch. 4"
 -
   date: 4/2
-  status: present
+  status: done
   covers:
     -
       title: "Evaluating performance via resampling"
@@ -246,7 +246,7 @@
       title: "CANCELLED: Campus Closed"
 -
   date: 4/9
-  status: present
+  status: done
   covers: 
     -
       title: "Machine Learning I: tree-based methods"
@@ -256,7 +256,7 @@
       title: "ISL Ch. 8"
 -
   date: 4/10
-  status: present
+  status: done
   covers:
     -
       title: "THIS IS NOT A LECTURE DAY"
@@ -270,6 +270,7 @@
   covers:
     -
       title: "Machine Learning II: The Support Vector Machine"
+      materials: { link: "lectures/SVM.html", insite: }
   readings:
     -
       title: "ISL Ch. 9"
