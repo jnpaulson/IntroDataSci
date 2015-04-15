@@ -1,0 +1,48 @@
+Unsupervised Methods
+========================================================
+author: Hector Corrada Bravo
+date: CMSC798: Intro. Data Sci
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
+Example
+========
+
+```{r, echo=FALSE}
+library(dplyr)
+
+load("geno_data.rda")
+
+# do principal components on
+# genotypes
+pr_out <- filtered_geno_data %>%
+  select(contains("rs")) %>%
+  prcomp(scale=TRUE)
+
+# get the embedded samples and add additional sample information
+embedded_samples <- pr_out$x[,1:3] %>%
+  as.data.frame() %>%
+  bind_cols(select(filtered_geno_data, sample_name, population, super_population))
+```
+
+```{r, echo=FALSE}
+library(ggplot2)
+
+embedded_samples %>%
+  ggplot(aes(x=PC1, y=PC2, color=super_population)) +
+    geom_point() +
+     scale_color_brewer(palette="Dark2")
+```
+
+Example (cont'd)
+=================
+
+```{r, echo=FALSE}
+embedded_samples %>%
+  ggplot(aes(x=PC1, y=PC3, color=super_population)) +
+  geom_point() +
+  scale_color_brewer(palette="Dark2")
+```
+
