@@ -266,7 +266,7 @@
       link: { url: "homeworks/project2.html", insite: }  
 -
   date: 4/14
-  status: present
+  status: done
   covers:
     -
       title: "Machine Learning II: The Support Vector Machine"
@@ -276,9 +276,11 @@
       title: "ISL Ch. 9"
 -
   date: 4/16
+  status: present
   covers:
     -
-      title: "Machine Learning III: clustering and unsupervised data reduction"
+      title: "Machine Learning III: clustering and unsupervised dimensionality reduction"
+      materials: { link: "lectures/Unsupervised.html", insite: }
   readings:
     -
       title: "ISL Ch. 10"
