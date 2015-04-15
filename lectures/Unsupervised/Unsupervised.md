@@ -2449,7 +2449,7 @@ A final caveat: PCA is **notoriously easy** to over-interpret...
 Motivating Example
 ===================
 
-Let's reveal the source of our motivating data. This came from a blog post by [Lior Pachter](https://math.berkeley.edu/~lpachter/) a mathematician and computational biologist. 
+Let's reveal the source of our motivating data. This came from a [blog post](https://liorpachter.wordpress.com/2014/12/02/the-perfect-human-is-puerto-rican/) by [Lior Pachter](https://math.berkeley.edu/~lpachter/) a mathematician and computational biologist. 
 
 - He did use real genotype data from the [1000 genomes project](http://www.1000genomes.org/)
 - And created, _in silico_ a hypothetical human being where each SNP was set optimally
