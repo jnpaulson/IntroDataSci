@@ -329,3 +329,12 @@
   covers:
     -
       title: "Demos and presentations (2)"
+-
+  date: 5/18
+  covers:
+    -
+      title: "THIS IS NOT A LECTURE DAY"
+  workdue:
+    -
+      title: "Final Project"
+      link: { url: "homeworks/final_project.html", insite: }
