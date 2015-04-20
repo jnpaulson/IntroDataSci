@@ -276,7 +276,7 @@
       title: "ISL Ch. 9"
 -
   date: 4/16
-  status: present
+  status: done
   covers:
     -
       title: "Machine Learning III: clustering and unsupervised dimensionality reduction"
@@ -286,6 +286,7 @@
       title: "ISL Ch. 10"
 -
   date: 4/21
+  status: present
   covers:
     -
       title: "Analysis at scale: regression and classification"  
