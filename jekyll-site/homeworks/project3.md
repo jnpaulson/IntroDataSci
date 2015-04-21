@@ -5,7 +5,7 @@ title:  "Project 3: Classification"
 
 **Due**: April 22nd, 2015
 **Posted**: April 9th, 2015
-**Last Update**: April 9th, 2015
+**Last Update**: April 21st, 2015
 
 
 Note: All required packages and datasets needed for this should be
@@ -103,7 +103,8 @@ obtain the LOOCV estimate for the test error. Comment on the results.
 ###Question 3
 
 a. Use 10-fold cross validation to estimate prediction error for a
-random forest that predicts `Direction` using all predictors in the
+random forest that predicts `Direction` using all predictors (except
+the `Today` variable) in the
 `Weekly` dataset. 
 
 b. Do the same for an SVM using a "radial" kernel.
