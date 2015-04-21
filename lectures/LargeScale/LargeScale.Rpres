@@ -3,6 +3,10 @@ LargeScale
 author: Hector Corrada Bravo
 date: CMSC489T: Intro Data Science
 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
 Reminder (Regression)
 =======================================================
 
@@ -66,11 +70,11 @@ Case Study
 
 ```{r, echo=FALSE, fig.height=10, fig.width=15}
 n <- length(y)
-compute_error <- function(beta) {
+compute_loss <- function(beta, x, y) {
   0.5 * mean((y-x*beta)^2)
 }
 beta <- seq(-10, 10, len=100)
-plot(beta, sapply(beta, compute_error), type="l", lwd=2, ylab=expression(L(beta[1])),cex.lab=1.5,xlab=expression(beta[1]))
+plot(beta, sapply(beta, compute_loss, x=x, y=y), type="l", lwd=2, ylab=expression(L(beta[1])),cex.lab=1.5,xlab=expression(beta[1]))
 abline(v=true_beta, col="red", lwd=2)
 abline(v=seq(-3,3,len=5), col="blue", lwd=2, lty=2)
 ```
@@ -106,46 +110,175 @@ abline(v=true_beta, col="red", lwd=2)
 abline(v=seq(-3,3,len=5), col="blue", lwd=2, lty=2)
 ```
 
-Case Study
+Gradient Descent
 =================================================
 
 This suggests an algorithm:
 
 1. Initialize $\beta_1=0$
-2. While $|\frac{\partial L(\beta_1)}{\beta_1}| > \mathrm{tol}$
-  - Set $\beta_1 = \beta_1 + -\alpha \frac{\partial L(\beta_1)}{\beta_1}$
-
+2. Repeat until convergence
+  - Set $\beta_1 = \beta_1 + \alpha \sum_{i=1}^n (y_i - f(x_i)) x_i$
+  
 This algorithm is called **gradient descent** in the general case.
 
-Case Study
-=============
+Gradient Descent
+=================
 
-```{r}
-gradient_descent <- function(x, y, tol=1e-6, plot=FALSE) {
-  beta_1 <- 0; i <- 0
-  deriv <- loss_derivative(beta_1, x, y)
+```{r, echo=FALSE}
+gradient_descent <- function(x, y, tol=1e-6, maxit=50, plot=FALSE) {
+  beta_1 <- 0; old_beta_1 <- Inf; i <- 0; beta_keep <- NA
+  deriv <- loss_derivative(beta_1, x, y);
+  loss <- compute_loss(beta_1, x, y); loss_keep <- NA
+  
   alpha <- 1e-3
-  while ((abs(deriv) > tol) && (i < 30)) {
-    cat("it: ", i, " beta: ", round(beta_1, 2), " deriv: ", round(deriv,6), " alpha: ", round(alpha, 6), "\n")
-    if (plot) {
-      abline(v=beta_1)
-      
+  difference <- (beta_1 - old_beta_1)^2 / (old_beta_1)^2
+  
+  while ((difference > tol) && (i < maxit)) {
+    cat("it: ", i, " beta: ", round(beta_1, 2), "loss: ", round(loss, 2), " deriv: ", round(deriv,6), " alpha: ", round(alpha, 6), "\n")
+    if (plot && !is.na(beta_keep) && !is.na(loss_keep)) {
+      suppressWarnings(arrows(beta_keep, loss_keep, beta_1, loss, lty=2, col="blue"))
     }
+    beta_keep <- beta_1; loss_keep <- loss;
+    old_beta_1 <- beta_1
     beta_1 <- beta_1 - alpha * deriv
+    difference <- (beta_1 - old_beta_1)^2 / (old_beta_1)^2
+  
+    loss <- compute_loss(beta_1, x, y)
     deriv <- loss_derivative(beta_1, x, y)
     i <- i+1
     if ((i %% 5) == 0) alpha <- alpha / 2
   }
-  if (plot) abline(v=beta_1)
+  if (plot) {
+    suppressWarnings(arrows(beta_keep, loss_keep, beta_1, loss, lty=2, col="blue"))
+  }
   beta_1
 }
 ```
 
-Case Study
+Gradient Descent
 ===============
 
 ```{r, echo=FALSE}
-plot(beta, sapply(beta, compute_error), type="l", lwd=2, ylab=expression(L(beta[1])),cex.lab=1.5,xlab=expression(beta[1]))
+plot(beta, sapply(beta, compute_loss, x=x, y=y), type="l", lwd=2, ylab=expression(L(beta[1])),cex.lab=1.5,xlab=expression(beta[1]), xlim=c(-10,10))
 estimate <- gradient_descent(x, y, plot=TRUE)
 ```
 
+Gradient Descent
+=================
+
+```{r, echo=FALSE}
+plot(beta, sapply(beta, compute_loss, x=x, y=y), type="l", lwd=2, ylab=expression(L(beta[1])),cex.lab=1.5,xlab=expression(beta[1]), xlim=c(-3,3))
+estimate <- gradient_descent(x, y, plot=TRUE)
+```
+
+Gradient Descent
+==================
+
+This is referred to as "Batch" gradient descent, since we take a step (update $\beta_1$) by calculating derivative with respect to all $n$ observations.
+
+Let's write out the update equation:
+
+$$
+\beta_1 = \beta_1 + \alpha \sum_{i=1}^n (y_i - f(x_i, \beta_1)) x_i
+$$
+
+where $f(x_i) = \beta_1 x_i$.
+
+Gradient Descent
+==================
+
+Note: For multiple predictors (e.g., adding an intercept), this generalizes to the _gradient_ i.e., the vector of first derivatives of _loss_ with respect to parameters.
+
+The update equation is exactly the same for least squares regression
+
+$$
+\beta = \beta + \alpha \sum_{i=1^n} (y_i - f(\mathbf{x}_i, \beta)) \mathbf{x}_i
+$$
+
+First-order methods
+============================
+
+Gradiest descent falls within a family of optimization methods called _first-order methods_.
+
+These methods have properties amenable to use with very large datasets:
+
+1. Inexpensive updates    
+2. "Stochastic" version can converge with few sweeps of the data  
+3. "Stochastic" version easily extended to streams  
+4. Easily parallelizable  
+
+Drawback: Takes many steps to converge
+
+Stochastic gradient descent
+============================
+
+**Key Idea**: Update parameters using update equation _one observation at a time_:
+
+1. Initialize $\beta=\mathbf{0}$, $i=1$
+2. Repeat until convergence
+  - For $i=1$ to $n$
+    - Set $\beta = \beta + \alpha (y_i - f(\mathbf{x}_i, \beta)) \mathbf{x}_i$
+
+```{r, echo=FALSE}
+stochastic_gradient_descent <- function(x, y, tol=1e-6, maxit=50, plot=FALSE) {
+  n <- length(y)
+  
+  beta_1 <- 0; i <- 0; beta_keep <- NA
+  deriv <- loss_derivative(beta_1, x, y);
+  loss <- compute_loss(beta_1, x, y); loss_keep <- NA
+  
+  alpha <- 1e-3
+  difference <- (beta_1 - old_beta_1)^2 / (old_beta_1)^2
+  
+  while ((difference > tol) && (i < maxit)) {
+    cat("it: ", i, " beta: ", round(beta_1, 2), "loss: ", round(loss, 2), " deriv: ", round(deriv,6), " alpha: ", round(alpha, 6), "\n")
+    
+    for (j in seq(1,n)) {
+      if (plot && !is.na(beta_keep) && !is.na(loss_keep)) {
+        suppressWarnings(arrows(beta_keep, loss_keep, beta_1, loss, lty=2, col="blue"))
+      }
+      
+      beta_keep <- beta_1; loss_keep <- loss;
+      
+      f <- beta_1 * x[j]
+      resid <- y[j] - f
+      
+      beta_1 <- beta_1 + alpha * resid * x[j]
+      loss <- compute_loss(beta_1, x, y)
+    }
+    
+    deriv <- loss_derivative(beta_1, x, y)
+    i <- i+1
+    if ((i %% 5) == 0) alpha <- alpha / 2
+  }
+  
+  if (plot) {
+    suppressWarnings(arrows(beta_keep, loss_keep, beta_1, loss, lty=2, col="blue"))
+  }
+  
+  beta_1
+}
+```
+
+Stochastic Gradient Descent
+============================
+
+```{r, echo=FALSE}
+plot(beta, sapply(beta, compute_loss, x=x, y=y), type="l", lwd=2, ylab=expression(L(beta[1])),cex.lab=1.5,xlab=expression(beta[1]), xlim=c(-3,3))
+estimate <- stochastic_gradient_descent(x, y, plot=TRUE)
+```
+
+Stochastic Gradient Descent
+=============================
+
+Easily adapt to _data streams_ where we receive observations one at a time and _assume_ they are not stored.
+
+**Idea**: Update parameter using same update rule
+_Note_: This falls in the general category of _online_ learning.
+
+Gradient Descent
+==================
+
+Easily parallelizable:
+
+Split observations 
