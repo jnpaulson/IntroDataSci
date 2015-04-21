@@ -289,7 +289,8 @@
   status: present
   covers:
     -
-      title: "Analysis at scale: regression and classification"  
+      title: "Analysis at scale: stochastic gradient descent"
+      materials: { link: "lectures/LargeScale.html", insite: }
 -
   date: 4/22
   status: present
