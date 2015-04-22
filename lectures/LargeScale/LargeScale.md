@@ -120,15 +120,17 @@ Check presentation RMarkdown for implementation
 
 
 
+
+
 Gradient Descent
 ===============
 
-![plot of chunk unnamed-chunk-7](LargeScale-figure/unnamed-chunk-7-1.png) 
+![plot of chunk unnamed-chunk-8](LargeScale-figure/unnamed-chunk-8-1.png) 
 
 Gradient Descent
 =================
 
-![plot of chunk unnamed-chunk-8](LargeScale-figure/unnamed-chunk-8-1.png) 
+![plot of chunk unnamed-chunk-9](LargeScale-figure/unnamed-chunk-9-1.png) 
 
 Gradient Descent
 ==================
@@ -151,10 +153,10 @@ For multiple predictors (e.g., adding an intercept), this generalizes to the _gr
 The update equation is exactly the same for least squares regression
 
 $$
-\beta = \beta + \alpha \sum_{i=1}^n (y_i - f(\mathbf{x}_i, \beta)) \mathbf{x}_i
+\mathbf{\beta} = \mathbf{\beta} + \alpha \sum_{i=1}^n (y_i - f(\mathbf{x}_i, \beta)) \mathbf{x}_i
 $$
 
-where $f(\mathbf{x}_i, \beta) = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_p x_{ip}$
+where $f(\mathbf{x}_i, \mathbf{\beta}) = \beta_0 + \beta_1 x_{i1} + \cdots + \beta_p x_{ip}$
 
 First-order methods
 ============================
@@ -187,10 +189,11 @@ See presentation Rmarkdown for implementation
 
 
 
+
 Stochastic Gradient Descent
 ============================
 
-![plot of chunk unnamed-chunk-10](LargeScale-figure/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-12](LargeScale-figure/unnamed-chunk-12-1.png) 
 
 ```
 it:  0  beta:  0 loss:  66.15  alpha:  0.001 
