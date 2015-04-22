@@ -286,7 +286,7 @@
       title: "ISL Ch. 10"
 -
   date: 4/21
-  status: present
+  status: done
   covers:
     -
       title: "Analysis at scale: stochastic gradient descent"
@@ -303,6 +303,7 @@
       link: { url: "homeworks/project3.html", insite: }
 -
   date: 4/23
+  status: present
   covers:
     -
       title: "Wrapup unit 2 and project discussion"
