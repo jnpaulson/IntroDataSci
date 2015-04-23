@@ -2,8 +2,7 @@
 title: CMSC498T (Spring 2015)
 email: hcorrada@umiacs.umd.edu
 description: "CMSC498T, Introduction to Data Science II: Exploring, modeling and communicating with data"
-baseurl: "/~hcorrada/IntroDataSci"
-url: "http://cbcb.umd.edu/~hcorrada/IntroDataSci"
+baseurl: "/IntroDataSci"
 twitter_username: hcorrada
 github_username:  hcorrada
 
