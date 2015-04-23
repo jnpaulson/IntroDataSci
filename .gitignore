@@ -6,3 +6,5 @@
 *.rstudio*
 *.gitconfig*
 *_cache*
+_site
+
