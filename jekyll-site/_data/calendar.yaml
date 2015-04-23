@@ -293,7 +293,7 @@
       materials: { link: "lectures/LargeScale.html", insite: }
 -
   date: 4/22
-  status: present
+  status: done
   covers:
     -
       title: "THIS IS NOT A LECTURE DAY"
@@ -303,7 +303,7 @@
       link: { url: "homeworks/project3.html", insite: }
 -
   date: 4/23
-  status: present
+  status: done
   covers:
     -
       title: "Wrapup unit 2 and project discussion"
