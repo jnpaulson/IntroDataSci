@@ -91,3 +91,7 @@ Things that do not go into consideration when grading.
 **You can do this project in groups of at most 4. I highly recommend that you do this in a group. Contact us if you would like us to put a group together.**
 
 Finally: I highly recommend sending questions and updates through Piazza as you go along.
+
+##Submission
+
+Submit all parts on ELMS: [https://myelms.umd.edu/courses/1130499/assignments](https://myelms.umd.edu/courses/1130499/assignments)
