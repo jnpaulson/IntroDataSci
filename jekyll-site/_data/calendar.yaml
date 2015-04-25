@@ -313,6 +313,9 @@
   covers:
     -
       title: "Communicating results of data analyses"
+  readings:
+    -
+      title: "Leek, Elements of Data Style, Ch. 9-11"
 -
   date: 4/30
   covers:
