@@ -107,3 +107,4 @@ Hadley's presentation on R packages
 
 [http://www.slideshare.net/hadley/r-packages](http://www.slideshare.net/hadley/r-packages)
 
+[The book](http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/programming/r/9781491910580)
