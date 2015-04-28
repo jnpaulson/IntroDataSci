@@ -310,9 +310,11 @@
       materials: { link: "lectures/recap_unit2.html", insite: }
 -
   date: 4/28
+  status: present
   covers:
     -
       title: "Communicating results of data analyses"
+      materials: { link: "lectures/Presentation.html", insite: }
   readings:
     -
       title: "Leek, Elements of Data Style, Ch. 9-11"
