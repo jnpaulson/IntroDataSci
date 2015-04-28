@@ -3,35 +3,79 @@ Communicating Results of Data Analysis
 author: Hector Corrada Bravo
 date: CMSC498T: Introduction Data Science, Spring 2015
 
-First Slide
+For Today
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+Deliverables:
+  - Written analyses
+  - Presentations
+  - R packages
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
-
-Slide With Code
+Written analyses
 ========================================================
 
+Components:
 
-```r
-summary(cars)
-```
+1. Title
+2. Introduction and motivation
+3. Description of design
+4. Description of dataset
+5. Description of statistical and machine learning models used (Methods)
+6. Results (including measures of uncertainty)
+7. Conclusions (including potential problems)
+8. References
 
-```
-     speed           dist       
- Min.   : 4.0   Min.   :  2.00  
- 1st Qu.:12.0   1st Qu.: 26.00  
- Median :15.0   Median : 36.00  
- Mean   :15.4   Mean   : 42.98  
- 3rd Qu.:19.0   3rd Qu.: 56.00  
- Max.   :25.0   Max.   :120.00  
-```
 
-Slide With Plot
+Introduction and Motivation
 ========================================================
 
-![plot of chunk unnamed-chunk-2](Presentation-figure/unnamed-chunk-2-1.png) 
+Always lead with the question (task) you are addressing.
+
+E.g.: "Can we use tweets about stocks to predict stock prices?"
+Not: "Can we use the Random Forest algorithm to learn a classifier that predicts stock prices"
+
+E.g: "What are good predictors of student performance?"
+Not: "Can we use linear regression to predict student performance"
+
+Description of dataset
+============================
+
+Size: observations and variables
+Important: describe what you did to 1) obtain, 2) tidy the dataset.
+
+Description of statistical methods
+======================================
+
+Be specific, use equations when appropriate:
+
+$$
+W = a + b H + e
+$$
+
+where $W$ is _weight_, $H$ is _height_ and $e$ is an error term.
+
+When appropriate mention distributional assumptions on $e$.
+
+Results
+=========
+
+- Report estimates in the appropriate units
+- Report estimates with uncertainty
+
+We saw confidence intervals on our regression lecture
+
+- Summarize importance of estimate (i.e., refer to the question you originally posed in introduction)
+
+End matter
+==========
+
+- Include potential problems with the analysis you carried out.
+- Include references to the analysis methods used.
+
+Graphics
+=========
+
+Karl Broman's presentation on bad graphics:
+
+[https://www.biostat.wisc.edu/~kbroman/presentations/IowaState2013/graphs_combined.pdf](https://www.biostat.wisc.edu/~kbroman/presentations/IowaState2013/graphs_combined.pdf)
+
