@@ -333,6 +333,7 @@
       link: { url: "http://shiny.rstudio.com/tutorial/"}
 -
   date: 5/5
+  status: present
   covers:
     -
       title: "Web-based interactive visualization (2)"
