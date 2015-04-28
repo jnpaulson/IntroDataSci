@@ -8,7 +8,6 @@ For Today
 
 Deliverables:
   - Written analyses
-  - Presentations
   - R packages
 
 Written analyses
@@ -78,4 +77,33 @@ Graphics
 Karl Broman's presentation on bad graphics:
 
 [https://www.biostat.wisc.edu/~kbroman/presentations/IowaState2013/graphs_combined.pdf](https://www.biostat.wisc.edu/~kbroman/presentations/IowaState2013/graphs_combined.pdf)
+
+Graphics
+==========
+
+A few other notes on style:
+- Make titles legible
+- Annotate in plot if possible (see PCA lecture example)
+- Include units in axis titles when appropriate
+  - E.g., not appropriate in PC scatterplot
+
+R packages
+===========
+
+Case study: suppose you used data to create a classifier for diagnostic purposes. How do you share?
+
+R packages is a reproducible, high-visibility way of publishing these types of results
+
+R packages
+===========
+
+- Consistent organization
+- Standardized deployment
+
+R packages
+===========
+
+Hadley's presentation on R packages
+
+[http://www.slideshare.net/hadley/r-packages](http://www.slideshare.net/hadley/r-packages)
 
