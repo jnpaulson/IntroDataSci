@@ -320,14 +320,26 @@
       title: "Leek, Elements of Data Style, Ch. 9-11"
 -
   date: 4/30
+  status: present
   covers:
     -
       title: "Web-based interactive visualization (1)"
+  readings:
+    -
+      title: "Murray, Interactive Visualization for the Web, Ch. 2 and 3"
+      link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
+    -
+      title: "Shiny Tutorial"
+      link: { url: "http://shiny.rstudio.com/tutorial/"}
 -
   date: 5/5
   covers:
     -
       title: "Web-based interactive visualization (2)"
+  readings:
+    -
+      title: "Murray, Interactive Visualization for the Web, Ch. 6, 9 and 10"
+      link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
 -
   date: 5/7
   covers:
