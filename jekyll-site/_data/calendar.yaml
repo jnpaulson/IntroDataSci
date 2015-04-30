@@ -310,7 +310,7 @@
       materials: { link: "lectures/recap_unit2.html", insite: }
 -
   date: 4/28
-  status: present
+  status: done
   covers:
     -
       title: "Communicating results of data analyses"
