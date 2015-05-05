@@ -338,6 +338,7 @@
   covers:
     -
       title: "Web-based interactive visualization (2)"
+      materials: { link: "lectures/D3.html", insite: }
   readings:
     -
       title: "Murray, Interactive Visualization for the Web, Ch. 6, 9 and 10"
