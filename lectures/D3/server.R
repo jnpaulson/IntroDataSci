@@ -7,9 +7,15 @@ library(dplyr)
 
 shinyServer(function(input, output) {
   output$myChart <- renderChart({
+    facet <- if(input$continent) {
+      "continent"
+    } else {
+      NULL
+    }
+    
     p1 <- gapminder %>%
       filter(year == input$year) %>%
-      rPlot("gdpPercap", "lifeExp", data=., type="point")
+      rPlot(input$x, "lifeExp", data=., type="point", facet=facet)
     p1$addParams(dom = "myChart")
     return(p1)
   })
