@@ -334,30 +334,36 @@
       link: { url: "http://shiny.rstudio.com/tutorial/"}
 -
   date: 5/5
-  status: present
+  status: done
   covers:
     -
       title: "Web-based interactive visualization (2)"
       materials: { link: "lectures/D3.html", insite: }
+    -
+      title: "Toy example of R and D3 using htmlwidgets"
+      materials: { link: "https://github.com/hcorrada/linkedscatter" }
   readings:
     -
       title: "Murray, Interactive Visualization for the Web, Ch. 6, 9 and 10"
       link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
 -
   date: 5/7
+  status: done
   covers:
     -
       title: "Demos and presentations (1)"
 -
   date: 5/12
+  status: present
   covers:
     -
       title: "Demos and presentations (2)"
 -
   date: 5/18
+  status: present
   covers:
     -
-      title: "THIS IS NOT A LECTURE DAY"
+      title: "Final (May 18, 10:30am-12:30pm)"
   workdue:
     -
       title: "Final Project"
