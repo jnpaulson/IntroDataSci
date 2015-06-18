@@ -7,7 +7,7 @@ twitter_username: hcorrada
 github_username:  hcorrada
 ignore: ["materials", "tasks"]
 
-pageOrder: ["/index.html", "/calendar.html","/resources.html","/syllabus.html","/projects.html"]
+pageOrder: ["/index.html", "/resources.html","/syllabus.html","/projects.html"]
 
 # Build settings
 markdown: kramdown
@@ -18,4 +18,3 @@ redcarpet:
 # my variables
 piazza_url: "https://piazza.com/class/i5e39xpjr662in"
 elms_url: "https://myelms.umd.edu/courses/1130499"
-
