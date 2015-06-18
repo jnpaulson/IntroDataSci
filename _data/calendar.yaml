@@ -293,7 +293,7 @@
       materials: { link: "lectures/LargeScale.html", insite: }
 -
   date: 4/22
-  status: present
+  status: done
   covers:
     -
       title: "THIS IS NOT A LECTURE DAY"
@@ -303,41 +303,67 @@
       link: { url: "homeworks/project3.html", insite: }
 -
   date: 4/23
-  status: present
+  status: done
   covers:
     -
       title: "Wrapup unit 2 and project discussion"
       materials: { link: "lectures/recap_unit2.html", insite: }
 -
   date: 4/28
+  status: done
   covers:
     -
       title: "Communicating results of data analyses"
+      materials: { link: "lectures/Presentation.html", insite: }
+  readings:
+    -
+      title: "Leek, Elements of Data Style, Ch. 9-11"
 -
   date: 4/30
+  status: done
   covers:
     -
       title: "Web-based interactive visualization (1)"
+      materials: { link: "lectures/Shiny.html", insite: }
+  readings:
+    -
+      title: "Murray, Interactive Visualization for the Web, Ch. 2 and 3"
+      link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
+    -
+      title: "Shiny Tutorial"
+      link: { url: "http://shiny.rstudio.com/tutorial/"}
 -
   date: 5/5
+  status: done
   covers:
     -
       title: "Web-based interactive visualization (2)"
+      materials: { link: "lectures/D3.html", insite: }
+    -
+      title: "Toy example of R and D3 using htmlwidgets"
+      materials: { link: "https://github.com/hcorrada/linkedscatter" }
+  readings:
+    -
+      title: "Murray, Interactive Visualization for the Web, Ch. 6, 9 and 10"
+      link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
 -
   date: 5/7
+  status: done
   covers:
     -
       title: "Demos and presentations (1)"
 -
   date: 5/12
+  status: done
   covers:
     -
       title: "Demos and presentations (2)"
 -
   date: 5/18
+  status: present
   covers:
     -
-      title: "THIS IS NOT A LECTURE DAY"
+      title: "Final (May 18, 10:30am-12:30pm)"
   workdue:
     -
       title: "Final Project"
