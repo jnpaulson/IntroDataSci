@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: calendar
 title: "CADi: Introduction to Data Science with R"
 logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.png"/>
 ---
@@ -16,12 +16,11 @@ logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.p
 
 *   Textbook information:
 	There is no required textbook. See the [syllabus](syllabus.html)
-	for more information.
+	and [calendar](#Calendar) for more information.
 
-*   Other links:
-	Check the github page for the course: [https://github.com/hcorrada/MTEC_CADi2015/tree/gh-pages](https://github.com/hcorrada/MTEC_CADi2015/tree/gh-pages)
+* Check the github page for the course: [https://github.com/hcorrada/MTEC_CADi2015/tree/gh-pages](https://github.com/hcorrada/MTEC_CADi2015/tree/gh-pages)
 
-##Syllabus
+##Calendar
 
-The official syllabus detailing course policies, calendar and other
-details can be found [here](syllabus.html)
+This calendar will be updated through the semester as needed.
+See below to understand lecture status code.
