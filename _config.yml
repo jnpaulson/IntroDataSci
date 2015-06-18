@@ -5,6 +5,7 @@ description: "CMSC498T, Introduction to Data Science II: Exploring, modeling and
 baseurl: "/IntroDataSci"
 twitter_username: hcorrada
 github_username:  hcorrada
+ignore: ["materials", "tasks"]
 
 pageOrder: ["/index.html", "/calendar.html","/resources.html","/syllabus.html","/projects.html"]
 
