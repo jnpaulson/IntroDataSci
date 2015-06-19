@@ -74,17 +74,36 @@ The last command will make a scatter plot on the **Plots** pane.
 
 #Stopping the container
 
-To stop running docker container, run `docker stop`:
+To stop and remove the running docker container, write:
 
 {% highlight bash %}
 docker stop ids
+docker rm ids
 {% endhighlight %}
 
 
-##Permissions
+#Permissions
 Advanced Note: you don't need to use `sudo` on Mac OSX. Linux users might want to add their user to the docker group to avoid having to use sudo. To do so, just run
 
 {% highlight bash %}
 sudo usermod -a -G docker <username>
 {% endhighlight %}
 You may need to login again to refresh your group membership.
+
+#Git
+
+The course docker image also includes `git` a *version control* program we will use during the course. You will download *all* course materials using `git` and be able to update any changes I make along the way.
+
+Version control will also be useful for reproducibility of your data analyses, also for sharing your analyses and contributing with collaborators.
+
+To get started we will create a new Rstudio project by clicking on `File->New Project...`
+
+and selecting `Version Control` to build the project from our course materials.
+
+Select `Git` and enter the course repositories URL:
+
+[https://github.com/hcorrada/MTEC_CADi2015.git](https://github.com/hcorrada/MTEC_CADi2015.git)
+
+This will download all the course materials to your current directory.
+
+We will later see more information on how to use `git`.
