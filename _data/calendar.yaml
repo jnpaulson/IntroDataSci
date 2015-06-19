@@ -17,13 +17,13 @@
 #       title: <title>
 #       link: { url: <url>, [insite:] }
 -
-  date: 1/27
+  date: 6/22
   status: done
   covers:
     -
       title: "Course Introduction"
 -
-  date: 1/29
+  date: 6/22
   status: done
   covers:
     -
@@ -33,9 +33,6 @@
     -
       title: "Zumel & Mount: pp. xix-17"
     -
-      title: "Loukides: What is data science?"
-      link: { url: "http://radar.oreilly.com/2010/06/what-is-data-science.html" }
-    -
       title: "Silver: What the fox knows"
       link: { url: "http://fivethirtyeight.com/features/what-the-fox-knows/" }
   workdue:
@@ -43,22 +40,12 @@
       title: "Setting up R"
       link: { url: "homeworks/rocker.html", insite: }
 -
-  date: 2/3
+  date: 6/22
   status: done
   covers:
     -
-      title: "R for Data Science Primer (1)"
+      title: "R for Data Science Primer"
       materials: { link: "lectures/Rintro.pdf", insite: }
-  readings:
-    -
-      title: "Wickham: Advanced R, 'Foundations' and 'Functional Programming'"
-      link: { url: "http://adv-r.had.co.nz/" }
--
-  date: 2/5
-  status: done
-  covers:
-    -
-      title: "R for Data Science Primer (2)"
     -
       title: "RMarkdown for arrest analysis (baltimore.Rmd)"
       materials: { link: "misc/baltimore.Rmd", insite: }
@@ -67,19 +54,19 @@
       materials: { link: "misc/BPD_Arrests.csv", insite: }
     -
       title: "CCTV data (CCTV_Locations.csv)"
-      materials: { link: "misc/CCTV_Locations.csv", insite: }      
+      materials: { link: "misc/CCTV_Locations.csv", insite: }
   readings:
     -
       title: "Zumen & Mount: Ch. 2"
 -
-  date: 2/10
+  date: 6/22
   status: done
   covers:
     -
       title: "Best practices for Data Science Projects"
       materials: { link: "lectures/BestPractices.pdf", insite: }
 -
-  date: 2/12
+  date: 6/23
   status: done
   covers:
     -
@@ -88,18 +75,8 @@
     -
       title: "RMarkdown for tidying examples (tidy_code.Rmd)"
       materials: { link: "misc/tidy_code.Rmd" }
-  readings:
-    -
-      title: "Wickham, Tidy Data. JSS 2014"
-      link: { url: "http://www.jstatsoft.org/v59/i10/paper" }
 -
-  date: 2/17
-  status: done
-  covers:
-    -
-      title: "UNIVERSITY CLOSED"
--
-  date: 2/19
+  date: 6/23
   status: done
   covers:
     -
@@ -109,7 +86,7 @@
     -
       title: "Zuman & Mount: Sec 4.1"
 -
-  date: 2/24
+  date: 6/23
   status: done
   covers:
     -
@@ -118,17 +95,10 @@
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
-  workdue:
-    -
-      title: "Wrangling quiz"
-      link: {url: "https://myelms.umd.edu/courses/1130499/quizzes/1079169"}
 -
-  date: 2/26
+  date: 6/23
   status: done
   covers:
-    -
-      title: "The q-q plot"
-      materials: { link: "lectures/quantile_notes.html", insite: }
     -
       title: "Exploratory Data Analysis (2): Visualization"
       materials: { link: "lectures/EDA2.html", insite: }
@@ -136,33 +106,7 @@
     -
       title: "Zumen & Mount: Ch. 3"
 -
-  date: 3/3
-  status: done
-  covers:
-    -
-      title: "Data summarisation and aggregation at scale"
-      materials: { link: "lectures/MapReduce.html", insite: }
-  workdue:
-    -
-      title: "Project I, Part 1"
-      link: { url: "homeworks/project1_part1.html", insite: }
-    -
-      title: "Project I, Part 2"
-      link: { url: "homeworks/project1_part2.html", insite: }
--
-  date: 3/5
-  status: done
-  covers:
-    -
-      title: "UNIVERSITY CLOSED"
--
-  date: 3/10
-  status: done
-  covers:
-    -
-      title: "Wrap-up unit 1 and project discussion" 
--
-  date: 3/12
+  date: 6/24
   status: done
   covers:
     -
@@ -173,25 +117,9 @@
       materials: { link: "lectures/StatLearnBackground.html", insite: }
   readings:
     -
-      title: "ISL Ch. 2"
-  workdue:
-    -
-      title: "ISL Ch. 2 reading prep quiz"
-      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1081113" }
+      title: "Zumen & Mount Ch. 5"
 -
-  date: 3/17
-  status: done
-  covers:
-    -
-      title: "No class, Spring Break"
--
-  date: 3/19
-  status: done
-  covers:
-    -
-      title: "No class, Spring Break"
--
-  date: 3/24
+  date: 6/24
   status: done
   covers:
     -
@@ -199,37 +127,22 @@
       materials: { link: "lectures/Regression.pdf", insite: }
   readings:
     -
-      title: "ISL Ch. 3 and 4"
-  workdue:
-    -
-      title: "ISL Ch. 3 reading prep quiz"
-      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082257" }
+      title: "Zumen & Mount Ch. 7.1"
 -
-  date: 3/26
+  date: 6/24
   status: done
   covers:
     -
       title: "Linear models for regression and classification (2)"
       materials: { link: "lectures/Classification.html", insite: }
-  readings:
-    -
-      title: "ISL Ch. 3 and 4"
-  workdue:
-    -
-      title: "ISL Ch. 4 reading prep quiz"
-      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082468" }
--
-  date: 3/31
-  status: done
-  covers:
     -
       title: "Linear models for regression and classification (3)"
       materials: { link: "lectures/Classification2.html", insite: }
   readings:
     -
-      title: "ISL Ch. 4"
+      title: "Zumen & Mount Ch. 7.2"
 -
-  date: 4/2
+  date: 6/24
   status: done
   covers:
     -
@@ -237,79 +150,37 @@
       materials: { link: "lectures/Evaluation.html", insite: }
   readings:
     -
-      title: "ISL Ch. 5"
+      title: "Zumen & Mount Ch. 5"
 -
-  date: 4/7
+  date: 6/24
   status: done
   covers:
-    -
-      title: "CANCELLED: Campus Closed"
--
-  date: 4/9
-  status: done
-  covers: 
     -
       title: "Machine Learning I: tree-based methods"
       materials: { link: "lectures/TreeMethods.html", insite: }
   readings:
     -
-      title: "ISL Ch. 8"
--
-  date: 4/10
-  status: done
-  covers:
-    -
-      title: "THIS IS NOT A LECTURE DAY"
+      title: "Zumen & Mount Ch. 9.1"
   workdue:
     -
       title: "Project II"
-      link: { url: "homeworks/project2.html", insite: }  
+      link: { url: "homeworks/project2.html", insite: }
 -
-  date: 4/14
+  date: 6/24
   status: done
   covers:
     -
-      title: "Machine Learning II: The Support Vector Machine"
-      materials: { link: "lectures/SVM.html", insite: }
-  readings:
-    -
-      title: "ISL Ch. 9"
--
-  date: 4/16
-  status: done
-  covers:
-    -
-      title: "Machine Learning III: clustering and unsupervised dimensionality reduction"
+      title: "Machine Learning II: clustering and unsupervised dimensionality reduction"
       materials: { link: "lectures/Unsupervised.html", insite: }
   readings:
     -
-      title: "ISL Ch. 10"
--
-  date: 4/21
-  status: done
-  covers:
-    -
-      title: "Analysis at scale: stochastic gradient descent"
-      materials: { link: "lectures/LargeScale.html", insite: }
--
-  date: 4/22
-  status: done
-  covers:
-    -
-      title: "THIS IS NOT A LECTURE DAY"
+      title: "Zumen & Mount Ch. 8"
   workdue:
     -
       title: "Project III"
       link: { url: "homeworks/project3.html", insite: }
 -
-  date: 4/23
-  status: done
-  covers:
-    -
-      title: "Wrapup unit 2 and project discussion"
-      materials: { link: "lectures/recap_unit2.html", insite: }
--
-  date: 4/28
+  date: 6/25
   status: done
   covers:
     -
@@ -319,52 +190,20 @@
     -
       title: "Leek, Elements of Data Style, Ch. 9-11"
 -
-  date: 4/30
+  date: 6/25
   status: done
   covers:
     -
       title: "Web-based interactive visualization (1)"
       materials: { link: "lectures/Shiny.html", insite: }
-  readings:
-    -
-      title: "Murray, Interactive Visualization for the Web, Ch. 2 and 3"
-      link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
-    -
-      title: "Shiny Tutorial"
-      link: { url: "http://shiny.rstudio.com/tutorial/"}
--
-  date: 5/5
-  status: done
-  covers:
-    -
-      title: "Web-based interactive visualization (2)"
-      materials: { link: "lectures/D3.html", insite: }
     -
       title: "Toy example of R and D3 using htmlwidgets"
       materials: { link: "https://github.com/hcorrada/linkedscatter" }
   readings:
     -
-      title: "Murray, Interactive Visualization for the Web, Ch. 6, 9 and 10"
-      link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
--
-  date: 5/7
-  status: done
-  covers:
-    -
-      title: "Demos and presentations (1)"
--
-  date: 5/12
-  status: done
-  covers:
-    -
-      title: "Demos and presentations (2)"
--
-  date: 5/18
-  status: present
-  covers:
-    -
-      title: "Final (May 18, 10:30am-12:30pm)"
+      title: "Shiny Tutorial"
+      link: { url: "http://shiny.rstudio.com/tutorial/"}
   workdue:
     -
       title: "Final Project"
-      link: { url: "homeworks/final_project.html", insite: }
+      
