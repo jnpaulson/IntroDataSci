@@ -21,12 +21,6 @@
   status: done
   covers:
     -
-      title: "Course Introduction"
--
-  date: 6/22
-  status: done
-  covers:
-    -
       title: "What is Data Science"
       materials: { link: "lectures/Intro.pdf", insite: }
   readings:
@@ -47,6 +41,13 @@
       title: "R for Data Science Primer"
       materials: { link: "lectures/Rintro.pdf", insite: }
     -
+      title: "Best practices for Data Science Projects"
+      materials: { link: "lectures/BestPractices.pdf", insite: }
+  readings:
+    -
+      title: "Zumen & Mount: Ch. 2"
+  workdue:
+    -
       title: "RMarkdown for arrest analysis (baltimore.Rmd)"
       materials: { link: "misc/baltimore.Rmd", insite: }
     -
@@ -55,16 +56,6 @@
     -
       title: "CCTV data (CCTV_Locations.csv)"
       materials: { link: "misc/CCTV_Locations.csv", insite: }
-  readings:
-    -
-      title: "Zumen & Mount: Ch. 2"
--
-  date: 6/22
-  status: done
-  covers:
-    -
-      title: "Best practices for Data Science Projects"
-      materials: { link: "lectures/BestPractices.pdf", insite: }
 -
   date: 6/23
   status: done
@@ -75,10 +66,6 @@
     -
       title: "RMarkdown for tidying examples (tidy_code.Rmd)"
       materials: { link: "misc/tidy_code.Rmd" }
--
-  date: 6/23
-  status: done
-  covers:
     -
       title: "Data tyding (2)"
       materials: { link: "lectures/Wrangling.html", insite: }
@@ -92,13 +79,6 @@
     -
       title: "Exploratory Data Analysis (1)"
       materials: { link: "lectures/EDA1.html", insite: }
-  readings:
-    -
-      title: "Zumen & Mount: Ch. 3"
--
-  date: 6/23
-  status: done
-  covers:
     -
       title: "Exploratory Data Analysis (2): Visualization"
       materials: { link: "lectures/EDA2.html", insite: }
@@ -125,13 +105,6 @@
     -
       title: "Linear models for regression and classification (1)"
       materials: { link: "lectures/Regression.pdf", insite: }
-  readings:
-    -
-      title: "Zumen & Mount Ch. 7.1"
--
-  date: 6/24
-  status: done
-  covers:
     -
       title: "Linear models for regression and classification (2)"
       materials: { link: "lectures/Classification.html", insite: }
@@ -140,7 +113,7 @@
       materials: { link: "lectures/Classification2.html", insite: }
   readings:
     -
-      title: "Zumen & Mount Ch. 7.2"
+      title: "Zumen & Mount Ch. 7"
 -
   date: 6/24
   status: done
@@ -206,4 +179,3 @@
   workdue:
     -
       title: "Final Project"
-      
