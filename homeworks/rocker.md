@@ -106,4 +106,6 @@ Select `Git` and enter the course repositories URL:
 
 This will download all the course materials to your current directory.
 
+One more thing: we are using the `gh-pages` branch to keep track of our materials. Go to the `Git` tab on Rstudio and on the branch dropdown (it should show `master` at first), select `origin/gh-pages`. Ok, now we're done.
+
 We will later see more information on how to use `git`.
