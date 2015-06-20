@@ -332,19 +332,19 @@ neighborhoods <- unique(arrest_tab$neighborhood)
 length(neighborhoods)
 ```
 
-Hmm, if we wanted to analyze every neighborhood we would need to write over 250 lines of code that look very similar. We can do better with *loops*. Let's see how we can do this for the first 20 neighborhoods with a `for` loop:
+Hmm, if we wanted to analyze every neighborhood we would need to write over 250 lines of code that look very similar. We can do better with *loops*. Let's see how we can do this for the first 10 neighborhoods with a `for` loop:
 
 ```{r}
 # remember that we have got the neighborhood names already
-for (neighborhood in neighborhoods[1:20]) {
+for (neighborhood in neighborhoods[1:10]) {
   analyze_neighborhood(neighborhood)
 }
 ```
 
 R has a handy shorthand for this type of operation. The `sapply` function is used to apply some function to each entry in a vector. E.g., this is equivalent to the for loop we wrote just now:
 
-```{r, results="hide"}
-sapply(neighborhoods, analyze_neighborhood)
+```{r, results="hide", eval=FALSE}
+sapply(neighborhoods[1:10], analyze_neighborhood)
 ```
 
 Much cleaner. 
@@ -392,7 +392,7 @@ So far, we've been plotting everything to Rstudio, but we may want to share our 
 
 ```{r}
 pdf("neighborhood_plots.pdf", width=6, height=6)
-for (neighborhood in neighborhoods[1:20]) {
+for (neighborhood in neighborhoods[1:10]) {
   analyze_neighborhood(neighborhood)
 }
 dev.off()
