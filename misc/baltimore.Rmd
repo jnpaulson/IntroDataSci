@@ -1,32 +1,90 @@
-A quick analysis of Baltimore crime
+Learning R with data
 ========================================================
 
-I'm going to do a very simple analysis of Baltimore crime to show off R. We'll use data downloaded from Baltimore City's awesome open data site (this was downloaded a couple of years ago so if you download now, you will get different results). 
+```{r, echo=FALSE}
+knitr::opts_chunk$set(cache=TRUE)
+```
+
+I'm going to do a very simple analysis of Baltimore crime to show introduce some R basics. We'll use data downloaded from Baltimore City's awesome open data site (this was downloaded a couple of years ago so if you download now, you will get different results). 
 
 ### Getting data
 
 * Arrest data: https://data.baltimorecity.gov/Crime/BPD-Arrests/3i3v-ibrt 
 * CCTV data: https://data.baltimorecity.gov/Crime/CCTV-Locations/hdyb-27ak 
 
-Let's load the data:
-```{r}
-arrest_tab=read.csv("BPD_Arrests.csv", stringsAsFactors=FALSE)
-cctv_tab=read.csv("CCTV_Locations.csv", stringsAsFactors=FALSE)
+### Getting started
 
+In Rstudio let's open a new R script, we will use this to try out commands, and later to write functions that perform a few steps at a time. The first command we'll try is the following
+
+Let's read data from a comma-separated text file:
+
+```{r}
+read.csv(path="misc/BPD_Arrests.csv", header=TRUE, stringsAsFactors=FALSE)
+```
+
+So that command read arrest records from the file, and printed them out. This type of command is a *function call*. `read.csv` is a *function* that performs some number of operations (in this case read data from a file). The *function* needs to know *what* to operate on, that's what *arguments* are for. The `path` argument says where the file is located, the `header` argument says "yes, the first line in the file contains column names", and the `stringsAsFactors` argument does some esoteric work that we will ignore for the moment. 
+
+### Variables
+
+Now this was a very powerful command but can't do much with the result, we need to be able to remember things. To do that we *assign* it a name:
+
+```
+arrest_tab <- read.csv("misc/BPD_Arrests.csv", stringsAsFactors=FALSE)
+```
+
+This command says "assign" to the name `arrest_tab` the result of calling `read.csv` with those arguments. We call these names *variables* because the can _vary_, i.e., they can change value.
+
+
+```
+# assign value to variable
+my_city <- "Mexico D.F."
+
+# print the current value of this variable
+my_city
+
+# change the value of the variable
+my_city <- "Monterrey"
+
+# print the new value
+my_city
+```
+
+You should think of variables as boxes where we store things we want to remember. Every time we use the variable in a command, it will take whatever is in the box. Every time we assign a new value to the variable, we change the contents of the box.
+
+
+### Exploring data
+
+Now that we have a way of remembering the data we read from the file, we can start to take a look at what it is. First of all, what kind of value is in the `arrest_tab` box?
+
+```{r}
+class(arrest_tab)
+```
+
+The `data.frame` type is one of the most important types in R. It corresponds to a data table (like a sheet in a spreadsheet). Each row corresponds to an observation, and columns to characteristics of each observation. Let's see how many rows and columns we have:
+
+```{r}
+# dimension of table (data.frame)
+dim(arrest_tab)
+```
+
+What are the column names?
+
+```{r}
+# what are the columns
+colnames(arrest_tab)
+```
+
+
+```{r}
+
+```
+
+```
 # these columns are mislabeled, so fix them
 tmp=arrest_tab$sex
 arrest_tab$sex=arrest_tab$race
 arrest_tab$race=tmp
 ```
-
-### Exploring data
-
-```{r}
-# dimension of table (data.frame)
-dim(arrest_tab)
-
-# what are the columns
-names(arrest_tab)
 
 # what is the average arrest age?
 mean(arrest_tab$age)
