@@ -8,9 +8,9 @@ knitr::opts_chunk$set(cache=TRUE)
 ```
 
 Workbook for data tidying lecture.
-First off: I cloned data for Hadley's paper from [github](https://github.com/hadley/tidyr)
+We are using data from Hadley's paper. It's found at [github](https://github.com/hadley/tidyr). It'included in the course repository in directory `materials/lectures/Tidy/tidyr/vignettes`.
 
-All datasets will be found in this directory afterwards:
+We're running this Rmarkdown file from directory `materials/lectures/Tidy` so all datasets will be found in this directory afterwards:
 ```{r}
 data_dir <- "tidyr/vignettes"
 ```
