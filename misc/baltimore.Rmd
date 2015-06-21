@@ -431,6 +431,7 @@ library(ggplot2)
 balto_map <- subset(map_data("county", region="maryland"),subregion=="baltimore city")
 plt <- ggplot(arrest_tab, aes(x=lon, y=lat)) +
         geom_polygon(data=balto_map, mapping=aes(x=long, y=lat), color="white", fill="gray40") +
-        geom_point(color="blue", alpha=.1) 
+        geom_point(color="blue", alpha=.1) +
+        labs(title="Arrests in Baltimore", x="Longitude", y="Latitude")
 print(plt)
 ```
