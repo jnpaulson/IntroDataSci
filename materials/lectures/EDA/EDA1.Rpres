@@ -86,7 +86,7 @@ Visual Exploration of pairs of variables
 For two continuous variables the most useful visualization is the scatter plot. This gives an idea of how
 one variable varies conditioned on another variable.
 
-```{r}
+```{r, eval=FALSE}
 plot(flights$dep_delay, flights$arr_delay, xlab="Departure Delay", ylab="Arrival Delay")
 ```
 
@@ -95,7 +95,7 @@ Visual Exploration of pairs of variables
 
 A statistic to summarize these relationships is Spearman's correlation coefficient (`cor`)
 
-```{r}
+```{r, eval=FALSE}
 cor(flights$dep_delay, flights$arr_delay, use="complete.obs")
 ```
 
@@ -104,7 +104,7 @@ Visual Exploration of pairs of variables
 
 What if one of the variables is discrete? Use a conditioned boxplot
 
-```{r}
+```{r, eval=FALSE}
 boxplot(log(flights$dep_delay)~flights$carrier,xlab="Carrier", "Log departure delay")
 ```
 
@@ -113,7 +113,7 @@ Visal Exploration of pairs of variables
 
 What if both variables are discrete? Use a mosaic plot
 
-```{r}
+```{r, eval=FALSE}
 mosaicplot(flights$origin~flights$carrier,xlab="Origin", ylab="Carrier")
 ```
 
