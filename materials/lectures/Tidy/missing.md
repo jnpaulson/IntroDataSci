@@ -1,10 +1,4 @@
-```{r, echo=FALSE}
-knitr::opts_chunk$set(cache=TRUE)
-library(png)
-library(grid)
-library(tidyr)
-library(dplyr)
-```
+
 
 Missing Data and Data Transformations
 =======================================
@@ -46,7 +40,8 @@ Dealing with data missing at random
 
 - Categorical: encode missing as value
 
-```{r, eval=FALSE}
+
+```r
 is.missing <- is.na(tb2$iso2)
 tb2 %>% 
   mutate(iso2_fixed=factor(
@@ -59,7 +54,8 @@ Dealing with data missing at random
 - Numeric: impute
 - Simple method: replace missing values for a variable with mean of non-missing values
 
-```{r, eval=FALSE}
+
+```r
 is.missing <- is.na(flights$dep_delay)
 flights %>%
   mutate(dep_delay_fixed = 
@@ -74,7 +70,8 @@ Dealing with data missing at random
 - More complex method: replace missing values for a variable predicting from
 other variables when variables are related.
 
-```{r, eval=FALSE}
+
+```r
 is.missing <- is.na(flights$dep_delay)
 # use average delay condition on origin airport
 fit <- flights %>% lm(dep_delay~origin, data=.)
@@ -91,7 +88,8 @@ Dealing with data missing at random
 - In either case, a common approach is to add an additional indicator
 variable stating if continous missing measurement was imputed
 
-```{r, eval=FALSE}
+
+```r
 flights %>%
   mutate(dep_delay_missing = is.na(dep_delay))
 ```
@@ -118,7 +116,8 @@ Transforming Data
 Two standard methods:
 1. equal-length bins
 
-```{r, eval=FALSE}
+
+```r
 is.missing <- is.na(flights$dep_delay)
 flights %>% 
   mutate(dep_delay_fixed = 
@@ -135,7 +134,8 @@ Transforming Data
 Two standard methods:
 2. equal-sized bins
 
-```{r, eval=FALSE}
+
+```r
 is.missing <- is.na(flights$dep_delay)
 flights %>% 
   mutate(dep_delay_fixed = 
@@ -162,15 +162,14 @@ Transforming Data
 
 Dealing with skewed data
 
-```{r echo=FALSE}
-library(dplyr)
-library(ggplot2)
-library(nycflights13)
-```
 
-```{r, fig.width=20}
+
+
+```r
 flights %>% ggplot(aes(dep_delay)) + geom_histogram(binwidth=30)
 ```
+
+![plot of chunk unnamed-chunk-9](missing-figure/unnamed-chunk-9-1.png) 
 
 Skewed Data
 =========================================
