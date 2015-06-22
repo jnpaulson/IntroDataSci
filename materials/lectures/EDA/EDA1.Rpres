@@ -11,18 +11,6 @@ Exploratory Data Analysis
 author: Hector Corrada Bravo
 date: CMSC498T Spring 2015
 
-For Today
-=====================================
-
-- Invited Q&A
-- Project I
-- Exploratory Data Analysis
-
-Project I
-======================================
-
-[http://cbcb.umd.edu/~hcorrada/IntroDataSci/homeworks/hw1_part2.html](http://cbcb.umd.edu/~hcorrada/IntroDataSci/homeworks/hw1_part2.html)
-
 EDA (Exploratory Data Analysis)
 ===================
 
@@ -73,23 +61,60 @@ Visual Exploration of single variable
 Boxplots, histograms and densities
 
 ```{r eval=FALSE}
-boxplot(flights$dep_delay)
-boxplot(flights$minute)
-hist(flights$dep_delay)
-hist(flights$minute)
-plot(density(flights$dep_delay, na.rm=TRUE))
-plot(density(flights$minute, na.rm=TRUE))
+boxplot(flights$dep_delay, ylab="Departure Delay")
+boxplot(flights$minute, ylab="Departure minute")
+hist(flights$dep_delay, xlab="Departure Delay")
+hist(flights$minute, xlab="Departure minute")
+plot(density(flights$dep_delay, na.rm=TRUE), xlab="Departure Delay")
+plot(density(flights$minute, na.rm=TRUE), xlab="Departure Delay")
 ```
 
 Visual Exploration of single variables
 =========================================
 
-In many cases modeling methods work better when data is roughly normal.
+In many cases modeling methods work better when data is roughly normally distributed.
 We can check that using a Quantile-Quantile (Q-Q) plot
 
 ```{r eval=FALSE}
 qqnorm(flights$dep_delay)
 qqnorm(flights$minute)
+```
+
+Visual Exploration of pairs of variables
+==========================================
+
+For two continuous variables the most useful visualization is the scatter plot. This gives an idea of how
+one variable varies conditioned on another variable.
+
+```{r}
+plot(flights$dep_delay, flights$arr_delay, xlab="Departure Delay", ylab="Arrival Delay")
+```
+
+Visual Exploration of pairs of variables
+==========================================
+
+A statistic to summarize these relationships is Spearman's correlation coefficient (`cor`)
+
+```{r}
+cor(flights$dep_delay, flights$arr_delay, use="complete.obs")
+```
+
+Visual Exploration of pairs of variables
+=========================================
+
+What if one of the variables is discrete? Use a conditioned boxplot
+
+```{r}
+boxplot(log(flights$dep_delay)~flights$carrier,xlab="Carrier", "Log departure delay")
+```
+
+Visal Exploration of pairs of variables
+========================================
+
+What if both variables are discrete? Use a mosaic plot
+
+```{r}
+mosaicplot(flights$origin~flights$carrier,xlab="Origin", ylab="Carrier")
 ```
 
 Transforming Data

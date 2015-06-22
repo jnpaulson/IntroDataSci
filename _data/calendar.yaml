@@ -61,7 +61,7 @@
       title: "Data wrangling"
       materials: { link: "lectures/wrangling.html", insite: }
     -
-      title: "Handling missing data and data transformations"
+      title: "Missing data"
       materials: { link: "lectures/missing.html", insite: }
   readings:
     -
