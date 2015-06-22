@@ -55,17 +55,19 @@
   status: done
   covers:
     -
-      title: "Data tyding (1)"
-      materials: { link: "lectures/Tidying1.html", insite: }
+      title: "Data tyding"
+      materials: { link: "lectures/tidy.html", insite: }
     -
-      title: "RMarkdown for tidying examples (tidy_code.Rmd)"
-      materials: { link: "misc/tidy_code.Rmd" }
-    -
-      title: "Data tyding (2)"
+      title: "Data wrangling"
       materials: { link: "lectures/Wrangling.html", insite: }
   readings:
     -
       title: "Zuman & Mount: Sec 4.1"
+  workdue:
+    -
+      title: "RMarkdown for tidying examples (tidy_code.Rmd)"
+      link: { url: "misc/tidy_code.Rmd", insite: }
+
 -
   date: 6/23
   status: done
