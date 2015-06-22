@@ -86,6 +86,10 @@
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
+  workdue:
+    -
+      title: "Wrangling and EDA project"
+      link: { url: "homeworks/project1_part2.html", insite: }
 -
   date: 6/24
   status: done
