@@ -46,7 +46,7 @@ A couple of things to note:
 
 1. We will use Rstudio server through the web browser. The command `-p 8787:8787` tells docker where you're going to point your browser to run it.
 
-2. Docker runs on a virtual machine, we would like to be able to share files in your local machine with this virtual machine. The `-v` flag does that. Here `<local_path>` corresponds to a path in your local machine that will be mapped to the home directory in the docker virtual machine running rstudio. You can read more about this [here](https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine).
+2. Docker runs on a virtual machine, we would like to be able to share files in your local machine with this virtual machine. The `-v` flag does that. Here `${PWD}` corresponds to the current path in your local machine that will be mapped to the home directory in the docker virtual machine running rstudio. You can read more about this [here](https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine).
 
 3. We name the instance `ids` so we can refer to it in other commands later on.
 
