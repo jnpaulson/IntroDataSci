@@ -5,7 +5,7 @@ title: Setting up R
 
 We will be using R, Rstudio and git. You can dowload and install each here:
 
-- [R](http://cran.r-project.com)
+- [R](http://cran.r-project.org)
 - [Rstudio](http://rstudio.org)
 - [git](http://git.com)
 
