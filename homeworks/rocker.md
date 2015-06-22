@@ -37,7 +37,7 @@ packages providing analysis tools and datasets we will use throughout the course
 This command will start an instance of this image.
 
 {% highlight bash %}
-docker run -d -p 8787:8787 -v <local_path>:/home/rstudio --name ids hcorrada/idsdocker
+docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio --name ids hcorrada/idsdocker
 {% endhighlight %}
 
 This will take a while the first time you download it. After the download `Rstudio Server` will start (invisibly).
