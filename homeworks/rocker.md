@@ -7,7 +7,7 @@ We will be using R, Rstudio and git. You can dowload and install each here:
 
 - [R](http://cran.r-project.org)
 - [Rstudio](http://rstudio.org)
-- [git](http://git.com)
+- [git](https://help.github.com/articles/set-up-git/)
 
 We will use [Rocker](https://github.com/rocker-org/rocker), a project built on top of
 [Docker](https://www.docker.com/) to manage our software installation. This will provide you with a working installation of R, and the Rstudio IDE, along with a lot
