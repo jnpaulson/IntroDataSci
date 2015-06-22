@@ -1,6 +1,6 @@
 ---
 layout: calendar
-title: "CADi: Introduction to Data Science with R"
+title: "CADi: Big Data (Introduction to Data Science with R)"
 logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.png"/>
 ---
 
