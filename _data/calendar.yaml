@@ -53,6 +53,9 @@
     -
       title: "Data for baltimore exercise"
       link: { url: "misc/BPD_Arrests.csv", insite: }
+    -
+      title: "In-class exercise"
+      link: { url: "misc/aprender_r.R", insite: }
 -
   date: 6/23
   status: done
