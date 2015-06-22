@@ -1,7 +1,7 @@
 Exploratory Data Analysis (adding visualization to the chain)
 ========================================================
 author: Hector Corrada Bravo
-date: CMSC498T Spring 2015
+date: CADi 2015
 
 Visual EDA 
 ========================================================
@@ -205,11 +205,6 @@ batting %>%
   geom_point() + 
   geom_smooth(method=lm)
 ```
-
-Link
-======
-http://catalog.umd.edu/F/BKBIQXGLRMJUEVDRE17SLUQIIGMPFYVSN4M8TN13UGKYFJ5R13-01494?local_base=gl&func=find-c&ccl_term=sys%3D003921336&pds_handle=GUEST
-===
 
 Summary
 =============

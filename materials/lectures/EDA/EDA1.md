@@ -3,7 +3,7 @@
 Exploratory Data Analysis
 ========================================================
 author: Hector Corrada Bravo
-date: CMSC498T Spring 2015
+date: CADi 2015
 
 EDA (Exploratory Data Analysis)
 ===================
