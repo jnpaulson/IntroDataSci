@@ -59,7 +59,10 @@
       materials: { link: "lectures/tidy.html", insite: }
     -
       title: "Data wrangling"
-      materials: { link: "lectures/Wrangling.html", insite: }
+      materials: { link: "lectures/wrangling.html", insite: }
+    -
+      title: "Handling missing data and data transformations"
+      materials: { link: "lectures/missing.html", insite: }
   readings:
     -
       title: "Zuman & Mount: Sec 4.1"
@@ -67,7 +70,9 @@
     -
       title: "RMarkdown for tidying examples (tidy_code.Rmd)"
       link: { url: "misc/tidy_code.Rmd", insite: }
-
+    -
+      title: "Wrangling exercise"
+      link: { url: "misc/wrangling_exercise.Rmd", insite: }
 -
   date: 6/23
   status: done
