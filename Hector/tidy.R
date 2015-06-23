@@ -47,9 +47,41 @@ weather <- read.csv(file.path(data_dir,
                               "weather.csv"),
                     stringsAsFactors = FALSE)
 
+# Solucion: crear columnas day y value
+#   luego crear tmax y tmin
 tidy_weather <- weather %>%
   gather(day, value, d1:d31, na.rm=TRUE) %>%
   spread(element, value) 
+
+# Multiples tablas
+billboard <- read.csv(file.path(data_dir,
+                                "billboard.csv"),
+                      stringsAsFactors=FALSE)
+
+# nuevas columnas week y rank
+tidy_billboard <- gather(billboard,
+                         week, rank,
+                         wk1:wk76)
+
+# separar en dos tables: rank y song
+
+# seleccione variables de cancion
+# añadarle song_id
+song <- tidy_billboard %>%
+  select(artist, track, year, time, date.entered) %>%
+  unique() %>%
+  mutate(song_id = row_number())
+
+# junte song y tidy_billboard para añadir song_id
+# seleccione variables del ranking
+rank <- tidy_billboard %>%
+  left_join(song, c("artist", "year", "track", "time", "date.entered")) %>% 
+  select(song_id, week, rank)
+
+
+
+
+
   
   
   
