@@ -7,3 +7,4 @@
 *.gitconfig*
 *_cache*
 _site
+.Rproj.user
