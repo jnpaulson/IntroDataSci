@@ -122,6 +122,9 @@ median(arrest_dat$age)
 # delito mas frecuente
 summary(arrest_dat$incidentOffense)
 
+# summary para variables continuas
+summary(arrest_dat$age)
+
 # edad arrestos en Mt. Washington
 mean(arrest_dat$age[mtwashington_index])
 
@@ -161,17 +164,23 @@ boxplot(mtwashington_dat$age~mtwashington_dat$sex,
 # funciones
 
 analyze_neighborhood <- function(neighborhood) {
-  mtwashington_index <- arrest_dat$neighborhood == neighborhood
-  mtwashington_dat <- arrest_dat[mtwashington_index, c("age", "sex", "race")]
+  neighborhood_index <- arrest_dat$neighborhood == neighborhood
+  neighborhood_dat <- arrest_dat[neighborhood_index, 
+                                 c("age", "sex", "race")]
 
-  # boxplot edad condicionado en sex
-  boxplot(mtwashington_dat$age~mtwashington_dat$sex,main=neighborhood)
+  # solo hacer analisis si hay mas arrestos de blancos
+  # que arrestos de negros en el barrio
+  if (sum(neighborhood_dat$race == "W") > 
+      sum(neighborhood_dat$race == "B")) {
+    # boxplot edad condicionado en sex
+    boxplot(neighborhood_dat$age~neighborhood_dat$sex,main=neighborhood)
 
-  # boxplot edad condicionado en race
-  boxplot(mtwashington_dat$age~mtwashington_dat$race,main=neighborhood)
+    # boxplot edad condicionado en race
+    boxplot(neighborhood_dat$age~neighborhood_dat$race,main=neighborhood)
 
-  # barplot numero de arrestos por race
-  barplot(table(mtwashington_dat$race),main=neighborhood)
+    # barplot numero de arrestos por race
+    barplot(table(neighborhood_dat$race),main=neighborhood)
+  }
 }
 analyze_neighborhood("Mount Washington")
 analyze_neighborhood("Hampden")
@@ -181,10 +190,15 @@ analyze_neighborhood("Hampden")
 # cuales son los diferentes barrios
 neighborhoods <- unique(arrest_dat$neighborhood)
 
-# hacer analisis en los primeros diez
-for (neighborhood in neighborhoods[1:10]) {
+# hacer analisis en los barrios con mas de
+# con mas arrestos de blancos que negros
+pdf("neighborhood_analysis.pdf", height=6, width=6)
+for (neighborhood in neighborhoods) {
   analyze_neighborhood(neighborhood)
 }
+dev.off()
+
+
 
 
 
