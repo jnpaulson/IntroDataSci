@@ -76,9 +76,18 @@ batting %>%
 
 batting %>%
   filter(yearID == "2010") %>%
-  sample_n(100) %>%
   ggplot(aes(x=AB, y=H,color=lgID)) +
-  geom_line()
+  geom_point() +
+  geom_smooth()
+
+batting %>%
+  filter(yearID %in% c("1995", "2000", "2010")) %>%
+  ggplot(aes(x=AB, y=R, size=HR)) +
+  facet_grid(lgID~yearID) +
+  geom_point() + 
+  geom_smooth(method=lm)
+
+
 
 
 

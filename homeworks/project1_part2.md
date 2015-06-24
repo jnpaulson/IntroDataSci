@@ -67,7 +67,7 @@ The data you need to answer these questions is in two tables:
 
 ## Data transformations
 
-It's hard to compare across time periods using these multiple plots, so let's try to create a single plot that makes this comparison easier. The idea is to create a new measurement unit we can plot across time for each time that summarizes how efficient each team in their spending. We'll use the number of wins a team can get per dollar:
+It's hard to compare across time periods using these multiple plots, so let's try to create a single plot that makes this comparison easier. The idea is to create a new measurement unit we can plot across time for each team that summarizes how efficient each team is in their spending. We'll use the number of wins a team can get per dollar:
 
 **Problem 4**. Calculate the number of wins per dollar spent on payroll for each team in each year.
 
@@ -77,13 +77,15 @@ $$
 
 for team $$i$$ in year $$j$$.
 
+Make a line plot with year on the x-axis and wins-per-dollar on the y-axis. A good set of teams to plot are Oakland, the two New York teams, Boston and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `NYN`, `TBA`).
+
 **Problem 5**. Using the result of problem 4, calculate the average number of wins per dollar for each year between 1990 and 2013:
 
 $$
 wpd_{.j} = \mathrm{mean}_i (wpd_{ij})
 $$
 
-With the result of problem 5, now we can approximate the number of wins we would expect each team to get given their payroll, and then see how many more (or less) wins they had compared to this expectation. Note: this is a naive version of linear regression that we'll see in better detail later in the semester.
+With the result of problem 5, now we can approximate the number of wins we would expect each team to get given their payroll, and then see how many more (or less) wins they had compared to this expectation. Note: this is a naive version of linear regression that we'll see in better detail later in the course.
 
 **Problem 6**. Compute the difference between wins and expected wins for each team in each year between 1990 and 2013:
 
@@ -91,6 +93,6 @@ $$
 \mathrm{residualWins}_{ij} = \mathrm{wins}_{ij} - wpd_{. j} * payroll_{ij}
 $$
 
-**Problem 7**. Plot residual wins (y-axis, computed in Problem 6) for a few teams and year (x-axis). A good set of teams to plot are Oakland, the two New York teams, Boston and Kansas City.
+**Problem 7**. Plot residual wins (y-axis, computed in Problem 6) for a few teams and year (x-axis). A good set of teams to plot are Oakland, the two New York teams, Boston and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `NYN`, `TBA`).
 
 **Question 2**. What can you learn from this plot compared to the set of plots you looked at in Question 1?
