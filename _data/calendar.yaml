@@ -103,9 +103,6 @@
     -
       title: "Introduction to Statistical Learning"
       materials: { link: "lectures/IntroStatLearn.html", insite: }
-    -
-      title: "Some background"
-      materials: { link: "lectures/StatLearnBackground.html", insite: }
   readings:
     -
       title: "Zumen & Mount Ch. 5"

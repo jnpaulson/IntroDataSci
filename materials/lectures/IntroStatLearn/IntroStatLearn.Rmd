@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Statistical Learning"
-author: 'CMSC498T: Introduction to Data Science, Spring 2015'
+author: 'CADi 2015'
 output: html_document
 ---
 
@@ -37,7 +37,7 @@ plot(x, xlab="Parent Height", ylab="Height", cex=.5, col="darkblue")
 abline(v=mean(x[,1]), h=mean(x[,2]), lty=2, col="red")
 ```
 
-We can show mathematically that for a particular definition of "best", described below, the average is the best predictor of a value picked from that population. However, if we have information about a related variable, then the conditional average is best.
+We can show mathematically that for a particular definition of "best", the average is the best predictor of a value picked from that population. However, if we have information about a related variable, then the conditional average is best.
 
 One can think of the conditional average as the average heights for all men with parents of particular average height.
 
@@ -78,32 +78,6 @@ abline(fit1, col="orange", lwd=2)
 points(X0, predict(fit1, newdata=list(X=X0)), col="orange", pch="A", cex=2)
 ```
 
-Technical note: Because in practice it is useful to describe distributions of populations with continuous distributions we will start using the word *expectation* or the phrase *expected value* instead of average. We use the notation $E[\cdot]$. If you think of integrals as sums, then you can think of expectations as averages.
-
-Notice that equation (1.1) can be written in this notation:
-
-$$
-E[Y|X=x] = \beta_0 + \beta_1 x.
-$$
-
-Because the conditional distribution of $Y$ given $X$ is normal, then we can write:
-
-$$
-Y=\beta_0 + \beta_1 X + \epsilon,
-$$
-
-with $\epsilon$ a mean $0$, normally distributed random variable that is independent of $X$. This notation is popular in many fields because $\beta_1$ has a nice interpretation and its typical (least squares) estimate has nice properties.
-
-When more than one predictor exists, it is quite common to extend this linear regression model to the multiple linear regression model:
-
-$$
-Y=\beta_0 + \beta_1 X_1 + \cdots + \beta_p X_p + \epsilon
-$$
-
-with $\epsilon$ as unbiased ($0$ mean) error independent of the $X_j$ as before.
-
-A drawback of these models is that they are quite restrictive. Linearity and additivity are two very strong assumptions. This may have practical consequences. For example, by assuming linearity one may never notice that a covariate has an effect that increases and then decreases. We will see various examples of this in class.
-
 Linear regression is popular mainly because of the interpretability of the parameters. It allows us to perform _inference_ about our measurements. E.g.,
 
 - Which predictors are associated with the response?
@@ -117,8 +91,8 @@ Prediction
 
 Methods for prediction can be divided into two general groups: continuous and discrete outcomes:
 
-1. When the data is discrete we will refer to it as *classification*. 
-2. When the data is continuous we will refer to it as *regression*. 
+1. When the outcome is discrete we will refer to it as *classification*. 
+2. When the outcome is continuous we will refer to it as *regression*. 
 
 These seem very different but they have some in common. In this class, we will talk about the commonalities, but in general, we will discuss these two cases separately.
 
@@ -140,29 +114,7 @@ $$
 
 We sometime call this the *loss function*.
 
-Notice that because both $Y$ and $f(X)$ are random variables, so is (2.2). Minimizing a random variable is meaningless because it is not a number. A common thing to do is minimize over the average loss, or the **expected prediction error**:
-
-$$
-E_X E_{Y|X} [ \{Y-f(X)\}^2 | X ].
-$$
-
-For a given $x$, the expected loss is minimized by the conditional expectation:
-
-$$
-f(x) = E[ Y | X=x ],
-$$
-
-so it all comes down to getting a good estimate of $E [ Y | X=x ]$. We usually call $f(x)$ the *regression function*.
-
-Note: For discrete problems we usually want a plausible prediction. Note $f(x)$ is typically a continuous number and not a class. We can take an extra step and define a prediction rule. For example, for binary outcomes, we can say: if $f(x) > 0.5$, I predict a $1$, otherwise, predict $0$. However, it is useful to change the loss function. More on this later.
-
-Notice that if the regression model holds, then
-
-$$
-f(X) = E [ Y | X_1 = x_1, \ldots, X_p = x_p ] = \beta_0 + \sum_{j=1}^p \beta_j x_j.
-$$
-
-For Gaussian models, the solution is the same for least squares. However, many times, it is hard to believe that the linear regresion model holds. A simple example comes from AIDS research:
+Many times, it is hard to believe that the linear regresion model holds. A simple example comes from AIDS research:
 
 ```{r, echo=FALSE}
 CD4_data <- read.table("cd4.data", col.names=c("Time", "CD4", "Age", "Packs", "Drugs", "Sex", "Cesd", "ID"))
@@ -220,8 +172,7 @@ lines(x, f(x), col="blue", lwd=2)
 For now, let's consider this curve as truth and simulate CD4 counts from it.
 We will use this simulated data to compare two simple but commonly
 used methods to predict $Y$ (CD4 counts) from $X$ (Time), and discuss some of the issues that
-will arise throughout this course. In particular, what is overfitting,
-and what is the bias-variance tradeoff.
+will arise throughout this course. In particular, what is overfitting.
 
 ```{r, echo=FALSE}
 make.x <- function(n)
@@ -269,9 +220,7 @@ $$
 RSS(\mathbf{\beta}) = \sum_{i=1}^N \{y_i - (\beta_0 + \beta_1 X_i)\}^2.
 $$
 
-If you know linear algebra and calculus you can show that $\hat{\mathbf{\beta}} = (\mathbf{X'X})^{-1}X'y$.
-
-Notice we can predict $Y$ for any $X$:
+The value of $\beta$ can be found using mathematically. Notice we can predict $Y$ for any $X$:
 
 $$
 \hat{Y} = \hat{\beta_0} + \hat{\beta_1} X
@@ -367,9 +316,6 @@ Notice RSS is worse in test set than in the training set for the KNN methods. Es
 spikes we had in the estimate to predict the training data perfectly
 no longer helps.
 
-So, how do we choose $k$? We will study various ways. First, let's
-talk about the bias/variance trade-off.
-
 Smaller $k$ give more flexible estimates, but too much flexibility can
 result in over-fitting and thus estimates with more variance. Larger
 $k$ will give more stable estimates but may not be flexible
@@ -444,23 +390,9 @@ with mean zero and some variance $\sigma^2$.
 
 We have been measuring how good our predictions are by using
 RSS. Recall that we sometimes refer to this as a
-*loss function*. Recall also that for this loss function, if we want
-to minimize the **expected prediction error** for a given $x$:
-
-$$
-E_{Y|X=x} [ \{Y-f(X)\}^2 | X=x ],
-$$
-
-we get the conditional expectation $f(x)=E[ Y | X=x]$. With some
-algebra we see that the RSS for this optimal selection is $\sigma^2$
-in our setting. That is, we can't do better than this, on average,
-with any other predictor. This is called _irreducible error_ in the book.
-
-Notice that KNN is an intuitive estimator of this optimal
-predictor. We do not know the function $E[ Y | X=x]$ looks like so we
-estimate it with the $y$'s of nearby $x$'s. The larger $k$ is, the
-less precise my estimate might be since the radius of $x$'s I use for
-is larger.
+*loss function*. In our case, we can't do better than $\sigma^2$
+when minimizing this loss function. That is, we can't do better than this, on average,
+with any other predictor. This is called _irreducible error_.
 
 *Predictions are not always perfect.*
 
