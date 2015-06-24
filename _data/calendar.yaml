@@ -125,11 +125,8 @@
   status: done
   covers:
     -
-      title: "Linear models for regression and classification (2)"
+      title: "Linear models for classification"
       materials: { link: "lectures/Classification.html", insite: }
-    -
-      title: "Linear models for regression and classification (3)"
-      materials: { link: "lectures/Classification2.html", insite: }
   readings:
     -
       title: "Zumen & Mount Ch. 7"
