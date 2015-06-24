@@ -118,7 +118,7 @@
       title: "Zumen & Mount Ch. 7"
   workdue:
     -
-      title: "Project II"
+      title: "Regression Project"
       link: { url: "homeworks/gapminder.Rmd", insite: }
 -
   date: 6/24
