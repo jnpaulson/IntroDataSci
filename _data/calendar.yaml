@@ -113,6 +113,13 @@
     -
       title: "Linear models for regression and classification (1)"
       materials: { link: "lectures/Regression.pdf", insite: }
+  readings:
+    -
+      title: "Zumen & Mount Ch. 7"
+-
+  date: 6/24
+  status: done
+  covers:
     -
       title: "Linear models for regression and classification (2)"
       materials: { link: "lectures/Classification.html", insite: }
