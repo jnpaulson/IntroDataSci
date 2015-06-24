@@ -111,11 +111,15 @@
   status: done
   covers:
     -
-      title: "Linear models for regression and classification (1)"
+      title: "Linear models for regression"
       materials: { link: "lectures/Regression.pdf", insite: }
   readings:
     -
       title: "Zumen & Mount Ch. 7"
+  workdue:
+    -
+      title: "Project II"
+      link: { url: "homeworks/gapminder.Rmd", insite: }
 -
   date: 6/24
   status: done
@@ -149,10 +153,6 @@
   readings:
     -
       title: "Zumen & Mount Ch. 9.1"
-  workdue:
-    -
-      title: "Project II"
-      link: { url: "homeworks/project2.html", insite: }
 -
   date: 6/24
   status: done
