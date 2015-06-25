@@ -1,0 +1,86 @@
+---
+title: "Analisis de 'El juego de la fortuna'"
+author: "Hector Corrada Bravo, Brad Pitt"
+date: "June 24, 2015"
+output: html_document
+---
+
+```{r, message=FALSE}
+# montar libreria de datos de beisbol
+library(Lahman)
+
+# montar otras librerias
+library(dplyr)
+library(ggplot2)
+```
+
+##Preparar datos
+
+La tabla `Salaries` continene salarios de jugadores.... La tabla `Teams` contiene numero de victorias por año....
+
+```{r, warning=FALSE}
+# calcular total de salarios por equipo por año
+payroll <- Salaries %>%
+  group_by(yearID, teamID) %>%
+  summarize(payroll=sum(salary)/1e6)
+
+team_payroll <- Teams %>%
+  inner_join(payroll, c("yearID", "teamID")) %>%
+  filter(yearID >= 1990, yearID <= 2013) %>%
+  select(yearID, teamID, W, payroll)
+```
+
+Aqui los primeras filas de la tabla:
+```{r, echo=FALSE}
+knitr::kable(head(team_payroll, 10))
+```
+
+##Graficos de victorias vs. nomina
+
+Aqui escrubsvbkjhbrhb
+
+```{r}
+make_wins_payroll_graph <- function(start_year, end_year) {
+  title <- paste0("Victorias vs. Nomina, ", 
+                  start_year, "-", end_year)
+  team_payroll %>%
+    filter(yearID >= start_year, yearID < end_year) %>%
+    group_by(teamID) %>%
+    summarize(W=mean(W), payroll=mean(payroll)) %>%
+    ggplot(aes(x=payroll, y=W,label=teamID)) +
+      geom_text() +
+      geom_smooth(method=lm) +
+      labs(x="Nomina (millones)", y="Victorias", title=title)
+}
+make_wins_payroll_graph(1990, 1995)
+make_wins_payroll_graph(1995, 2000)
+make_wins_payroll_graph(2000, 2005)
+make_wins_payroll_graph(2005,2010)
+make_wins_payroll_graph(2010, 2014)
+```
+
+##Estadistica de Eficiencia
+
+Pra resumir cada graufdvuwnviybikhbihbvyvbv
+
+```{r}
+# calcular eficiencia
+team_efficiency <- team_payroll %>%
+  mutate(efficiency=W/payroll)
+```
+
+```{r}
+team_efficiency %>%
+  filter(teamID %in% c("OAK", "NYA", "NYN",
+                       "MON", "TBA", "ATL", 
+                       "BOS")) %>%
+  ggplot(aes(x=yearID, y=efficiency, color=teamID)) +
+    geom_line(size=1.3) +
+    labs(title="Team Efficiency", x="Year", y="Wins per Million Dollars")
+```
+
+Podemos ver que ....
+
+
+
+
