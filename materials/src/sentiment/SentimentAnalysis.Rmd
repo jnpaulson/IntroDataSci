@@ -1,0 +1,123 @@
+---
+title: "Sentiment Analysis"
+author: "Hector Corrada Bravo"
+date: "June 25, 2015"
+output: html_document
+---
+
+This document is based on [Cheng-Jun Wang's](http://chengjun.github.io/) [post on sentiment analysis in R](http://chengjun.github.io/en/2014/04/sentiment-analysis-with-machine-learning-in-R/).
+
+##Sentiment Analysis
+
+The goal of sentiment analysis is to classify text into sentiment categories (e.g., happy, sad) based on the word content. Initial work in this area used supervised machine learning algorithms. I.e., given a text corpus, each document tagged with a sentiment label, learn a classifier that categorizes new documents based on sentiment. In this document we will do this analysis for a small corpus of Tweets. Current research on far more complex learning models (e.g., Deep Learning) is showing much promise to learn more sophisticated and accurate sentiment models.
+
+##Tools
+
+R includes very useful packages for text mining and processing. For more information consult the [Natural Language Processing Task View](http://cran.r-project.org/web/packages/RTextTools/index.html). In particular, we will use the [tm package](http://cran.r-project.org/web/packages/tm/index.html) that includes many fundamental operations in text processing (e.g., stemming, stop word removal, document to word vector representation), and the [RTextTools package](http://cran.r-project.org/web/packages/RTextTools/index.html) that implements a number of Machine Learning algorithms that have proven to be particuarly useful in text classification tasks.
+
+##Datasets
+
+We will use two datasets. A toy dataset (from [Cheng-Jun Wang's post](http://chengjun.github.io/en/2014/04/sentiment-analysis-with-machine-learning-in-R/)), and a small corpus of labeled tweets downloaded from [this Sentiment Analysis tutorial](https://github.com/victorneo/Twitter-Sentimental-Analysis).
+
+##Toy Example
+
+Let's start by loading the libraries we will use in this analysis and creating the toy dataset.
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(cache=FALSE)
+```
+
+```{r load, message=FALSE}
+library(tm)
+library(RTextTools)
+library(e1071)
+library(dplyr)
+
+# a toy dataset of labeled tweets
+
+# these are positive tweets, each 
+# tweet in this list is tagged as 'positive'
+pos_tweets =  rbind(
+  c('I love this car', 'positive'),
+  c('This view is amazing', 'positive'),
+  c('I feel great this morning', 'positive'),
+  c('I am so excited about the concert', 'positive'),
+  c('He is my best friend', 'positive')
+)
+
+# negative tweets
+neg_tweets = rbind(
+  c('I do not like this car', 'negative'),
+  c('This view is horrible', 'negative'),
+  c('I feel tired this morning', 'negative'),
+  c('I am not looking forward to the concert', 'negative'),
+  c('He is my enemy', 'negative')
+)
+
+# test tweets, we'll use this to test the accuracy of the
+# learned sentiment classifier
+test_tweets = rbind(
+  c('feel happy this morning', 'positive'),
+  c('larry friend', 'positive'),
+  c('not like that man', 'negative'),
+  c('house not great', 'negative'),
+  c('your song annoying', 'negative')
+)
+
+# put all tweets together into a single matrix
+tweets = rbind(pos_tweets, neg_tweets, test_tweets)
+```
+
+The resulting dataset looks as follows:
+
+```{r, echo=FALSE}
+knitr::kable(tweets %>% as.data.frame() %>% sample_n(10))
+```
+
+The first step in the analysis will be to convert each tweet into a word occurence vector. This is representation (known as bag-of-words) is extremely simple, but usually serves as a very good starting point. The conversion is done in two steps, first all words in the corpus are collected, second each document is then represented by a list, of length equal to the total number of words in the corpus, with each entry in the list containing the number of times the corresponding word appears in the document. Alternatively, it may only contain 1 or 0 to indicate if the word appears in the document or not. 
+
+Let's construct the bag-of-words representation for this toy example.
+
+```{r}
+# the create matrix function is
+# defined in the RTextTools package
+dtm <- create_matrix(tweets[,1], language="english",
+                     removeStopwords=FALSE, removeNumbers=TRUE,
+                     stemWords=FALSE)
+```
+
+Let's see what the resulting document-term matrix looks like:
+
+```{r, echo=FALSE}
+inspect(dtm)
+```
+
+With this representation, we can use standard machine learning classification algorithms. A very simple algorithm is the "Naive Bayes Classifier" that learns a probability of (in this case) each sentiment, based on the frequency each term appears in either positive or negative tweets. Let's train the classifier using the training tweets:
+
+```{r}
+nb_classifier <- e1071::naiveBayes(as.matrix(dtm[1:10,]), 
+                                   factor(tweets[1:10,2]))
+```
+
+Let's plot the how the learned model treats each term when classifying a tweet as positive or negative
+
+```{r}
+weights <- sapply(nb_classifier$tables, function(x) x[,2])
+weights[1,] <- -weights[1,]
+
+library(tidyr)
+library(ggplot2)
+
+weight_dat <- weights %>% 
+  as.data.frame() %>%
+  mutate(sentiment=rownames(.)) %>%
+  gather(term, weight,-sentiment) %>%
+  spread(sentiment,weight)
+
+weight_dat %>%
+  ggplot(aes(x=term, y=positive)) +
+    geom_bar(stat="identity") +
+    geom_bar(stat="identity", aes(y=negative)) +
+    labs(title="Learned weights", y="Positive weight", x="Term") +
+    coord_flip()
+```
