@@ -1,8 +1,8 @@
 # Site settings
-title: CMSC498T (Spring 2015)
+title: CMSC320 (Spring 2016)
 email: hcorrada@umiacs.umd.edu
-description: "CMSC498T, Introduction to Data Science II: Exploring, modeling and communicating with data"
-baseurl: "/MTEC_CADi2015"
+description: "CMSC320, Introduction to Data Science"
+baseurl: "/IntroDataSci"
 twitter_username: hcorrada
 github_username:  hcorrada
 ignore: ["materials", "tasks"]
@@ -16,5 +16,5 @@ redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
 # my variables
-piazza_url: "https://piazza.com/class/i5e39xpjr662in"
-elms_url: "https://myelms.umd.edu/courses/1130499"
+piazza_url: "https://piazza.com/class/ije6l0thr383ii"
+elms_url: "https://myelms.umd.edu/courses/1177854"

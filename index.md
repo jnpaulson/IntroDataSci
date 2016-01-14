@@ -1,24 +1,19 @@
 ---
 layout: calendar
-title: "CADi: Big Data (Introduction to Data Science with R)"
+title: "CMSC320: Introduction to Data Science"
 logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.png"/>
 ---
 
+##Course Details
 
-##Course Information
+Instructor: [H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
+TA: TBD <tbd@umd.edu>  
+Lecture: Tuesday and Thursday, 2:00pm-3:15, Room CSI 1121
 
-*	Instructor:  
-	[H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
-	Center for Bioinformatics and Computational Biology  
-	Department of Computer Science  
-	University of Maryland  
-	<hcorrada@umiacs.umd.edu>  
+Check the [logistics page](logistics.html) to find more information on how the class will work and the official syllabus detailing class policies and other details.
 
-*   Textbook information:
-	There is no required textbook. See the [syllabus](syllabus.html)
-	and [calendar](#Calendar) for more information.
-
-* Check the github page for the course: [https://github.com/hcorrada/MTEC_CADi2015/tree/gh-pages](https://github.com/hcorrada/MTEC_CADi2015/tree/gh-pages)
+* [ELMS course page]( {{ site.elms_url }} )  
+* [Piazza course page]( {{ site.piazza_url }})  
 
 ##Calendar
 
