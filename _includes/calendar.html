@@ -1,0 +1,25 @@
+<table class="calendar_table">
+<colgroup>
+<thead>
+<tr><th>Date<th>Title<th>Class Prep<th>Work Due
+<tbody>
+  {% for entry in site.data.calendar %}
+<tr {% if entry.status == "present" %}class="present_item"{% elsif entry.status == "done" %}{% else %}class="future_item"{% endif %}><td>{{ entry.date }}
+       <td>{% include calendar_theme.html %}
+       <td>{% include calendar_readings.html %}
+       <td>{% include calendar_workdue.html %}
+</tr>
+{% endfor %}
+</table>
+
+<table class="calendar_table">
+	<colgroup>
+	<thead>
+		<tr><th>Legend
+	</thead>
+	<tbody>
+		<tr class="present_item"><td>Not ready yet
+		<tr class="future_item"><td>Pre-lecture ready
+		<tr><td>Post-lecture ready
+	</tbody>
+</table>

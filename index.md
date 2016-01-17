@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: index
 title: "CMSC320: Intro. to Data Science"
 ---
 

@@ -1,5 +1,8 @@
 # Site settings
 title: CMSC320 Introduction to Data Science
+author: Héctor Corrada Bravo
+theme_author: Alex Carpenter
+theme_url: "http://alexcarpenter.me/material-jekyll-theme/"
 email: hcorrada@umiacs.umd.edu
 description: >
   A description will be added here
