@@ -4,10 +4,8 @@ title: "CMSC320: Intro. to Data Science"
 ---
 
 Instructor: Héctor Corrada Bravo <hcorrada@umiacs.umd.edu>  
-
-TA: Nick Thieme <tba>  
-
-Lecture Times: Tuesday and Thursday, 2:00pm-3:15pm, CSI 1121  
+TA: Nick Thieme <tba@example.com>  
+Lecture Times: Tuesday and Thursday, 2:00pm-3:15pm, CSI 1121    
 
 Check the [logistics page](logistics.html) for more information, including the official syllabus.
 

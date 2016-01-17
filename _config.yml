@@ -19,3 +19,18 @@ include: [_pages]
 exclude: [_site, CHANGELOG.md, LICENSE, README.md]
 sass:
   style: compressed
+
+# course variables
+navigation:
+  -
+    name: Home
+    url: /index.html
+  -
+    name: Logistics
+    url: /logistics.html
+  -
+    name: Resources
+    url: /resources.html
+  -
+    name: Projects
+    url: /projects.html
