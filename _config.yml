@@ -21,6 +21,8 @@ sass:
   style: compressed
 
 # course variables
+piazza_url: "https://piazza.com/class/ije6l0thr383ii"
+elms_url: "https://myelms.umd.edu/courses/1177854"
 navigation:
   -
     name: Home
