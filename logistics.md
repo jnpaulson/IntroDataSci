@@ -75,40 +75,20 @@ libraries, data resources and publishing mechanisms.
 
 ####Tentative Course Organization
 
-- Preliminaries
+- Preliminaries:
+  What is Data Science? Who is a Data Scientist? The scope of Data Science: the open data movement, science, business, government, education, sport, and more. Introduction to the R data analysis environment. Formulating data-centric answers to scientific, business and social questions. Best practices: organizing projects, managing collaborations and expectations.
 
-	- What is Data Science? Who is a Data Scientist? The scope of Data
-	  Science: the open data movement, science, business, government,
-	  education, sport, and more
-	- Introduction to the R data analysis environment
-	- Formulating data-centric answers to scientific, business and
-      social questions
-	- Best practices: organizing projects, managing collaborations and
-  expectations
+- Data Management Principles:
+  Data scraping, tidying, cleaning and summarization. Basics of database systems and SQL. Exploratory Data Analysis. Exploration at scale: introduction to map reduce.
 
-- Data Management Principles
-  - Data scraping, tidying, cleaning and summarization
-  - Basics of database systems and SQL
-  - Exploratory Data Analysis
-  - Exploration at scale: introduction to map reduce
+- Computational and Statistical Data Analysis:
+  From exploration to inference: statistical and probabilistic models. Linear modeling: regression and prediction. Introduction to Machine Learning: unsupervised methods, SVMs, tree-based methods
 
-- Computational and Statistical Data Analysis
-	- From exploration to inference: statistical and probabilistic models
-	- Linear modeling: regression and prediction
-	- Introduction to Machine Learning: unsupervised methods, SVMs, tree-based methods
+- Data Mining:
+  Regression and prediction at scale. Mining time series and data streams.
 
-- Data Mining
-  - Regression and prediction at scale
-  - Mining time series and data streams
-
-- Communicating with data
-  - Writing with and about data: communicating the result of a data
-    analysis
-  - Information visualization, visualizing for an
-    audience
-  - Putting it together: interactive data dissemination on the web
-    (d3.js and related technologies)
-
+- Communicating with data:
+  Writing with and about data: communicating the result of a data analysis. Information visualization, visualizing for an audience. Putting it together: interactive data dissemination on the web (d3.js and related technologies).
 
 ####Classroom Policies
 * There will be reading assignments. Students are expected to have read the material **before** class.
