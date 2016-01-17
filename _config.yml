@@ -1,16 +1,14 @@
 # Site settings
-title: Alex Carpenter
-email: your-email@domain.com
+title: CMSC320 Introduction to Data Science
+email: hcorrada@umiacs.umd.edu
 description: >
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "/material-jekyll-theme"
-url: "http://alexcarpenter.me"
+  A description will be added here
+baseurl: "/IntroDataSci"
+url: "http://hcbravo.org"
 fixedNav: 'true' # true or false
-theme: purple # green, blue, orange, purple, grey
-twitterUsername: hybrid_alex
-githubUsername: alexcarpenter
+theme: orange # green, blue, orange, purple, grey
+twitterUsername: hcorrada
+githubUsername: hcorrada
 dribbbleUsername:
 codepenUsername:
 
