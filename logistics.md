@@ -42,7 +42,6 @@ It will be centered around case studies and projects drawing extensively from ap
 	Office Hours: TBD  
 
 *	Evaluation (see section below on logistics for details)
-
 	*    Projects (4) (40%)
 	*    In-class work (15%)
 	*    Written homework (15%)
@@ -51,15 +50,14 @@ It will be centered around case studies and projects drawing extensively from ap
   *    Class participation (5%)
 
 *   Textbook information:
-    	There is no required textbook. However, we will be drawing heavily
-    	from these two sources:
-	*  [N. Zumel and J. Mount. Practical Data Science with R. Manning Publications Co. 2014](http://www.manning.com/zumel/).   
-	*  [G. James, D. Witten, T. Hastie and R. Tibshirani. Introduction to Statistical Learning with Applications in R. Springer 2013.](http://www-bcf.usc.edu/~gareth/ISL/). A
-	   free PDF of this book can be downloaded at their
-	   site.
-  *  [EMC Education Services. Data Science & Big Analytics: Discovering, Analyzing, Visualizing and Presenting Data](http://www.wiley.com/WileyCDA/WileyTitle/productCd-111887613X.html)
 
-	Additional readings will be posted in ELMS [{{ site.elms_url }}]({{ site.elms_url}}).
+There is no required textbook. However, we will be drawing heavily from these sources:
+
+*  [N. Zumel and J. Mount. Practical Data Science with R. Manning Publications Co. 2014](http://www.manning.com/zumel/).   
+*  [G. James, D. Witten, T. Hastie and R. Tibshirani. Introduction to Statistical Learning with Applications in R. Springer 2013.](http://www-bcf.usc.edu/~gareth/ISL/). A free PDF of this book can be downloaded at their site.
+*  [EMC Education Services. Data Science & Big Analytics: Discovering, Analyzing, Visualizing and Presenting Data. Wiley, 2015](http://www.wiley.com/WileyCDA/WileyTitle/productCd-111887613X.html)
+
+Additional readings will be posted in ELMS [{{ site.elms_url }}]({{ site.elms_url}}).
 
 ####Expected outcomes
 
