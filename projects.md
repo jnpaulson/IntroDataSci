@@ -1,6 +1,9 @@
 ---
 layout: page
-title: Projects
+title: "CMSC320: Projects"
 ---
 
-This is the projects page.
+1. COMING SOON  
+2. COMING SOON  
+3. COMING SOON  
+4. COMING SOON  

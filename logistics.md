@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Course Logistics and syllabus
+title: "CMSC320: Course Logistics and Syllabus"
 ---
 
 ##CMSC320 Introduction to Data Science
