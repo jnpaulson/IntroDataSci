@@ -1,21 +1,17 @@
 ---
-layout: calendar
-title: "CMSC320: Introduction to Data Science"
-logo: <img src="http://www.cbcb.umd.edu/~hcorrada/CMSC423/img/new-cbcb-logo3_0.png"/>
+layout: index
+title: "CMSC320: Intro. to Data Science"
 ---
 
-##Course Details
+Instructor: Héctor Corrada Bravo <hcorrada@umiacs.umd.edu>  
+TA: Nick Thieme <tba@example.com>  
+Lecture Times: Tuesday and Thursday, 2:00pm-3:15pm, CSI 1121    
 
-Instructor: [H&eacute;ctor Corrada Bravo](http://www.cbcb.umd.edu/~hcorrada)  
-TA: TBD <tbd@umd.edu>  
-Lecture: Tuesday and Thursday, 2:00pm-3:15, Room CSI 1121
+Check the [logistics page](logistics.html) for more information, including the official syllabus.
 
-Check the [logistics page](logistics.html) to find more information on how the class will work and the official syllabus detailing class policies and other details.
+[ELMS](site.elms_url)  
+[Piazza](site.piazza_url)
 
-* [ELMS course page]( {{ site.elms_url }} )  
-* [Piazza course page]( {{ site.piazza_url }})  
+## Calendar
 
-##Calendar
-
-This calendar will be updated through the semester as needed.
-See below to understand lecture status code.
+This calendar will be updated through the semester as needed. See below to understand lecture status code.

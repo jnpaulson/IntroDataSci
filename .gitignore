@@ -7,4 +7,6 @@
 *.gitconfig*
 *_cache*
 _site
-.Rproj.user
+.sass-cache
+Gemfile.lock
+

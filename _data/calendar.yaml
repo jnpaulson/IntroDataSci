@@ -17,15 +17,24 @@
 #       title: <title>
 #       link: { url: <url>, [insite:] }
 -
-  date: 6/22
-  status: done
+  date: 1/26
+  status:
   covers:
     -
-      title: "What is Data Science"
+      title: "What is Data Science, Course Introduction and Logistics"
       materials: { link: "lectures/Intro.pdf", insite: }
+-
+  date: 1/28
+  status:
+  covers:
+    -
+      title: "Data Preliminaries: measurement and data types"
   readings:
     -
       title: "Zumel & Mount: pp. xix-17"
+    -
+      title: "Loukides: What is data science?"
+      link: { url: "http://radar.oreilly.com/2010/06/what-is-data-science.html" }
     -
       title: "Silver: What the fox knows"
       link: { url: "http://fivethirtyeight.com/features/what-the-fox-knows/" }
@@ -34,139 +43,246 @@
       title: "Setting up R"
       link: { url: "homeworks/rocker.html", insite: }
 -
-  date: 6/22
-  status: done
+  date: 2/2
+  status:
   covers:
     -
-      title: "R for Data Science Primer"
+      title: "R for Data Science Primer (1)"
       materials: { link: "lectures/Rintro.pdf", insite: }
+  readings:
     -
-      title: "Best practices for Data Science Projects"
-      materials: { link: "lectures/BestPractices.pdf", insite: }
+      title: "Wickham: Advanced R, 'Foundations' and 'Functional Programming'"
+      link: { url: "http://adv-r.had.co.nz/" }
+-
+  date: 2/4
+  status:
+  covers:
+    -
+      title: "R for Data Science Primer (2)"
+    -
+      title: "RMarkdown for arrest analysis (baltimore.Rmd)"
+      materials: { link: "misc/baltimore.Rmd", insite: }
+    -
+      title: "Arrest data (BPD_Arrests.csv)"
+      materials: { link: "misc/BPD_Arrests.csv", insite: }
+    -
+      title: "CCTV data (CCTV_Locations.csv)"
+      materials: { link: "misc/CCTV_Locations.csv", insite: }
   readings:
     -
       title: "Zumen & Mount: Ch. 2"
-  workdue:
-    -
-      title: "R basics with data (baltimore.Rmd)"
-      link: { url: "misc/baltimore.Rmd", insite: }
-    -
-      title: "Data for baltimore exercise"
-      link: { url: "misc/BPD_Arrests.csv", insite: }
-    -
-      title: "In-class exercise"
-      link: { url: "misc/aprender_r.R", insite: }
 -
-  date: 6/23
-  status: done
+  date: 2/9
+  status:
   covers:
     -
-      title: "Data tyding"
-      materials: { link: "lectures/tidy.html", insite: }
+      title: "Best practices for Data Science Projects"
+      materials: { link: "lectures/BestPractices.pdf", insite: }
+-
+  date: 2/11
+  status:
+  covers:
     -
-      title: "Data wrangling"
-      materials: { link: "lectures/wrangling.html", insite: }
+      title: "Data tyding (1)"
+      materials: { link: "lectures/Tidying1.html", insite: }
     -
-      title: "Missing data"
-      materials: { link: "lectures/missing.html", insite: }
+      title: "RMarkdown for tidying examples (tidy_code.Rmd)"
+      materials: { link: "misc/tidy_code.Rmd" }
+  readings:
+    -
+      title: "Wickham, Tidy Data. JSS 2014"
+      link: { url: "http://www.jstatsoft.org/v59/i10/paper" }
+-
+  date: 2/16
+  status:
+  covers:
+    -
+      title: "Data Models"
+      materials: { link: "lectures/Wrangling.html", insite: }
   readings:
     -
       title: "Zuman & Mount: Sec 4.1"
-  workdue:
-    -
-      title: "RMarkdown for tidying examples (tidy_code.Rmd)"
-      link: { url: "misc/tidy_code.Rmd", insite: }
-    -
-      title: "Wrangling exercise"
-      link: { url: "misc/wrangling_exercise.Rmd", insite: }
 -
-  date: 6/23
-  status: done
+  date: 2/18
+  status:
   covers:
     -
-      title: "Exploratory Data Analysis (1)"
+      title: "Data Wrangling 1: dplyr"
+-
+  date: 2/23
+  status:
+  covers:
+    -
+      title: "Data Wrangling 2: SQL"
+-
+  date: 2/25
+  status:
+  covers:
+    -
+      title: "Exploratory Data Analysis (1): summary statistics"
       materials: { link: "lectures/EDA1.html", insite: }
+  readings:
+    -
+      title: "Zumen & Mount: Ch. 3"
+  workdue:
+    -
+      title: "Wrangling quiz"
+      link: {url: "https://myelms.umd.edu/courses/1130499/quizzes/1079169"}
+-
+  date: 3/1
+  status:
+  covers:
     -
       title: "Exploratory Data Analysis (2): Visualization"
       materials: { link: "lectures/EDA2.html", insite: }
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
+-
+  date: 3/3
+  status:
+  covers:
+    -
+      title: "Data summarisation and aggregation at scale"
+      materials: { link: "lectures/MapReduce.html", insite: }
   workdue:
     -
-      title: "Wrangling and EDA project"
+      title: "Project I, Part 1"
+      link: { url: "homeworks/project1_part1.html", insite: }
+    -
+      title: "Project I, Part 2"
       link: { url: "homeworks/project1_part2.html", insite: }
 -
-  date: 6/24
-  status: done
+  date: 3/8
+  status:
   covers:
     -
-      title: "Introduction to Statistical Learning"
+      title: "Introduction to Statistical Learning (1): Distributions and Statistics"
       materials: { link: "lectures/IntroStatLearn.html", insite: }
+    -
+      title: "Some background"
+      materials: { link: "lectures/StatLearnBackground.html", insite: }
   readings:
     -
-      title: "Zumen & Mount Ch. 5"
+      title: "ISL Ch. 2"
+  workdue:
+    -
+      title: "ISL Ch. 2 reading prep quiz"
+      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1081113" }
 -
-  date: 6/24
+  date: 3/10
+  status:
+  covers:
+    -
+      title: "Introduction to Statistical Learning (2): Inference and testing"
+-
+  date: 3/15
   status: done
   covers:
     -
-      title: "Linear models for regression"
+      title: "No class, Spring Break"
+-
+  date: 3/17
+  status: done
+  covers:
+    -
+      title: "No class, Spring Break"
+-
+  date: 3/22
+  status: 
+  covers:
+    -
+      title: "Linear models for regression (1)"
       materials: { link: "lectures/Regression.pdf", insite: }
   readings:
     -
-      title: "Zumen & Mount Ch. 7"
+      title: "ISL Ch. 3"
   workdue:
     -
-      title: "Regression Project"
-      link: { url: "homeworks/gapminder.Rmd", insite: }
+      title: "ISL Ch. 3 reading prep quiz"
+      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082257" }
 -
-  date: 6/24
-  status: done
+  date: 3/24
+  status:
   covers:
     -
-      title: "Linear models for classification"
+      title: "Linear models for classification (2)"
       materials: { link: "lectures/Classification.html", insite: }
   readings:
     -
-      title: "Zumen & Mount Ch. 7"
+      title: "ISL Ch. 4"
+  workdue:
+    -
+      title: "ISL Ch. 4 reading prep quiz"
+      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082468" }
 -
-  date: 6/24
-  status: done
+  date: 3/29
+  status:
   covers:
     -
       title: "Evaluating performance via resampling"
       materials: { link: "lectures/Evaluation.html", insite: }
   readings:
     -
-      title: "Zumen & Mount Ch. 5"
+      title: "ISL Ch. 5"
 -
-  date: 6/24
-  status: done
+  date: 3/31
+  status:
   covers:
     -
       title: "Machine Learning I: tree-based methods"
       materials: { link: "lectures/TreeMethods.html", insite: }
   readings:
     -
-      title: "Zumen & Mount Ch. 9.1"
+      title: "ISL Ch. 8"
 -
-  date: 6/24
-  status: done
+  date: 4/5
+  status:
   covers:
     -
-      title: "Machine Learning II: clustering and unsupervised dimensionality reduction"
+      title: "Machine Learning II: The Support Vector Machine"
+      materials: { link: "lectures/SVM.html", insite: }
+  readings:
+    -
+      title: "ISL Ch. 9"
+-
+  date: 4/7
+  status:
+  covers:
+    -
+      title: "Machine Learning III: clustering and unsupervised dimensionality reduction"
       materials: { link: "lectures/Unsupervised.html", insite: }
   readings:
     -
-      title: "Zumen & Mount Ch. 8"
-  workdue:
-    -
-      title: "Project III"
-      link: { url: "homeworks/project3.html", insite: }
+      title: "ISL Ch. 10"
 -
-  date: 6/25
-  status: done
+  date: 4/12
+  status:
+  covers:
+    -
+      title: "Time series analysis and forecasting"
+-
+  date: 4/14
+  status:
+  covers:
+    -
+      title: "Analysis at scale: stochastic gradient descent"
+      materials: { link: "lectures/LargeScale.html", insite: }
+-
+  date: 4/19
+  status:
+  covers:
+    -
+      title: "Data streaming/real-time analytics"
+-
+  date: 4/21
+  status:
+  covers:
+    -
+      title: "Text and sentiment analysis"
+-
+  date: 4/26
+  status:
   covers:
     -
       title: "Communicating results of data analyses"
@@ -175,19 +291,52 @@
     -
       title: "Leek, Elements of Data Style, Ch. 9-11"
 -
-  date: 6/25
-  status: done
+  date: 4/28
+  status:
   covers:
     -
       title: "Web-based interactive visualization (1)"
       materials: { link: "lectures/Shiny.html", insite: }
+  readings:
+    -
+      title: "Murray, Interactive Visualization for the Web, Ch. 2 and 3"
+      link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
+    -
+      title: "Shiny Tutorial"
+      link: { url: "http://shiny.rstudio.com/tutorial/"}
+-
+  date: 5/3
+  status:
+  covers:
+    -
+      title: "Web-based interactive visualization (2)"
+      materials: { link: "lectures/D3.html", insite: }
     -
       title: "Toy example of R and D3 using htmlwidgets"
       materials: { link: "https://github.com/hcorrada/linkedscatter" }
   readings:
     -
-      title: "Shiny Tutorial"
-      link: { url: "http://shiny.rstudio.com/tutorial/"}
+      title: "Murray, Interactive Visualization for the Web, Ch. 6, 9 and 10"
+      link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
+-
+  date: 5/5
+  status:
+  covers:
+    -
+      title: "TBD (options: Data integration and information extraction, What's the deal with Deep Learning?)"
+-
+  date: 5/10
+  status:
+  covers:
+    -
+      title: "Course Wrapup and Persepectives"
+-
+  date: TBD
+  status:
+  covers:
+    -
+      title: "Final (TBD)"
   workdue:
     -
       title: "Final Project"
+      link: { url: "homeworks/final_project.html", insite: }

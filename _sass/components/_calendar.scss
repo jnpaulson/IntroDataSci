@@ -1,0 +1,18 @@
+.calendar_table {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.calendar_cell {
+    background-image: none !important;
+    list-style-type: none;
+}
+
+.future_item {
+    background-color: #E0E0EB;
+}
+
+.present_item {
+    background-color:   #C2D1F0;
+}
