@@ -18,8 +18,7 @@ These instructions are essentially following [this document](https://github.com/
 
 #Setting up Docker
 
-Install [Docker](https://www.docker.com/) according to the instructions [for your system](https://docs.docker.com/installation/). For Mac and Windows users you will
-need to install `boot2docker` to setup a lightweight VM that runs Docker itself.
+Install [Docker](https://www.docker.com/) according to the instructions [for your system](https://docs.docker.com/installation/).
 
 To check that docker works:
 
@@ -55,7 +54,7 @@ A couple of things to note:
 You will use Rstudio through your web browser. First, you need to know what is the address of your virtual machine. You can do this by typing this in a terminal window:
 
 {% highlight bash %}
-boot2docker ip
+docker-machine ip default
 {% endhighlight %}
 
 If, for example, this returned `192.168.59.103` then we can open Rstudio by pointing our web browser to `http://192.168.59.103:8787` (remember we used port `8787` when we started the image).
