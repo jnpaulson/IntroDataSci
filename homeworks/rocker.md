@@ -105,7 +105,7 @@ and selecting `Version Control` to build the project from our course materials.
 
 Select `Git` and enter the course repositories URL:
 
-[https://github.com/hcorrada/MTEC_CADi2015.git](https://github.com/hcorrada/MTEC_CADi2015.git)
+[https://github.com/hcorrada/IntroDataSci.git](https://github.com/hcorrada/IntroDataSci.git)
 
 This will download all the course materials to your current directory.
 
