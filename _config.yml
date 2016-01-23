@@ -26,16 +26,3 @@ sass:
 # course variables
 piazza_url: "https://piazza.com/class/ije6l0thr383ii"
 elms_url: "https://myelms.umd.edu/courses/1177854"
-navigation:
-  -
-    name: Home
-    url: /index.html
-  -
-    name: Logistics
-    url: /logistics.html
-  -
-    name: Resources
-    url: /resources.html
-  -
-    name: Projects
-    url: /projects.html

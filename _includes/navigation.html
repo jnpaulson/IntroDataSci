@@ -1,6 +1,6 @@
 <nav class="c-navigation {% if site.fixedNav == 'true' %}is-fixed{% endif %}">
   <div class="c-navigation__container u-container">
-    {% for navitem in site.navigation %}
+    {% for navitem in site.data.navigation %}
       <a class="c-navigation__item {% if page.url == navitem.url %}is-active{% endif %}" href="{{ navitem.url | prepend: site.baseurl }}">{{ navitem.name }}</a>
     {% endfor %}
   </div>
