@@ -3,18 +3,13 @@ layout: page
 title: Setting up R
 ---
 
-We will be using R, Rstudio and git. You can dowload and install each here:
-
-- [R](http://cran.r-project.org)
-- [Rstudio](http://rstudio.org)
-- [git](https://help.github.com/articles/set-up-git/)
-
-We will use [Rocker](https://github.com/rocker-org/rocker), a project built on top of
-[Docker](https://www.docker.com/) to manage our software installation. This will provide you with a working installation of R, and the Rstudio IDE, along with a lot
+For class we will be using R, Rstudio and git. You can download and install each using the [links below](#downloads). However, you can instead use [Rocker](https://github.com/rocker-org/rocker), a project built on top of
+[Docker](https://www.docker.com/) to manage your software installation. We've setup a container that will provide you with a working installation of R, and the Rstudio IDE, along with a lot
 of packages providing analysis tools and datasets we will use throughout the semester. You
 can read more about Rocker in [this introduction](http://dirk.eddelbuettel.com/blog/2014/10/23/)
 
 These instructions are essentially following [this document](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image).
+
 
 #Setting up Docker
 
@@ -112,3 +107,11 @@ This will download all the course materials to your current directory.
 One more thing: we are using the `gh-pages` branch to keep track of our materials. Go to the `Git` tab on Rstudio and on the branch dropdown (it should show `master` at first), select `origin/gh-pages`. Ok, now we're done.
 
 We will later see more information on how to use `git`.
+
+#Downloads
+
+If you would rather download and maintain your own software environment, download tools from these links:
+
+- [R](http://cran.r-project.org)
+- [Rstudio](http://rstudio.org)
+- [git](https://help.github.com/articles/set-up-git/)
