@@ -157,6 +157,12 @@
   status:
   covers:
     -
+      title: "Midterm Exam"
+-
+  date: 3/10
+  status:
+  covers:
+    -
       title: "Introduction to Statistical Learning (1): Distributions and Statistics"
       materials: { link: "lectures/IntroStatLearn.html", insite: }
     -
@@ -169,12 +175,6 @@
     -
       title: "ISL Ch. 2 reading prep quiz"
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1081113" }
--
-  date: 3/10
-  status:
-  covers:
-    -
-      title: "Introduction to Statistical Learning (2): Inference and testing"
 -
   date: 3/15
   status: done
@@ -189,7 +189,13 @@
       title: "No class, Spring Break"
 -
   date: 3/22
-  status: 
+  status:
+  covers:
+    -
+      title: "Introduction to Statistical Learning (2): Inference and testing"
+-
+  date: 3/24
+  status:
   covers:
     -
       title: "Linear models for regression (1)"
@@ -202,7 +208,7 @@
       title: "ISL Ch. 3 reading prep quiz"
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082257" }
 -
-  date: 3/24
+  date: 3/29
   status:
   covers:
     -
@@ -216,7 +222,7 @@
       title: "ISL Ch. 4 reading prep quiz"
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082468" }
 -
-  date: 3/29
+  date: 3/31
   status:
   covers:
     -
@@ -226,7 +232,7 @@
     -
       title: "ISL Ch. 5"
 -
-  date: 3/31
+  date: 4/5
   status:
   covers:
     -
@@ -236,7 +242,7 @@
     -
       title: "ISL Ch. 8"
 -
-  date: 4/5
+  date: 4/7
   status:
   covers:
     -
@@ -246,7 +252,7 @@
     -
       title: "ISL Ch. 9"
 -
-  date: 4/7
+  date: 4/12
   status:
   covers:
     -
@@ -256,32 +262,32 @@
     -
       title: "ISL Ch. 10"
 -
-  date: 4/12
+  date: 4/14
   status:
   covers:
     -
       title: "Time series analysis and forecasting"
 -
-  date: 4/14
+  date: 4/19
   status:
   covers:
     -
       title: "Analysis at scale: stochastic gradient descent"
       materials: { link: "lectures/LargeScale.html", insite: }
 -
-  date: 4/19
+  date: 4/21
   status:
   covers:
     -
       title: "Data streaming/real-time analytics"
 -
-  date: 4/21
+  date: 4/26
   status:
   covers:
     -
       title: "Text and sentiment analysis"
 -
-  date: 4/26
+  date: 4/28
   status:
   covers:
     -
@@ -291,7 +297,7 @@
     -
       title: "Leek, Elements of Data Style, Ch. 9-11"
 -
-  date: 4/28
+  date: 5/3
   status:
   covers:
     -
@@ -305,7 +311,7 @@
       title: "Shiny Tutorial"
       link: { url: "http://shiny.rstudio.com/tutorial/"}
 -
-  date: 5/3
+  date: 5/5
   status:
   covers:
     -
@@ -319,24 +325,14 @@
       title: "Murray, Interactive Visualization for the Web, Ch. 6, 9 and 10"
       link: { url: "http://proquest.safaribooksonline.com.proxy-um.researchport.umd.edu/book/web-design-and-development/9781449340223" }
 -
-  date: 5/5
-  status:
-  covers:
-    -
-      title: "TBD (options: Data integration and information extraction, What's the deal with Deep Learning?)"
--
   date: 5/10
   status:
   covers:
     -
       title: "Course Wrapup and Persepectives"
 -
-  date: TBD
+  date: 5/16
   status:
   covers:
     -
-      title: "Final (TBD)"
-  workdue:
-    -
-      title: "Final Project"
-      link: { url: "homeworks/final_project.html", insite: }
+      title: "Final Exam: 10:30am-12:30am"
