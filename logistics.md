@@ -31,25 +31,24 @@ It will be centered around case studies and projects drawing extensively from ap
 	Office: 3114F Biomolecular Sciences Building  
 	Phone Number: 301-405-2481
 
-*	Lecture Meeting times  
-
+*	Lecture Meeting Times    
   Tuesday and Thursday, 2:00pm-3:15pm, CSI 1121    
 
 *	Office Hours: Friday 1:00pm-2:00pm AVW 3223 and by appointment
 
-*	TA: TBD  
-	<tbd@example.com>  
-	Office Hours: TBD  
+*	TA: Nick Thieme  
+	<nick.thieme5@gmail.com>  
+	Office Hours: Wednesdays 11:00am-1:00pm, AVW TA room       
 
-*	Evaluation (see section below on logistics for details)
-	*    Projects (4) (40%)
-	*    In-class work (15%)
-	*    Written homework (15%)
-	*    Midterm exam (10%)
-	*    Final exam (15%)
-  *    Class participation (5%)
+##Evaluation (see section below on logistics for details)
+*    Projects (4) (40%)
+*    In-class work (15%)
+*    Written homework (15%)
+*    Midterm exam (10%)
+*    Final exam (15%)
+*    Class participation (5%)
 
-*   Textbook information:
+##Textbook and resources:
 
 There is no required textbook. However, we will be drawing heavily from these sources:
 
@@ -59,7 +58,9 @@ There is no required textbook. However, we will be drawing heavily from these so
 
 Additional readings will be posted in ELMS [{{ site.elms_url }}]({{ site.elms_url}}).
 
-####Expected outcomes
+Additional resources listed [here](resources.html)
+
+##Expected outcomes
 
 1) Students will be able to create specific requirements for a
 data-centric application used to address a specific problem or
@@ -71,7 +72,7 @@ for a data-centric application
 application from a set of specific requirements using existing tools,
 libraries, data resources and publishing mechanisms.  
 
-####Tentative Course Organization
+##Tentative Course Organization
 
 - Preliminaries:
   What is Data Science? Who is a Data Scientist? The scope of Data Science: the open data movement, science, business, government, education, sport, and more. Introduction to the R data analysis environment. Formulating data-centric answers to scientific, business and social questions. Best practices: organizing projects, managing collaborations and expectations.
@@ -88,7 +89,7 @@ libraries, data resources and publishing mechanisms.
 - Communicating with data:
   Writing with and about data: communicating the result of a data analysis. Information visualization, visualizing for an audience. Putting it together: interactive data dissemination on the web (d3.js and related technologies).
 
-####Classroom Policies
+##Classroom Policies
 * There will be reading assignments. Students are expected to have read the material **before** class.
 * Students are expected to attend lectures. Active participation is expected. There will be graded work done in class.
 * Assignments are to be handed-in electronically or in class as instructed on their due date. Late assignments will not be accepted.  
@@ -104,7 +105,7 @@ libraries, data resources and publishing mechanisms.
 * Any student eligible for and requesting reasonable academic accommodations due to a disability is requested to provide, to the instructor in office hours, a letter of accommodation from the Office of Disability Support Services (DSS) within the first two weeks of the semester.
 * Any student who must miss a class due to religious holidays should also notify the instructor during the first two weeks of class.  
 
-#### Policy on excused absences ####
+## Policy on excused absences ##
 
 * Any student who needs to be excused for an absence from a single
 lecture, recitation, or lab due to a medically necessitated absence shall:
@@ -127,7 +128,7 @@ responsibilities. In addition, it must contain the name and phone number
 of the medical service provider to be used if verification is needed. No
 diagnostic information will ever be requested.
 
-#### Course evaluations ####
+## Course evaluations ##
 
 Course evaluations are important and that the department and faculty
 take student feedback seriously.  Students can go to the www.courseevalum.umd.edu to complete their evaluations.
