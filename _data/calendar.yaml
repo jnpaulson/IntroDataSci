@@ -22,6 +22,7 @@
   covers:
   -
     title: "UNIVERSITY CLOSED"
+-
   date: 1/28
   status:
   covers:
@@ -40,9 +41,6 @@
       title: "Silver: What the fox knows"
       link: { url: "http://fivethirtyeight.com/features/what-the-fox-knows/" }
   workdue:
-    -
-      title: "Setting up R"
-      link: { url: "homeworks/rocker.html", insite: }
 -
   date: 2/2
   status:
@@ -54,6 +52,10 @@
     -
       title: "Wickham: Advanced R, 'Foundations' and 'Functional Programming'"
       link: { url: "http://adv-r.had.co.nz/" }
+  workdue:
+    -
+      title: "Setting up R"
+      link: { url: "homeworks/rocker.html", insite: }
 -
   date: 2/4
   status:
