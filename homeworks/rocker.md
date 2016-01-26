@@ -42,7 +42,9 @@ A couple of things to note:
 
 2. Docker runs on a virtual machine, we would like to be able to share files in your local machine with this virtual machine. The `-v` flag does that. Here `${PWD}` corresponds to the current path in your local machine that will be mapped to the home directory in the docker virtual machine running rstudio. You can read more about this [here](https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine).
 
-3. We name the instance `ids` so we can refer to it in other commands later on.
+3. It may also be possible that your personal computer does not, by default, allow the creation of virtual machines. The process of changing this setting is easy to do but will depend on your computer. The general idea is that you want to open your BIOS settings from start-up and change the virtualization setting there. As a general heuristic for doing so is [here](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/5/html/Virtualization/sect-Virtualization-Troubleshooting-Enabling_Intel_VT_and_AMD_V_virtualization_hardware_extensions_in_BIOS.html).
+
+4. We name the instance `ids` so we can refer to it in other commands later on.
 
 #Starting Rstudio
 
