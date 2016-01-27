@@ -24,7 +24,7 @@
     title: "UNIVERSITY CLOSED"
 -
   date: 1/28
-  status:
+  status: present
   covers:
     -
         title: "What is Data Science, Course Introduction and Logistics"
