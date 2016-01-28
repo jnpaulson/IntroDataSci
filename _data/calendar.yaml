@@ -34,6 +34,7 @@
   readings:
     -
       title: "Zumel & Mount: pp. xix-17"
+      link: { url: "https://myelms.umd.edu/courses/1177854/modules/items/8462041" }
     -
       title: "Loukides: What is data science?"
       link: { url: "http://radar.oreilly.com/2010/06/what-is-data-science.html" }
@@ -48,10 +49,6 @@
     -
       title: "R for Data Science Primer (1)"
       materials: { link: "lectures/Rintro.pdf", insite: }
-  readings:
-    -
-      title: "Wickham: Advanced R, 'Foundations' and 'Functional Programming'"
-      link: { url: "http://adv-r.had.co.nz/" }
   workdue:
     -
       title: "Setting up R"
