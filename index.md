@@ -9,8 +9,8 @@ Lecture Times: Tuesday and Thursday, 2:00pm-3:15pm, CSI 1121
 
 Check the [logistics page](logistics.html) for more information, including the official syllabus.
 
-[ELMS](site.elms_url)  
-[Piazza](site.piazza_url)
+[ELMS]({{ site.elms_url }})  
+[Piazza]({{ site.piazza_url }})
 
 ## Calendar
 
