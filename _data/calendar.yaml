@@ -24,11 +24,11 @@
     title: "UNIVERSITY CLOSED"
 -
   date: 1/28
-  status: present
+  status: done
   covers:
     -
-        title: "What is Data Science, Course Introduction and Logistics"
-        materials: { link: "lectures/Intro.pdf", insite: }
+      title: "What is Data Science, Course Introduction and Logistics"
+      materials: { link: "lectures/Intro.pdf", insite: }
     -
       title: "Data Preliminaries: measurement and data types"
   readings:
