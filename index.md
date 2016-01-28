@@ -9,8 +9,8 @@ Lecture Times: Tuesday and Thursday, 2:00pm-3:15pm, CSI 1121
 
 Check the [logistics page](logistics.html) for more information, including the official syllabus.
 
-[ELMS]({{ site.elms_url }})  
-[Piazza]({{ site.piazza_url }})
+[ELMS](https://myelms.umd.edu/courses/1177854)  
+[Piazza](https://piazza.com/class/ije6l0thr383ii)
 
 ## Calendar
 
