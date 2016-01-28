@@ -44,11 +44,10 @@
   workdue:
 -
   date: 2/2
-  status:
+  status: present
   covers:
     -
       title: "R for Data Science Primer (1)"
-      materials: { link: "lectures/Rintro.pdf", insite: }
   workdue:
     -
       title: "Setting up R"
