@@ -5,6 +5,9 @@ date: "February 2, 2016"
 output: html_document
 ---
 
+---
+output: word_document
+---
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -16,12 +19,6 @@ R is a computational environment for data analysis. It is designed around a _fun
 R is an offspring of S, a language created in AT&T Labs by John Chambers (now at Stanford) and others in 1976 with the goal of creating an environment for statistical computing and data analysis. The standard for the language in current use was settled in 1998. That same year, "S" won the ACM Software System award, awarded to software systems "that have a lasting influence, reflected in contributions to concepts, in commercial acceptance, or both".
 
 In 1991, Robert Gentleman and Ross Ihaka created R to provide an open source implementation of the S language and environment. They also redesigned the language to enforce lexical scoping rules. It has been maintained by the R core group since 1997, and in 2015 an R consortium, including Microsoft, Google, and others, was created.
-
-In the last 5 years or so, R has gained rapid adoption in industry and other settings as an environment of choice for data analysis. For instance, a 2015 poll conducted by KDNuggets shows 51% of Data Science and Data Mining practitioners identify R (and its packages) as their primary language for data analysis [http://www.kdnuggets.com/polls/2015/r-vs-python.html](http://www.kdnuggets.com/polls/2015/r-vs-python.html).
-
-![](kdnuggets_2015.tiff)
-
-An analysis of tools used by Kaggle competitors in 2011 also showed high usage of R [http://blog.kaggle.com/2011/11/27/kagglers-favorite-tools/](http://blog.kaggle.com/2011/11/27/kagglers-favorite-tools/).
 
 ## Availability and eco-system
 
@@ -66,12 +63,10 @@ We've prepared the data previously into a comma-separated value file (`.csv` fil
 
 ```{r download}
 download.file("http://www.hcbravo.org/IntroDataSci/misc/BPD_Arrests.csv", destfile="BPD_Arrests.csv")
-read.csv("BPD_Arrests.csv", stringsAsFactors=FALSE)
 ```
 
-The `read.csv` command is part of base R and allows you to read a dataset stored in a csv file. This function is extremely versatile, and you can read more about it by using the standard help system in R: `?read.csv`. Now, the result of running calling this function is the data itself, so, by running the function in the console, the result of the function is printed. Just seeing the contents of the file in the console is not terribly useful, so let's do something better.
-
-### Variables and values
+The `read.csv` command is part of base R and allows you to read a dataset stored in a csv file. This function is extremely versatile, and you can read more about it by using the standard help system in R: `?read.csv`. Now, the result of running calling this function is the data itself, so, by running the function in the console, the result of the function is printed. 
+### Variables and Value
 
 To make use of this dataset we want to assign the result of calling `read.csv` (i.e., the dataset) to a variable:
 
@@ -273,7 +268,7 @@ Now suppose we wanted to do a similar analysis for other neighborhoods. In that 
 ```{r}
 analyze_neighborhood <- function(neighborhood) {
   neighborhood_index <- arrest_tab$neighborhood == neighborhood
-  neighborhood_tab <- arrest_tab[neighborhood_tab,]
+  neighborhood_tab <- arrest_tab[neighborhood_index,]
   
   # actually, we only want to make the plots for neighborhoods where there are more arrests for whites than blacks, let's use a conditional expression
   if (sum(neighborhood_tab$race == "W") > 
@@ -283,7 +278,7 @@ analyze_neighborhood <- function(neighborhood) {
             main = neighborhood,
             xlab = "Sex", ylab="Arrest Age")
     
-    barplot(neighborhood_tab$race,
+    barplot(table(neighborhood_tab$race),
             main = neighborhood,
             xlab = "Race", ylab="Number of Arrests")
   }
