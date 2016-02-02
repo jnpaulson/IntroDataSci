@@ -48,6 +48,7 @@
   covers:
     -
       title: "R for Data Science Primer (1)"
+      materials: { link: "misc/RIntro_lab.Rmd", insite: }
   workdue:
     -
       title: "Setting up R"
@@ -58,18 +59,6 @@
   covers:
     -
       title: "R for Data Science Primer (2)"
-    -
-      title: "RMarkdown for arrest analysis (baltimore.Rmd)"
-      materials: { link: "misc/baltimore.Rmd", insite: }
-    -
-      title: "Arrest data (BPD_Arrests.csv)"
-      materials: { link: "misc/BPD_Arrests.csv", insite: }
-    -
-      title: "CCTV data (CCTV_Locations.csv)"
-      materials: { link: "misc/CCTV_Locations.csv", insite: }
-  readings:
-    -
-      title: "Zumen & Mount: Ch. 2"
 -
   date: 2/9
   status:
