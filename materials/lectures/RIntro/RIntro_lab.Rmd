@@ -1,0 +1,56 @@
+---
+title: "Introduction to R"
+author: "CMSC320"
+date: "February 2, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+R is a computational environment for data analysis. It is designed around a _functional_ language, as opposed to _procedural_ languages like Java or C, that has desirable properties for the type of operations and workflows that are frequently performed in the course of analyzing datasets. In this exercise we will start learning some of those desirable properties while performing an analysis of a real dataset.
+
+## Some history
+
+R is an offspring of S, a language created in AT&T Labs by John Chambers (now at Stanford) and others in 1976 with the goal of creating an environment for statistical computing and data analysis. The standard for the language in current use was settled in 1998. That same year, "S" won the ACM Software System award, awarded to software systems "that have a lasting influence, reflected in contributions to concepts, in commercial acceptance, or both".
+
+In 1991, Robert Gentleman and Ross Ihaka created R to provide an open source implementation of the S language and environment. They also redesigned the language to enforce lexical scoping rules. It has been maintained by the R core group since 1997, and in 2015 an R consortium, including Microsoft, Google, and others, was created.
+
+In the last 5 years or so, R has gained rapid adoption in industry and other settings as an environment of choice for data analysis. For instance, a 2015 poll conducted by KDNuggets shows 51% of Data Science and Data Mining practitioners identify R (and its packages) as their primary language for data analysis [http://www.kdnuggets.com/polls/2015/r-vs-python.html](http://www.kdnuggets.com/polls/2015/r-vs-python.html).
+
+![](kdnuggets_2015.tiff)
+
+An analysis of tools used by Kaggle competitors in 2011 also showed high usage of R [http://blog.kaggle.com/2011/11/27/kagglers-favorite-tools/](http://blog.kaggle.com/2011/11/27/kagglers-favorite-tools/).
+
+## Availability and eco-system
+
+R is freely available at [http://www.r-project.org/](http://www.r-project.org/). A number of good IDEs are available for its use:
+
+- [Rstudio](http://rstudio.org)  
+- [Revolution R](http://www.revolutionanalytics.com/get-revolution-r)  
+
+You can also find bindings for commonly used editors and IDEs, like [emacs](http://ess.r-project.org/) and [eclipse](http://www.walware.de/goto/statet).
+
+Resources for learning and reading about R are listed in our [course page](http://www.hcbravo.org/IntroDataScience/resources.html). Of note are the [swirl project](http://swirlstats.com/) and Data Camp's [introduction to R] course.
+
+One of the biggest strengths of the R ecosystem is the variety and quality of packages for data analysis available. R uses a package system (like Python and Ruby for instance). Packages are divided into two classes: **base** which are packages installed when R is installed, includes packages for basic statistics, computing with probability distributions, plotting and graphics, matrix manipulations and other), all other packages are available in [CRAN](http://cran.r-project.org). We will be using a fair number of these packages through the course of the semester.
+
+## How to think about R
+
+As we wrote previously, R is an environment for data analysis, centered around a _functional_ language designed for common operations in data analysis. When we say that R is a _functional_ language, at its most basic definition, means that we treat _functions_ as values. For instance, we can assign _functions_ to variables, or pass _functions_ as arguments to other _functions_. We'll see examples of that later on. If you are familiar with Ruby or Python, while they are not functional languages, they do have some idioms of functional languages that may be familiar: [http://www.sitepoint.com/functional-programming-techniques-with-ruby-part-i/](http://www.sitepoint.com/functional-programming-techniques-with-ruby-part-i/), [https://docs.python.org/2/howto/functional.html](https://docs.python.org/2/howto/functional.html).
+
+With that in mind, it's useful to think of R as supporting three ways of thinking how to organize computation:
+
+1. Functions and lists, in the _functional_ language sense described above,  
+2. Numerical computation, operations over vectors, matrices and similar mathematical structures,  
+3. Operations over *data tables* (think spreadsheets in Excel, or individual tables in a database). We will start our introduction to R here.  
+
+## Literate Programming
+
+One last note before we get started. R has great support for [literate programming](http://en.wikipedia.org/wiki/Literate_programming), where source code that contains both code, the result of evaluating that code, and text explaining that code co-exist in a single document. This is extremely valuable in data analysis, as many choices made by data analysts are worth explaning in text, and interpretation of the results of analyses can co-exist with the computations used in that analysis. This document you are reading contains both text and code. In class, we will use [Rmarkdown](http://rmarkdown.rstudio.com/) for this purpose.
+
+## A simple data analysis to get us going
+
+
+

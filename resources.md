@@ -7,8 +7,9 @@ R
 ------
 * [R](http://www.r-project.org) is an open-source environment for data analysis.  
 * The [RStudio](http://www.rstudio.com/ide) IDE is highly recommended. The [Revolution IDE](http://www.revolutionanalytics.com/academic-and-public-service-programs) is also very good, only Linux and Windows.  
-* R Task Views: The [Machine Learning](http://cran.r-project.org/web/views/MachineLearning.html) and [Optimization](http://cran.r-project.org/web/views/Optimization.html) Task Views list useful packages in R we may use.  
 * [swirl](http://swirlstats.com/) is an interactive R (and general data analysis) tutorial  
+* [Data Camp](https://www.datacamp.com/courses/free-introduction-to-r) has a nice short online course introducing R  
+* R Task Views: The [Machine Learning](http://cran.r-project.org/web/views/MachineLearning.html) and [Optimization](http://cran.r-project.org/web/views/Optimization.html) Task Views list useful packages in R we may use.  
 * R/Matlab references: [A short R guide for Matlab users.](http://mathesaurus.sourceforge.net/octave-r.html) [A longer one.](http://cran.r-project.org/doc/contrib/Hiebeler-matlabR.pdf)  
 * R/Python references: [A short R guide for Python users.](http://mathesaurus.sourceforge.net/r-numpy.html)  
 
