@@ -58,10 +58,11 @@
       link: { url: "homeworks/rocker.html", insite: }
 -
   date: 2/4
-  status:
+  status: present
   covers:
     -
       title: "R for Data Science Primer (2)"
+      materials: { link: "misc/RIntro_lab2.Rmd", insite: }
 -
   date: 2/9
   status:
