@@ -44,11 +44,14 @@
   workdue:
 -
   date: 2/2
-  status: present
+  status: done
   covers:
     -
       title: "R for Data Science Primer (1)"
       materials: { link: "misc/RIntro_lab.Rmd", insite: }
+    -
+      title: "R for Data Science Primer (1), rendered file"
+      materials: { link: "misc/RIntro_lab.html", insite: }
   workdue:
     -
       title: "Setting up R"
