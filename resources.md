@@ -46,3 +46,5 @@ datasets, questions and tutorials.
 * [StatLib](http://lib.stat.cmu.edu/): Statistical software and
 dataset portal maintained by CMU.
 * Another large list of repositories: [http://www.inside-r.org/howto/finding-data-internet](http://www.inside-r.org/howto/finding-data-internet)
+* Yet another list of public datasets:
+[https://github.com/caesar0301/awesome-public-datasets](https://github.com/caesar0301/awesome-public-datasets)
