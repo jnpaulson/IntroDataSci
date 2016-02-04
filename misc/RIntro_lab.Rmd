@@ -17,12 +17,6 @@ R is an offspring of S, a language created in AT&T Labs by John Chambers (now at
 
 In 1991, Robert Gentleman and Ross Ihaka created R to provide an open source implementation of the S language and environment. They also redesigned the language to enforce lexical scoping rules. It has been maintained by the R core group since 1997, and in 2015 an R consortium, including Microsoft, Google, and others, was created.
 
-In the last 5 years or so, R has gained rapid adoption in industry and other settings as an environment of choice for data analysis. For instance, a 2015 poll conducted by KDNuggets shows 51% of Data Science and Data Mining practitioners identify R (and its packages) as their primary language for data analysis [http://www.kdnuggets.com/polls/2015/r-vs-python.html](http://www.kdnuggets.com/polls/2015/r-vs-python.html).
-
-![](kdnuggets_2015.tiff)
-
-An analysis of tools used by Kaggle competitors in 2011 also showed high usage of R [http://blog.kaggle.com/2011/11/27/kagglers-favorite-tools/](http://blog.kaggle.com/2011/11/27/kagglers-favorite-tools/).
-
 ## Availability and eco-system
 
 R is freely available at [http://www.r-project.org/](http://www.r-project.org/). A number of good IDEs are available for its use:
@@ -65,13 +59,14 @@ We recommend that you use Rstudio for this class. Once open you will see Rstudio
 We've prepared the data previously into a comma-separated value file (`.csv` file). In this format, each line contains _attribute_ values (separated by commas) for one _entity_ in our dataset. Which we can download and load into our R environment.
 
 ```{r download}
-download.file("http://www.hcbravo.org/IntroDataSci/misc/BPD_Arrests.csv", destfile="BPD_Arrests.csv")
-read.csv("BPD_Arrests.csv", stringsAsFactors=FALSE)
+if (!file.exists("BPD_Arrests.csv")) {
+  download.file("http://www.hcbravo.org/IntroDataSci/misc/BPD_Arrests.csv", destfile="BPD_Arrests.csv")
+}
 ```
 
-The `read.csv` command is part of base R and allows you to read a dataset stored in a csv file. This function is extremely versatile, and you can read more about it by using the standard help system in R: `?read.csv`. Now, the result of running calling this function is the data itself, so, by running the function in the console, the result of the function is printed. Just seeing the contents of the file in the console is not terribly useful, so let's do something better.
+The `read.csv` command is part of base R and allows you to read a dataset stored in a csv file. This function is extremely versatile, and you can read more about it by using the standard help system in R: `?read.csv`. Now, the result of running calling this function is the data itself, so, by running the function in the console, the result of the function is printed. 
 
-### Variables and values
+### Variables and Value
 
 To make use of this dataset we want to assign the result of calling `read.csv` (i.e., the dataset) to a variable:
 
@@ -146,7 +141,7 @@ arrest_tab[seq(from=1,to=10), seq(1,10)]
 arrest_tab[1:10,1:10]
 
 # with the `seq` function you can do more sophisticated things like select only entries in odd rows (1,3,5,7...)
-arrest_tab[seq(from=1,to=nrow(arrest_tab),by=2), ]
+head(arrest_tab[seq(from=1,to=nrow(arrest_tab),by=2), ])
 ```
 
 Now, since columns have names, we can also use strings (and vectors of strings) to index data frames.
@@ -176,7 +171,7 @@ In addition to integer indices or names, we can use vectors of logical values fo
 arrest_tab[c(FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,rep(FALSE,nrow(arrest_tab)-10)),]
 
 # now here's a fun one, if we only wanted odd rows
-arrest_tab[c(TRUE,FALSE),]
+head(arrest_tab[c(TRUE,FALSE),])
 ```
 
 The last example shows one of the most common gotchas in R. Indices are recycled. For instance if selecting rows, if you pass a logical vector that's shorter than the number of rows  in the data frame, the vector will be recycled as many times as necessary to match the number of rows in the dataset. Now, why is this useful, because a pithy index vector can let you select easily. Why is this bad, because errors in code can go easily unnoticed. So in this case, the price of ease of use is paid by the programmer by having to think a lot more carefully about their code (this is a theme in R programming...)
@@ -185,18 +180,19 @@ The utility of logical indexing is that now we can select rows based on a proper
 
 ```{r}
 # select rows for entities younger than 21 years old
-arrest_tab[arrest_tab$age < 21, ]
+head(arrest_tab[arrest_tab$age < 21, ])
 
 # notice that the value of expression `arrest_tab$age < 21` # is a logical vector
 
 # select entities (arrests) occuring in Mount Washington,
 # a specific neighborhood in Baltimore
-arrest_tab[arrest_tab$neighborhood == "Mount Washington",]
+head(arrest_tab[arrest_tab$neighborhood == "Mount Washington",])
 
 # how about arrests where subjects are under 21 in Mount  Washington? 
 # use a logical `and` operator
 indices <- arrest_tab$age < 21 & arrest_tab$neighborhood == "Mount Washington"
 ```
+
 
 ## Exploration
 
@@ -273,7 +269,7 @@ Now suppose we wanted to do a similar analysis for other neighborhoods. In that 
 ```{r}
 analyze_neighborhood <- function(neighborhood) {
   neighborhood_index <- arrest_tab$neighborhood == neighborhood
-  neighborhood_tab <- arrest_tab[neighborhood_tab,]
+  neighborhood_tab <- arrest_tab[neighborhood_index,]
   
   # actually, we only want to make the plots for neighborhoods where there are more arrests for whites than blacks, let's use a conditional expression
   if (sum(neighborhood_tab$race == "W") > 
@@ -283,7 +279,7 @@ analyze_neighborhood <- function(neighborhood) {
             main = neighborhood,
             xlab = "Sex", ylab="Arrest Age")
     
-    barplot(neighborhood_tab$race,
+    barplot(table(neighborhood_tab$race),
             main = neighborhood,
             xlab = "Race", ylab="Number of Arrests")
   }
@@ -317,4 +313,3 @@ dev.off()
 ## Next up
 
 On the intricacies of vectorized operations and loops. Matrices and other numerical computing facilities.
-```
