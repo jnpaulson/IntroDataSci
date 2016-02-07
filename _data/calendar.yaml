@@ -48,20 +48,23 @@
   covers:
     -
       title: "R for Data Science Primer (1)"
-      materials: { link: "misc/RIntro_lab.Rmd", insite: }
-    -
-      title: "R for Data Science Primer (1), rendered file"
       materials: { link: "misc/RIntro_lab.html", insite: }
+    -
+      title: "R for Data Science Primer (1) (Rmarkdown File)"
+      materials: { link: "misc/RIntro_lab.Rmd", insite: }
   workdue:
     -
       title: "Setting up R"
       link: { url: "homeworks/rocker.html", insite: }
 -
   date: 2/4
-  status: present
+  status: done
   covers:
     -
       title: "R for Data Science Primer (2)"
+      materials: { link: "misc/RIntro_lab2.html", insite: }
+    -
+      title: "R for Data Science Primer (2) (Rmarkdown File)"
       materials: { link: "misc/RIntro_lab2.Rmd", insite: }
 -
   date: 2/9
@@ -75,7 +78,7 @@
   status:
   covers:
     -
-      title: "Data tyding (1)"
+      title: "Data tyding"
       materials: { link: "lectures/Tidying1.html", insite: }
     -
       title: "RMarkdown for tidying examples (tidy_code.Rmd)"
