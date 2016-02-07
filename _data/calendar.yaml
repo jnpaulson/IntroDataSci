@@ -18,20 +18,23 @@
 #       link: { url: <url>, [insite:] }
 -
   date: 1/26
-  status:
+  status: done
+  covers:
+  -
+    title: "UNIVERSITY CLOSED"
+-
+  date: 1/28
+  status: done
   covers:
     -
       title: "What is Data Science, Course Introduction and Logistics"
       materials: { link: "lectures/Intro.pdf", insite: }
--
-  date: 1/28
-  status:
-  covers:
     -
       title: "Data Preliminaries: measurement and data types"
   readings:
     -
       title: "Zumel & Mount: pp. xix-17"
+      link: { url: "https://myelms.umd.edu/courses/1177854/modules/items/8462041" }
     -
       title: "Loukides: What is data science?"
       link: { url: "http://radar.oreilly.com/2010/06/what-is-data-science.html" }
@@ -39,38 +42,30 @@
       title: "Silver: What the fox knows"
       link: { url: "http://fivethirtyeight.com/features/what-the-fox-knows/" }
   workdue:
+-
+  date: 2/2
+  status: done
+  covers:
+    -
+      title: "R for Data Science Primer (1)"
+      materials: { link: "misc/RIntro_lab.html", insite: }
+    -
+      title: "R for Data Science Primer (1) (Rmarkdown File)"
+      materials: { link: "misc/RIntro_lab.Rmd", insite: }
+  workdue:
     -
       title: "Setting up R"
       link: { url: "homeworks/rocker.html", insite: }
 -
-  date: 2/2
-  status:
-  covers:
-    -
-      title: "R for Data Science Primer (1)"
-      materials: { link: "lectures/Rintro.pdf", insite: }
-  readings:
-    -
-      title: "Wickham: Advanced R, 'Foundations' and 'Functional Programming'"
-      link: { url: "http://adv-r.had.co.nz/" }
--
   date: 2/4
-  status:
+  status: done
   covers:
     -
       title: "R for Data Science Primer (2)"
+      materials: { link: "misc/RIntro_lab2.html", insite: }
     -
-      title: "RMarkdown for arrest analysis (baltimore.Rmd)"
-      materials: { link: "misc/baltimore.Rmd", insite: }
-    -
-      title: "Arrest data (BPD_Arrests.csv)"
-      materials: { link: "misc/BPD_Arrests.csv", insite: }
-    -
-      title: "CCTV data (CCTV_Locations.csv)"
-      materials: { link: "misc/CCTV_Locations.csv", insite: }
-  readings:
-    -
-      title: "Zumen & Mount: Ch. 2"
+      title: "R for Data Science Primer (2) (Rmarkdown File)"
+      materials: { link: "misc/RIntro_lab2.Rmd", insite: }
 -
   date: 2/9
   status:
@@ -83,7 +78,7 @@
   status:
   covers:
     -
-      title: "Data tyding (1)"
+      title: "Data tyding"
       materials: { link: "lectures/Tidying1.html", insite: }
     -
       title: "RMarkdown for tidying examples (tidy_code.Rmd)"
