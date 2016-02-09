@@ -8,7 +8,7 @@ subtitle: Introduction
 
 What is Data Science?
 
-Slides: [/lectures/Intro.pdf](/lectures/Intro.pdf)
+Slides: [/lectures/Intro.pdf]({{ site.baseurl }}/lectures/Intro.pdf)
 
 ## Readings
 
