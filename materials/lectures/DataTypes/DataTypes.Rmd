@@ -28,7 +28,7 @@ colnames(arrest_tab)[3:4] <- c("race", "sex")
 
 As a reminder, we are using the term _entities_ to refer to the objects to which data in a dataset refers to. For instance, in our example dataset, each arrest is an _entity_. In a rectangular dataset, as we've seen before, this usually corresponds to rows in a table. We then say that a dataset contains _attributes_ for each entity. For instance, attributes of each arrest would be the person's _age_, the type of offense, the location, etc. In a rectangular dataset, this corresponds to the columns in a table.
 
-This language of _entities_ and _attributes_ is commonly used in the database literature. In statistics you may see _experimental units_ or _samples_ for _entities_ and _covariates_ for _attributes_. In Machine Learning you may see _example_ for _entities_ and _features_ for _attributes_. For the most part, all of these are exchangable. 
+This language of _entities_ and _attributes_ is commonly used in the database literature. In statistics you may see _experimental units_ or _samples_ for _entities_ and _covariates_ for _attributes_. In other instances _observations_ for _entities_ and _variables_ for _attributes_. In Machine Learning you may see _example_ for _entities_ and _features_ for _attributes_. For the most part, all of these are exchangable. 
 
 This unit is concerned with the types of data we may encounter as _attributes_ in data analyses.
 
