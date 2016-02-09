@@ -9,7 +9,7 @@ subtitle: Introduction to R
 An introduction to the R programming language and data analysis environment
 
 Part I: ([html]({{ site.baseurl }}/misc/RIntro_lab.html)) ([Rmarkdown]({{ site.baseurl }}/misc/RIntro_lab.Rmd))  
-Part II: ([html]({{ site.baseurl }}/misc/RIntro_lab2.html)) ([Rmarkdown]({{site.baseurl }}/misc/RIntro_lab2.Rmd))
+Part II: ([html]({{ site.baseurl }}/misc/RIntro_lab2.html)) ([Rmarkdown]({{ site.baseurl }}/misc/RIntro_lab2.Rmd))
 
 
 ## Additional Resources
