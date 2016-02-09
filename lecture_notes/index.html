@@ -3,12 +3,14 @@ layout: page
 title: Lecture Notes
 ---
 
-{% for lecture in site.data.lectures %}
+{% assign lectures = site.data.lectures | where:"hide","false" %}
+{% for lecture in lectures %}
   {% if forloop.first %}
     <ul class="c-archives__list">
   {% endif %}
     <li class="c-archives__item">
-      <h3>{{ lecture.title }}</h3><br>
+      <h3><a href="{{ site.baseurl }}/lecture_notes/{{ lecture.url }}">
+{{ lecture.title }}</a></h3><br>
       <p>{{ lecture.excerpt }}</p>
     </li>
   {% if forloop.last %}

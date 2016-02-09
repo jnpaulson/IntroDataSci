@@ -1,54 +1,74 @@
 -
   title: Introduction
   excerpt: What is Data Science
+  url: "introduction.html"
+  hide: false
+-
+  title: R for Data Science primer
+  excerpt: An introduction to the R programming language and data analysis environment
+  url: "rintro.html"
+  hide: false
 -
   title: Measurement and data types
   excerpt: Examples of data sets, data types and measurements
+  hide: false
 -
-  title: R for Data Science Primer
-  excerpt: An introduction to the R programming language and data analysis environment
--
-  title: Best practices for Data Science Projects
+  title: Best practices for Data Science projects
   excerpt: Tips for organizing and managing data science projects
+  hide: false
 -
   title: Tidy data and data models
   excerpt: How to get data into shape before analysis
+  hide: true
 -
   title: Data Wrangling
   excerpt: Data management and manipulation
+  hide: true
 -
   title: "Exploratory Data Analaysis: summarization"
   excerpt: Data summaries and aggregates and their role in exploratory
+  hide: true
 -
   title: "Exploratory Data Analysis: visualization"
   excerpt: Visualization tools for exploratory data analysis
+  hide: true
 -
   title: Data summarization and aggregation at scale
   excerpt: Systems for large scale data processing
+  hide: true
 -
   title: Introduction to Statistical Learning
   excerpt: Introduction to randomness, distributions, inference and testing
+  hide: true
 -
   title: Linear models for regression and classification
   excerpt: Basic models for regression and classification
+  hide: true
 -
   title: Evaluating model performance via resampling
   excerpt: How to use sampling methods to evaluate statistical models
+  hide: true
 -
   title: Tree-based learning methods
   excerpt: Decision and regression trees and random forests.
+  hide: true
 -
   title: The support vector machine
   excerpt: Linear and non-linear regression and classification with support vector machines
+  hide: true
 -
   title: Unsupervised learning methods
   excerpt: Dimensionality reduction and clustering
+  hide: true
 -
   title: Time series analysis and forecasting
   excerpt: Basics of time series and longitudinal data
+  hide: true
 -
   title: Communicating results of data analyses
   excerpt: How to use narrative and visualization to communicate results of data analysis
+  hide: true
 -
   title: Web-based interactive visualization
   excerpt: Building web applications for interactive and exploratory data analysis and presentation
+  hide: true
