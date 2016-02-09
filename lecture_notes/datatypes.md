@@ -8,4 +8,4 @@ subtitle: Measurement and data types
 
 Examples of data sets, data types and measurements
 
-[Lecture Notes](/lectures/DataTypes.html)
+[Lecture Notes]({{ site.baseurl }}/lectures/DataTypes.html)
