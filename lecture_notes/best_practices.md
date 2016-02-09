@@ -8,7 +8,7 @@ subtitle: Best practices for Data Science projects
 
 Tips for organizing and managing data science projects
 
-- Slides: [/lectures/BestPractices.pdf]({{ site.baseurl }}/lectures/BestPractices.pdf)
+- [Lecture Slides]({{ site.baseurl }}/lectures/BestPractices.pdf)
 
 ## Additional Resources
 
