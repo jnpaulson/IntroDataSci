@@ -48,3 +48,4 @@ dataset portal maintained by CMU.
 * Another large list of repositories: [http://www.inside-r.org/howto/finding-data-internet](http://www.inside-r.org/howto/finding-data-internet)
 * Yet another list of public datasets:
 [https://github.com/caesar0301/awesome-public-datasets](https://github.com/caesar0301/awesome-public-datasets)
+* And yet another list of public datasets: [http://blog.bigml.com/list-of-public-data-sources-fit-for-machine-learning/#national_governments](http://blog.bigml.com/list-of-public-data-sources-fit-for-machine-learning/#national_governments)
