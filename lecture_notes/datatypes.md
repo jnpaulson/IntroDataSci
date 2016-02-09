@@ -1,0 +1,11 @@
+---
+layout: page
+title: Lecture Notes
+subtitle: Measurement and data types
+---
+
+## Measurement and data types
+
+Examples of data sets, data types and measurements
+
+[Lecture Notes](/lectures/DataTypes.html)

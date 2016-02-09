@@ -172,6 +172,11 @@ head(cars)</code></pre>
 <li>Geolocation: Latitude and Longitude of some event or observation (e.g., <code>Location.</code>)</li>
 </ul>
 </div>
+<div id="units" class="section level2">
+<h2>Units</h2>
+<p>Something that we tend to forget but is <strong>extremely</strong> important for the modeling and interpretation of data is that attributes are for the most part <em>measurements</em> and that they have <em>units</em>. For example, age of a person can be measured in different units: <em>years</em>, <em>months</em>, etc. These can be converted to one another, but nonetheless in a given dataset, that <em>attribute</em> or measurement will be recorded in some specific units. Similar arguments go for distances and times, for example. In other cases, we may have unitless measurements (we will see later an example of this when we do <em>dimensionality reduction</em>). In these cases, it is worth thinking about <em>why</em> your measurements are unit-less.</p>
+<p>When performing analyses that try to summarize the effect of some measurement or attribute on another, units matter a lot! We will see the importance of this in our <em>regression</em> section. For now, make sure you make a mental note of units for each measurement you come across. This will force you to think about where and how your data was obtained, which will become very important when modeling and interpreting the results of these models.</p>
+</div>
 
 
 </div>

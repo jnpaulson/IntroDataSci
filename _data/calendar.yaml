@@ -58,7 +58,7 @@
   covers:
     -
       title: "Data Preliminaries: measurement and data types"
-
+      materials: { link: "lecture_notes/datatypes.html", insite: }
     -
       title: "Best practices for Data Science Projects"
       materials: { link: "lecture_notes/best_practices.html", insite: }
