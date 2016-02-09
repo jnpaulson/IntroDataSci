@@ -28,19 +28,11 @@
   covers:
     -
       title: "What is Data Science, Course Introduction and Logistics"
-      materials: { link: "lectures/Intro.pdf", insite: }
-    -
-      title: "Data Preliminaries: measurement and data types"
+      materials: { link: "lecture_notes/introduction.html", insite: }
   readings:
     -
-      title: "Zumel & Mount: pp. xix-17"
-      link: { url: "https://myelms.umd.edu/courses/1177854/modules/items/8462041" }
-    -
-      title: "Loukides: What is data science?"
-      link: { url: "http://radar.oreilly.com/2010/06/what-is-data-science.html" }
-    -
-      title: "Silver: What the fox knows"
-      link: { url: "http://fivethirtyeight.com/features/what-the-fox-knows/" }
+      title: "Zumel & Mount, others"
+      link: { url: "lecture_notes/introduction.html", insite: }
   workdue:
 -
   date: 2/2
@@ -48,10 +40,7 @@
   covers:
     -
       title: "R for Data Science Primer (1)"
-      materials: { link: "misc/RIntro_lab.html", insite: }
-    -
-      title: "R for Data Science Primer (1) (Rmarkdown File)"
-      materials: { link: "misc/RIntro_lab.Rmd", insite: }
+      materials: { link: "lecture_notes/rintro.html", insite: }
   workdue:
     -
       title: "Setting up R"
@@ -62,14 +51,14 @@
   covers:
     -
       title: "R for Data Science Primer (2)"
-      materials: { link: "misc/RIntro_lab2.html", insite: }
-    -
-      title: "R for Data Science Primer (2) (Rmarkdown File)"
-      materials: { link: "misc/RIntro_lab2.Rmd", insite: }
+      materials: { link: "lecture_notes/rintro.html", insite: }
 -
   date: 2/9
-  status:
+  status: present
   covers:
+    -
+      title: "Data Preliminaries: measurement and data types"
+
     -
       title: "Best practices for Data Science Projects"
       materials: { link: "lectures/BestPractices.pdf", insite: }
