@@ -54,7 +54,7 @@
       materials: { link: "lecture_notes/rintro.html", insite: }
 -
   date: 2/9
-  status: present
+  status: done
   covers:
     -
       title: "Data Preliminaries: measurement and data types"
@@ -64,14 +64,11 @@
       materials: { link: "lecture_notes/best_practices.html", insite: }
 -
   date: 2/11
-  status:
+  status: present
   covers:
     -
       title: "Data tyding"
-      materials: { link: "lectures/Tidying1.html", insite: }
-    -
-      title: "RMarkdown for tidying examples (tidy_code.Rmd)"
-      materials: { link: "misc/tidy_code.Rmd" }
+      materials: { link: "lecture_notes/tidy.html", insite: }
   readings:
     -
       title: "Wickham, Tidy Data. JSS 2014"

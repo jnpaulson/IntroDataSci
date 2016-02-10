@@ -21,7 +21,8 @@
 -
   title: Tidy data and data models
   excerpt: How to get data into shape before analysis
-  hide: true
+  url: "tidy.html"
+  hide: false
 -
   title: Data Wrangling
   excerpt: Data management and manipulation
