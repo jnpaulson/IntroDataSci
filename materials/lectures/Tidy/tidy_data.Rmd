@@ -59,7 +59,7 @@ The set of common operations we will study are based on these common problems fo
 We are using data from Hadley's paper found in [github](https://github.com/hadley/tidyr). It's included in the course Rocker image in directory repository in directory `/home/rstudio/tidy_unit/example_data`:
 
 ```{r, eval=FALSE}
-data_dir <- "/home/rstudio/tidy_unit/example_data"
+data_dir <- "/home/ids_materials/tidy_unit/example_data"
 ```
 
 ```{r, eval=TRUE, echo=FALSE}
