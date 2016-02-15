@@ -1,14 +1,11 @@
 ---
-layout: page
-title: Lecture Notes
-subtitle: Best practices for Data Science projects
+layout: unit_index
+title: Best practices for Data Science projects
 ---
-
-## Best practices for Data Science projects
 
 Tips for organizing and managing data science projects
 
-- [Lecture Slides]({{ site.baseurl }}/lectures/BestPractices.pdf)
+- [Lecture Slides](BestPractices.pdf)
 
 ## Additional Resources
 
