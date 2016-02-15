@@ -6,7 +6,7 @@
 -
   title: R for Data Science primer
   excerpt: An introduction to the R programming language and data analysis environment
-  url: "rintro.html"
+  url: "rintro"
   hide: false
 -
   title: Measurement and data types

@@ -1,10 +1,7 @@
 ---
-layout: page
-title: Lecture Notes
-subtitle: Introduction to R
+layout: unit_index
+title: R for Data Science Primer
 ---
-
-## R for Data Science Primer
 
 An introduction to the R programming language and data analysis environment
 
