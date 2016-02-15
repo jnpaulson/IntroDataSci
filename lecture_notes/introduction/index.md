@@ -1,10 +1,7 @@
 ---
-layout: page
-title: Lecture Notes
-subtitle: Introduction
+layout: unit_index
+title: Introduction
 ---
-
-## Introduction
 
 What is Data Science?
 
