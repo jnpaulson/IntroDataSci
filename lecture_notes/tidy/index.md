@@ -1,16 +1,11 @@
 ---
-layout: page
-title: Lecture Notes
-subtitle: Tidy data and data models
+layout: unit_index
+title: Tidy data and data models
 ---
-
-## Tidy data and data models
 
 How to get data into shape before analysis
 
-### Lecture Notes
-
-- [Tidy data]({{ site.baseurl }}/lectures/tidy.html)  
+- [Lecture notes](tidy.html)  
 
 ### Readings and resources
 

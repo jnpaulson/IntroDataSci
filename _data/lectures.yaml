@@ -21,7 +21,7 @@
 -
   title: Tidy data and data models
   excerpt: How to get data into shape before analysis
-  url: "tidy.html"
+  url: "tidy"
   hide: false
 -
   title: Data Wrangling
