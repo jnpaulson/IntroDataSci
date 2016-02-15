@@ -91,7 +91,8 @@
       materials: { link: "lecture_notes/tidy/", insite: }
   readings:
     -
-      title: "Zuman & Mount: Sec 4.1"
+      title: "Data models lecture notes"
+      link: { url: "lecture_notes/tidy/DataModels.html", insite: }
 -
   date: 2/18
   status:
