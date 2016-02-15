@@ -5,7 +5,8 @@ title: Tidy data and data models
 
 How to get data into shape before analysis
 
-- [Lecture notes](tidy.html)  
+- [Lecture notes: Tidy data](tidy.html)  
+- Lecture notes: Data models (COMING SOON)
 
 ### Readings and resources
 

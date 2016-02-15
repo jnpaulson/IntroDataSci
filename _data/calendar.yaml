@@ -28,11 +28,11 @@
   covers:
     -
       title: "What is Data Science, Course Introduction and Logistics"
-      materials: { link: "lecture_notes/introduction.html", insite: }
+      materials: { link: "lecture_notes/introduction/", insite: }
   readings:
     -
       title: "Zumel & Mount, others"
-      link: { url: "lecture_notes/introduction.html", insite: }
+      link: { url: "lecture_notes/introduction/", insite: }
   workdue:
 -
   date: 2/2
@@ -40,7 +40,7 @@
   covers:
     -
       title: "R for Data Science Primer (1)"
-      materials: { link: "lecture_notes/rintro.html", insite: }
+      materials: { link: "lecture_notes/rintro/", insite: }
   workdue:
     -
       title: "Setting up R"
@@ -51,30 +51,30 @@
   covers:
     -
       title: "R for Data Science Primer (2)"
-      materials: { link: "lecture_notes/rintro.html", insite: }
+      materials: { link: "lecture_notes/rintro/", insite: }
 -
   date: 2/9
   status: done
   covers:
     -
       title: "Data Preliminaries: measurement and data types"
-      materials: { link: "lecture_notes/datatypes.html", insite: }
+      materials: { link: "lecture_notes/datatypes/", insite: }
     -
       title: "Best practices for Data Science Projects"
-      materials: { link: "lecture_notes/best_practices.html", insite: }
+      materials: { link: "lecture_notes/best_practices/", insite: }
 -
   date: 2/11
-  status: present
+  status: done
   covers:
     -
       title: "Data tyding"
-      materials: { link: "lecture_notes/tidy.html", insite: }
+      materials: { link: "lecture_notes/tidy/", insite: }
   readings:
     -
       title: "Wickham, Tidy Data. JSS 2014"
       link: { url: "http://www.jstatsoft.org/v59/i10/paper" }
 - date: 2/12
-  status: present
+  status: done
   covers:
     -
       title: "THIS IS NOT A LECTURE DAY"
@@ -84,11 +84,11 @@
       link: { url: "https://myelms.umd.edu/courses/1177854/assignments/4113117" }
 -
   date: 2/16
-  status:
+  status: present
   covers:
     -
       title: "Data Models"
-      materials: { link: "lectures/Wrangling.html", insite: }
+      materials: { link: "lecture_notes/tidy/", insite: }
   readings:
     -
       title: "Zuman & Mount: Sec 4.1"
