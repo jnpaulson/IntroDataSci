@@ -11,7 +11,7 @@ can read more about Rocker in [this introduction](http://dirk.eddelbuettel.com/b
 These instructions are essentially following [this document](https://github.com/rocker-org/rocker/wiki/Using-the-RStudio-image).
 
 
-#Setting up Docker
+# Setting up Docker
 
 Install [Docker](https://www.docker.com/) according to the instructions [for your system](https://docs.docker.com/installation/).
 
@@ -22,7 +22,7 @@ docker run hello-world
 {% endhighlight %}
 
 
-#Setting up the course Docker image
+# Setting up the course Docker image
 
 We will be working from a docker image that extends the `ropensci`
 container provided by the [Rocker project](https://github.com/rocker-org/rocker).  It includes a a working installation of R, and the Rstudio IDE, along with many
@@ -46,7 +46,7 @@ A couple of things to note:
 
 4. We name the instance `ids` so we can refer to it in other commands later on.
 
-#Starting Rstudio
+# Starting Rstudio
 
 You will use Rstudio through your web browser. First, you need to know what is the address of your virtual machine. You can do this by typing this in a terminal window:
 
@@ -58,7 +58,7 @@ If, for example, this returned `192.168.59.103` then we can open Rstudio by poin
 
 Sign-in with username `rstudio` and password `rstudio`.
 
-#Try it out
+# Try it out
 
 The `Rstudio` IDE is divided into multiple panes. R is an interactive environment for data analysis.
 An interactive R session runs in the **Console** pane in Rstudio. You can enter R commands there:
@@ -72,7 +72,7 @@ An interactive R session runs in the **Console** pane in Rstudio. You can enter 
 
 The last command will make a scatter plot on the **Plots** pane.
 
-#Stopping the container
+# Stopping the container
 
 To stop and remove the running docker container, write:
 
@@ -81,8 +81,12 @@ docker stop ids
 docker rm ids
 {% endhighlight %}
 
+# Dockerfile
 
-#Permissions
+The Dockerfile defining the class image is hosted on Github here: [https://github.com/hcorrada/idsDocker](https://github.com/hcorrada/idsDocker).
+
+# Permissions
+
 Advanced Note: you don't need to use `sudo` on Mac OSX. Linux users might want to add their user to the docker group to avoid having to use sudo. To do so, just run
 
 {% highlight bash %}
@@ -90,7 +94,7 @@ sudo usermod -a -G docker <username>
 {% endhighlight %}
 You may need to login again to refresh your group membership.
 
-#Git
+# Git
 
 The course docker image also includes `git` a *version control* program we will use during the course. You will download *all* course materials using `git` and be able to update any changes I make along the way.
 
@@ -110,7 +114,7 @@ One more thing: we are using the `gh-pages` branch to keep track of our material
 
 We will later see more information on how to use `git`.
 
-#Downloads
+# Downloads
 
 If you would rather download and maintain your own software environment, download tools from these links:
 
