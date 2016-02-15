@@ -102,7 +102,45 @@ Typically there are multiple levels of modeling. _Physical modeling_ concerns it
         - No real differentiation today from pure relational model
     - Other proposals for semantic data models
 
+### More on the ER Diagram
+
+The fundamental objects in this formalism are _entities_ and their _attributes_, as we have seen before, and _relationships_ and _relationship attributes_ which we saw briefly in the example above, where 'rankings' and 'songs' are distinct types of entities and we define _relationships_ between them.
+
+![](er.png)
+
+Here, rectangles are _entitites_, diamonds and edges indicate _relationships_. Circles describe either entity or relationship _attributes_. Arrows are used indicate multiplicity of relationships (one-to-one, many-to-one, one-to-many, many-to-many):
+
+![](relationships.png)
+
+Think about what relationships are shown in this diagram?
+
+![](er2.png)
+
+#### Exercise
+
+Consider the Lahman baseball dataset, included in your class materials
+
+```{r, eval=FALSE}
+library(Lahman)
+?Lahman
+```
+
+It contains information about, among other things: 
+
+- _Franchises_, these are the corporate team entities. Attributes for these can include, _year_established_, _city_, etc. 
+- _Teams_, which are the specific teams fielded by a franchise in a given season. Attributes for these can include, _year_, _wins_, _losses_, etc. 
+- _Players_, who are the people who play the game, attributes can include _name_, _school_attended_, etc. Also, there are season-specific attributes, like _batting average_, _home runs_, etc.
+- _Salaries_, which indicates how much a franchise is paying a player in a given season.
+
+**Draw an ER diagram describing this Schema**
+
+### The ER diagram and the Relational Model
+
+A last note. In databases and general datasets we work on, both Entities and Relationships are represented as _Relations_ (or tables of one Entity per row, one attribute per column).
+
 ### Late 90's-today
+
+One of the most restrictive aspects of the ER model is the need to specificy a data structure that applies to all objects in the dataset, and the need for _values_ stored in a given table (or relation) to be _atomic_. Recent data models attempt to address these shortcomings using semi-structured, complex, nested models.
 
 #### XML: eXtensible Markup Language 
 
@@ -249,3 +287,12 @@ out.close();
 
 - [Thrift](https://thrift.apache.org/): Developed by Facebook, now Apache project
     - Main goal to support Remote Procedure Calls across languages
+    
+### Using modern datamodels in R
+
+There are a number of packages to represent and manipulate data in these models in R:
+
+- `XML` and `xml2` available in CRAN
+- `jsonlite`, `rjson`, available in CRAN
+- `RProtoBuf` available in CRAN
+- [`ravro`](https://github.com/RevolutionAnalytics/ravro)
