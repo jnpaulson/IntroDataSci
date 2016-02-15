@@ -129,20 +129,34 @@ AWS (Amazon Web Services) provides Elastic Compute Cloud (EC2) as a service that
 Without further ado, here are the instructions:
 
 IMPORTANT; YOU WILL NEED TO DO THIS BEFORE ANYTHING ELSE:
-1)Go to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#sign-up-for-aws
-2) Create an AWS account. In order to do this you will need to provide a phone number and a credit card. The phone number will be used to get a pin number and the credit card will receive a $1 charge that will be removed. While the accounts we will be setting up are free, Amazon charges for these products and will charge your account if you go over the 750 hour limit they provide. You can set up usage alarms at http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-alarms.html in order to avoid going over your limit and being charged.
-3) Create and IAM user and follow the instructions for creating a group for administrators.
-4)Create a key pair and be sure to keep your private key somewhere safe. Something you may need to do is change the permissions on the private key (for those of you using linux this would be chmod 400 name_of_the_private_key.pem).
+
+
+1. Go to http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/get-set-up-for-amazon-ec2.html#sign-up-for-aws
+
+
+2. Create an AWS account. In order to do this you will need to provide a phone number and a credit card. The phone number will be used to get a pin number and the credit card will receive a $1 charge that will be removed. While the accounts we will be setting up are free, Amazon charges for these products and will charge your account if you go over the 750 hour limit they provide. You can set up usage alarms at http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-alarms.html in order to avoid going over your limit and being charged.
+
+
+3. Create and IAM user and follow the instructions for creating a group for administrators.
+
+
+4. Create a key pair and be sure to keep your private key somewhere safe. Something you may need to do is change the permissions on the private key (for those of you using linux this would be chmod 400 name_of_the_private_key.pem).
+
+
 ONCE YOU'VE CREATED A AN ACCOUNT AND AN IAM USER FOLLOW THESE INSTRUCTIONS:
-1) Sign into your AWS account and configure a t2.micro instance for launch.  When choosing the AMI, note that these instructions cover Rocker setup for Amazon Linux AMI and Ubuntu Server 14.04 AMI. REQUIRED: While configuring your EC2 instance for launch, add these inbound rules for the security group you selected: 
-Type: "SSH", Protocol: TCP, Port Range: 22, Source: my address (this will need to be updated when your local machine ip address changes)
-Type: "SSH": "custom TCP rule", Protocol: TCP, port 8787, Source: my address (this will need to be updated when your local machine ip address changes)
-2) Connect to your EC2 instance.  The EC2 Management Console provides the user name, host name, and SSH command after right clicking on an instance and choosing "Connect". The easiest way to ssh into your EC2 instance is in docker. From docker run the command ssh -i "name_of_EC2_instance" ec2-user@ec2-54-209-79-237.compute-1.amazonaws.com
-3) If using an Amazon Linux AMI, install Docker as follows: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker . If using an Ubuntu Server 14.04 AMI, install docker as follows starting with the "Install" heading (Half way down the page): https://docs.docker.com/engine/installation/linux/ubuntulinux/  IMPORTANT: the above OS refers to the OS of the AMI.
+1. Sign into your AWS account and configure a t2.micro instance for launch.  When choosing the AMI, note that these instructions cover Rocker setup for Amazon Linux AMI and Ubuntu Server 14.04 AMI. REQUIRED: While configuring your EC2 instance for launch, add these inbound rules for the security group you selected: 
+
+- Type: "SSH", Protocol: TCP, Port Range: 22, Source: my address (this will need to be updated when your local machine ip address changes)
+- Type: "SSH": "custom TCP rule", Protocol: TCP, port 8787, Source: my address (this will need to be updated when your local machine ip address changes)
+
+2. Connect to your EC2 instance.  The EC2 Management Console provides the user name, host name, and SSH command after right clicking on an instance and choosing "Connect". The easiest way to ssh into your EC2 instance is in docker. From docker run the command ssh -i "name_of_EC2_instance" ec2-user@ec2-54-209-79-237.compute-1.amazonaws.com
+
+3. If using an Amazon Linux AMI, install Docker as follows: http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html#install_docker . If using an Ubuntu Server 14.04 AMI, install docker as follows starting with the "Install" heading (Half way down the page): https://docs.docker.com/engine/installation/linux/ubuntulinux/  IMPORTANT: the above OS refers to the OS of the AMI.
  
-4) Run: $ docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio --name ids hcorrada/idsdocker
-5) Determine your EC2 instance public ip address.  This is accessible from the EC2 Management Console.
-6) On your local machine, point your browser to http://(ec2 instance public ip address):8787
-7) Sign-in with username rstudio and password rstudio
-Continue with #Try it out
+4. Run: $ docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio --name ids hcorrada/idsdocker
+5. Determine your EC2 instance public ip address.  This is accessible from the EC2 Management Console.
+6. On your local machine, point your browser to http://(ec2 instance public ip address):8787
+7. Sign-in with username rstudio and password rstudio
+
+ #Try it out
 
