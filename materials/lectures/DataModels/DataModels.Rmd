@@ -116,6 +116,13 @@ Think about what relationships are shown in this diagram?
 
 ![](er2.png)
 
+As we saw previously in our Tidy data section, we want data to be organized into tables such that a unique entity is represented by a single row. This leads to the natural question of how are unique entities determined or defined. Here is where the concept of a _key_ comes in. This is an essential aspect of the Entity-Relational model. 
+
+- A _key_ is a minimal set of _attributes_ that uniquely identifies an entity.
+- A _primary key_ is used in the ER model to specify a single key, although there may be multiple candidate _keys_
+- Relationships also have _keys_, defined by the set of keys of the entities participating in it.
+
+
 #### Exercise
 
 Consider the Lahman baseball dataset, included in your class materials
@@ -132,7 +139,7 @@ It contains information about, among other things:
 - _Players_, who are the people who play the game, attributes can include _name_, _school_attended_, etc. Also, there are season-specific attributes, like _batting average_, _home runs_, etc.
 - _Salaries_, which indicates how much a franchise is paying a player in a given season.
 
-**Draw an ER diagram describing this Schema**
+**Draw an ER diagram describing this Schema**. Indicate keys as appropriate.
 
 ### The ER diagram and the Relational Model
 
