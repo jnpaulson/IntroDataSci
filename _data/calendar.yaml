@@ -104,6 +104,9 @@
     -
       title: "Data wrangling with dplyr"
       link: { url: "lecture_notes/wrangling/wrangling_dplyr.html", insite: }
+    -
+      title: Zumen & Mount, Section 4.1
+      link: { url: "https://myelms.umd.edu/courses/1177854/modules/items/8462041"}
 -
   date: 2/23
   status:
