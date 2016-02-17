@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-This materials is based on Amol Deshpande's material: [https://github.com/umddb/datascience-fall14/blob/master/lecture-notes/models.md](https://github.com/umddb/datascience-fall14/blob/master/lecture-notes/models.md)
+This material is based on Amol Deshpande's material: [https://github.com/umddb/datascience-fall14/blob/master/lecture-notes/models.md](https://github.com/umddb/datascience-fall14/blob/master/lecture-notes/models.md)
 
 ## Overview
 
@@ -104,7 +104,7 @@ Typically there are multiple levels of modeling. _Physical modeling_ concerns it
 
 ### More on the ER Diagram
 
-The fundamental objects in this formalism are _entities_ and their _attributes_, as we have seen before, and _relationships_ and _relationship attributes_ which we saw briefly in the example above, where 'rankings' and 'songs' are distinct types of entities and we define _relationships_ between them.
+The fundamental objects in this formalism are _entities_ and their _attributes_, as we have seen before, and _relationships_ and _relationship attributes_ which we saw briefly in a previous example, where 'rankings' and 'songs' are distinct types of entities and we define _relationships_ between them.
 
 ![](er.png)
 
