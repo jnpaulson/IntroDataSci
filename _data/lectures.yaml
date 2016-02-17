@@ -26,7 +26,8 @@
 -
   title: Data Wrangling
   excerpt: Data management and manipulation
-  hide: true
+  url: "wrangling"
+  hide: false
 -
   title: "Exploratory Data Analaysis: summarization"
   excerpt: Data summaries and aggregates and their role in exploratory
