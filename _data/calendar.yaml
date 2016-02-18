@@ -117,6 +117,16 @@
     -
       title: "Data Wrangling 2: SQL"
 -
+  date: 2/24
+  status: present
+  covers:
+    -
+      title: "THIS IS NOT A LECTURE DAY"
+  workdue:
+    -
+      title: "Wrangling exercise"
+      link: {url: "https://myelms.umd.edu/courses/1177854/assignments/4122288"}
+-
   date: 2/25
   status:
   covers:
@@ -126,10 +136,6 @@
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
-  workdue:
-    -
-      title: "Wrangling quiz"
-      link: {url: "https://myelms.umd.edu/courses/1130499/quizzes/1079169"}
 -
   date: 3/1
   status:
