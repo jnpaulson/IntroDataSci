@@ -6,6 +6,7 @@ title: Data Wrangling
 Data management and manipulation
 
 [Data wrangling with `dplyr`](wrangling_dplyr.html)  
+[Data wrangling with SQL](wrangling_sql.html)
 [Handling missing data](missing_data.html)
 
 ## Additional Resources

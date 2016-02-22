@@ -116,6 +116,11 @@
   covers:
     -
       title: "Data Wrangling 2: SQL"
+      materials: { link: "lecture_notes/wrangling/", insite: }
+  readings:
+    -
+      title: "Data wrangling with SQL"
+      link: { url: "lecture_notes/wrangling/wrangling_sql.html", insite: }
 -
   date: 2/24
   status: present
