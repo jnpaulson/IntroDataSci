@@ -95,7 +95,7 @@
       link: { url: "lecture_notes/tidy/DataModels.html", insite: }
 -
   date: 2/18
-  status: present
+  status: done
   covers:
     -
       title: "Data Wrangling 1: dplyr"
@@ -112,7 +112,7 @@
       link: { url: "https://myelms.umd.edu/courses/1177854/modules/items/8462041"}
 -
   date: 2/23
-  status:
+  status: present
   covers:
     -
       title: "Data Wrangling 2: SQL"
