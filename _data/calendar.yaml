@@ -112,7 +112,7 @@
       link: { url: "https://myelms.umd.edu/courses/1177854/modules/items/8462041"}
 -
   date: 2/23
-  status: present
+  status: done
   covers:
     -
       title: "Data Wrangling 2: SQL"
@@ -122,21 +122,12 @@
       title: "Data wrangling with SQL"
       link: { url: "lecture_notes/wrangling/wrangling_sql.html", insite: }
 -
-  date: 2/24
+  date: 2/25
   status: present
   covers:
     -
-      title: "THIS IS NOT A LECTURE DAY"
--
-  date: 2/25
-  status:
-  covers:
-    -
-      title: "Exploratory Data Analysis (1): summary statistics"
-      materials: { link: "lectures/EDA1.html", insite: }
-  readings:
-    -
-      title: "Zumen & Mount: Ch. 3"
+      title: "Exploratory Data Analysis (1): Visualization"
+      materials: { link: "lecture_notes/eda/", insite: }
   workdue:
     -
       title: "Wrangling exercise"
@@ -146,8 +137,8 @@
   status:
   covers:
     -
-      title: "Exploratory Data Analysis (2): Visualization"
-      materials: { link: "lectures/EDA2.html", insite: }
+      title: "Exploratory Data Analysis (2): summary statistics"
+      materials: { link: "lectures/EDA1.html", insite: }
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
