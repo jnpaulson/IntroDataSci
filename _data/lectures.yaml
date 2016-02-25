@@ -29,13 +29,10 @@
   url: "wrangling"
   hide: false
 -
-  title: "Exploratory Data Analaysis: summarization"
-  excerpt: Data summaries and aggregates and their role in exploratory
-  hide: true
--
-  title: "Exploratory Data Analysis: visualization"
-  excerpt: Visualization tools for exploratory data analysis
-  hide: true
+  title: "Exploratory Data Analaysis"
+  excerpt: Data visualization and summarization
+  url: "eda"
+  hide: false
 -
   title: Data summarization and aggregation at scale
   excerpt: Systems for large scale data processing

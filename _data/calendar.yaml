@@ -127,10 +127,6 @@
   covers:
     -
       title: "THIS IS NOT A LECTURE DAY"
-  workdue:
-    -
-      title: "Wrangling exercise"
-      link: {url: "https://myelms.umd.edu/courses/1177854/assignments/4122288"}
 -
   date: 2/25
   status:
@@ -141,6 +137,10 @@
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
+  workdue:
+    -
+      title: "Wrangling exercise"
+      link: {url: "https://myelms.umd.edu/courses/1177854/assignments/4122288"}
 -
   date: 3/1
   status:
