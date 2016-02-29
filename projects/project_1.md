@@ -1,10 +1,10 @@
 ---
-layout: default
+layout: page
 title: "Wrangling/EDA Project"
 ---
 
 In this project you will apply your data wrangling and exploratory data analysis
-skills to baseball. In particular, we want to know how well did Moneyball work
+skills to baseball data. In particular, we want to know how well did Moneyball work
 for the Oakland A's. Was it worthy of a movie?
 
 ![](moneyball.jpg)
@@ -32,67 +32,105 @@ You can get more information about this period in baseball history from:
 
 ## The Data
 
-You will be using data from a very useful database on baseball teams, players and seasons curated by Sean Lahman available at [http://www.seanlahman.com/baseball-archive/statistics/](http://www.seanlahman.com/baseball-archive/statistics/). The database has been made available as an R package by Michael Friendly et al.: [http://cran.r-project.org/web/packages/Lahman/index.html](http://cran.r-project.org/web/packages/Lahman/index.html). It is part of the installed Docker container we have been using in class so far.
+You will be using data from a very useful database on baseball teams, players and seasons curated by Sean Lahman available at [http://www.seanlahman.com/baseball-archive/statistics/](http://www.seanlahman.com/baseball-archive/statistics/). The database has been made available as a `sqlite` database [https://github.com/jknecht/baseball-archive-sqlite](https://github.com/jknecht/baseball-archive-sqlite). `sqlite` is a light-weight, file-based database management system that is well suited for small projects and prototypes. Both `sqlite` and the Lahman `sqlite` database are installed in the Docker container we are using in class [http://www.hcbravo.org/IntroDataSci/homeworks/rocker.html](http://www.hcbravo.org/IntroDataSci/homeworks/rocker.html). You can read more about the dataset here: [http://seanlahman.com/files/database/readme2014.txt](http://seanlahman.com/files/database/readme2014.txt).
 
+There are a number of ways you can use SQL to interact with this dataset:
+
+1) Using the `sqlite3` command line interface. For example, given the running Docker container for class, you can start a `sqlite3` connection by running the following on your host machine:
+
+{% highlight bash %}
+docker exec -i -t -u rstudio ids sqlite3 /home/ids_materials/lahman_sqlite/lahman2014.sqlite
+{% endhighlight %}
+
+You can see documentation for the `sqlite3` command line interface here:
+[https://www.sqlite.org/cli.html](https://www.sqlite.org/cli.html).
+
+2) Using the `dplyr` R package:
 
 {% highlight r %}
-# to load data into current R session
-library(Lahman)
+library(dplyr)
+lahman_con <- src_sqlite("/home/ids_materials/lahman_sqlite/lahman2014.sqlite")
 
-# to read about the datebase itself
-?'Lahman-package'
+# this is how to run a sql query
+result <- lahman_con %>%
+  tbl(sql("SELECT * FROM Salaries where lgID == 'AL'")) %>%
+  head()
+{% endhighlight %}
+
+There is more information about this here: [https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html](https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html)
+
+3) Using the `RSQLite` R package:
+
+{% highlight r %}
+library(RSQLite)
+
+lahman_con <- dbConnect(RSQLite::SQLite(), "/home/ids_materials/lahman_sqlite/lahman2014.sqlite")
+
+query <- lahman_con %>%
+  dbSendQuery("SELECT * FROM Salaries where lgID == 'AL'") %>%
+
+result <- dbFetch(query) %>% head()
+
+# some cleanup code
+dbClearResults(query)
+dbDisconnect(lahman_con)
 {% endhighlight %}
 
 ## The question
 
-We want to understand historically how efficient teams are at spending money and getting wins in return. In the case of Moneyball, one would expect that Oakland was not much more efficient than other teams in their spending before 2000, were much more efficient (they made a movie about it after all) between 2000 and 2005, and by then other teams may have caught up. Your job in this project is to see if this is true.
+We want to understand how efficient teams have been historically at spending money and getting wins in return. In the case of Moneyball, one would expect that Oakland was not much more efficient than other teams in their spending before 2000, were much more efficient (they made a movie about it after all) between 2000 and 2005, and by then other teams may have caught up. Your job in this project is to see if this is true.
 
 ## Wrangling
 
-The data you need to answer these questions is in two tables:
+The data you need to answer these questions is in the `Salaries` and `Teams` tables of the database.
 
-1. `Salaries`: this contains each player's salary for each season and an identifier for the team that paid them. You can calculate each team's yearly payroll using this table.
-2. `Teams`: this table contains statistics for each team and season, including wins.
+**Problem 1** Using SQL compute a relation containing the total payroll and winning percentage (number of wins / number of games) for each team (that is, for each `teamID` and `yearID` combination). This is the minimum required schema for the result, you should include other columns that will help when performing EDA later on (e.g., franchise ids, number of wins, number of games).
 
-**Problem 1**. Write a `dplyr` expression to calculate yearly payroll for all teams in the `Salaries` table.
-
-**Problem 2**. Write a `dplyr` expression that adds a `payroll` column to the `Teams` table
-
+Include in your writeup, SQL code you used to create this relation. Also, if applicable, describe how you dealt with any missing data in the dataset. Include any code you used for this as well.
 
 ## Exploratory data analysis
 
-**Problem 3**. Write code to produce five scatterplots showing mean number of wins per season (y-axis) vs. mean payroll (x-axis) for time periods: 1) [1990,1995), 2) [1995,2000), 3) [2000, 2005), 4) [2005, 2010), 5) [2010, 2013]. You should add a regression line (using `geom_smooth(method=lm)` in each one to ease interpretation).
+**Problem 2**. Write code to produce plots that illustrate the distribution of payrolls across time from 1990-2013.
 
-**Question 1**. What can you say about team payrolls across these periods? How good were teams at paying for wins across these time periods? What can you say about the Oakland A's spending efficiency across these time periods.
+**Question 1**. What statements can you make about the distribution of payrolls across time based on these plots? Remember you can discuss what you learn in terms of central tendencies or spread, etc.
+
+**Problem 3**. Write code to produce plots that specifically show at least one of the statements you made in Question 1. For example, if you make a statement that there is a trend for payrolls to decrease over time, make a plot of a statistic for central tendency (e.g., mean payroll) vs. time to show that directly.
+
+**Problem 4**. Write code to produce scatterplots showing mean winning percentage per season (y-axis) vs. mean payroll (x-axis) for five time periods. Use the `cut` function with parameter `breaks=5` to divide data into five time periods. You should add a regression line (using e.g., `geom_smooth(method=lm)`) in each scatter plot to ease interpretation.
+
+**Question 2**. What can you say about team payrolls across these periods? How good were teams at paying for wins across these time periods? What can you say about the Oakland A's spending efficiency across these time periods.
 
 ## Data transformations
 
-It's hard to compare across time periods using these multiple plots, so let's try to create a single plot that makes this comparison easier. The idea is to create a new measurement unit we can plot across time for each team that summarizes how efficient each team is in their spending. We'll use the number of wins a team can get per dollar:
+It looks like comparing payrolls across years is problematic so let's do a scaling transformation that will help with these comparisons.
 
-**Problem 4**. Calculate the number of wins per dollar spent on payroll for each team in each year.
+**Problem 5**. Write `dplyr` code to create a new variable in your dataset. It should contain the number (and direction) of standard deviations away from the average payroll in a given year for each team. So, this column for team $$i$$ in year $$j$$ should equal
 
 $$
-wpd_{ij} = \frac{\mathrm{wins}_{ij}}{\mathrm{payroll}_{ij}}
+\mathrm{scaled_payroll}_{ij}=\frac{\mathrm{payroll}_{ij} - \overline{\mathrm{payroll}_{\cdot j}}}{s_{\cdot j}}
+$$
+
+where $$\overline{\mathrm{payroll}_{\cdot j}}$$ is the average payroll for year $$j$$, and $$s_{\cdot j}$$ is the
+standard deviation of payroll for year $$j$$.
+
+**Problem 6**. Repeat the same plots as Problem 4, but use this new scaled payroll variable.
+
+**Question 3**. Answer Question 2 again, but based on these new plots.
+
+It's hard to compare across time periods using these multiple plots, so let's try to create a single plot that makes this comparison easier. The idea is to create a new measurement unit we can plot across time for each team that summarizes how efficient each team is in their spending. We'll use the number of wins a team got per standard deviation of payroll:
+
+**Problem 4**. Calculate the  per dollar spent on payroll for each team in each year.
+
+$$
+efficiency_{ij} = \frac{\mathrm{wins}_{ij}}{\mathrm{scaled_payroll}_{ij}}
 $$
 
 for team $$i$$ in year $$j$$.
 
-Make a line plot with year on the x-axis and wins-per-dollar on the y-axis. A good set of teams to plot are Oakland, the two New York teams, Boston and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `NYN`, `TBA`).
+Make a line plot with year on the x-axis and efficiency on the y-axis. A good set of teams to plot are Oakland, the two New York teams, Boston and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `PHI`, `TBA`). That plot can be hard to read, so a better options is to use `geom_smooth` instead of `geom_line`.
 
-**Problem 5**. Using the result of problem 4, calculate the average number of wins per dollar for each year between 1990 and 2013:
+**Question 4**. What can you learn from this plot compared to the set of plots you looked at in Question 2 and 3?
 
-$$
-wpd_{.j} = \mathrm{mean}_i (wpd_{ij})
-$$
+## What to turn in
 
-With the result of problem 5, now we can approximate the number of wins we would expect each team to get given their payroll, and then see how many more (or less) wins they had compared to this expectation. Note: this is a naive version of linear regression that we'll see in better detail later in the course.
-
-**Problem 6**. Compute the difference between wins and expected wins for each team in each year between 1990 and 2013:
-
-$$
-\mathrm{residualWins}_{ij} = \mathrm{wins}_{ij} - wpd_{. j} * payroll_{ij}
-$$
-
-**Problem 7**. Plot residual wins (y-axis, computed in Problem 6) for a few teams and year (x-axis). A good set of teams to plot are Oakland, the two New York teams, Boston and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `NYN`, `TBA`).
-
-**Question 2**. What can you learn from this plot compared to the set of plots you looked at in Question 1?
+Create a pdf file with Rmarkdown containing all code and text to solve each problem and answer each question. Submit to ELMS at [LINK COMING SOON].
