@@ -36,13 +36,13 @@ You will be using data from a very useful database on baseball teams, players an
 
 There are a number of ways you can use SQL to interact with this dataset:
 
-1) Using the `sqlite3` command line interface. For example, given the running Docker container for class, you can start a `sqlite3` connection by running the following on your host machine:
+1) Using the `sqlite3` command line interface. For example, given the running Docker container for class, you can start a `sqlite3` command line session by running the following on your host machine:
 
 {% highlight bash %}
 docker exec -i -t -u rstudio ids sqlite3 /home/ids_materials/lahman_sqlite/lahman2014.sqlite
 {% endhighlight %}
 
-You can see documentation for the `sqlite3` command line interface here:
+There you can run SQL queries on the database. You can see documentation for the `sqlite3` command line interface here:
 [https://www.sqlite.org/cli.html](https://www.sqlite.org/cli.html).
 
 2) Using the `dplyr` R package:
@@ -57,7 +57,7 @@ result <- lahman_con %>%
   head()
 {% endhighlight %}
 
-There is more information about this here: [https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html](https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html)
+There is more information about `dplyr` database connections here: [https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html](https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html). Be sure to read carefully the section on lazy evaluation and the purpose of the `collect` function.
 
 3) Using the `RSQLite` R package:
 
@@ -76,6 +76,7 @@ dbClearResults(query)
 dbDisconnect(lahman_con)
 {% endhighlight %}
 
+This implements the core database API `DBI` for SQLite.
 ## The question
 
 We want to understand how efficient teams have been historically at spending money and getting wins in return. In the case of Moneyball, one would expect that Oakland was not much more efficient than other teams in their spending before 2000, were much more efficient (they made a movie about it after all) between 2000 and 2005, and by then other teams may have caught up. Your job in this project is to see if this is true.
@@ -84,21 +85,21 @@ We want to understand how efficient teams have been historically at spending mon
 
 The data you need to answer these questions is in the `Salaries` and `Teams` tables of the database.
 
-**Problem 1** Using SQL compute a relation containing the total payroll and winning percentage (number of wins / number of games) for each team (that is, for each `teamID` and `yearID` combination). This is the minimum required schema for the result, you should include other columns that will help when performing EDA later on (e.g., franchise ids, number of wins, number of games).
+**Problem 1** Using SQL compute a relation containing the total payroll and winning percentage (number of wins / number of games) for each team (that is, for each `teamID` and `yearID` combination). You should include other columns that will help when performing EDA later on (e.g., franchise ids, number of wins, number of games).
 
-Include in your writeup, SQL code you used to create this relation. Also, if applicable, describe how you dealt with any missing data in the dataset. Include any code you used for this as well.
+Include the SQL code you used to create this relation in your writeup. Also, if applicable, describe how you dealt with any missing data in the dataset, e.g., what type of join did you use and why.
 
 ## Exploratory data analysis
 
 **Problem 2**. Write code to produce plots that illustrate the distribution of payrolls across time from 1990-2013.
 
-**Question 1**. What statements can you make about the distribution of payrolls across time based on these plots? Remember you can discuss what you learn in terms of central tendencies or spread, etc.
+**Question 1**. What statements can you make about the distribution of payrolls across time based on these plots? Remember you can make statements in terms of central tendency, spread, etc.
 
 **Problem 3**. Write code to produce plots that specifically show at least one of the statements you made in Question 1. For example, if you make a statement that there is a trend for payrolls to decrease over time, make a plot of a statistic for central tendency (e.g., mean payroll) vs. time to show that directly.
 
-**Problem 4**. Write code to produce scatterplots showing mean winning percentage per season (y-axis) vs. mean payroll (x-axis) for five time periods. Use the `cut` function with parameter `breaks=5` to divide data into five time periods. You should add a regression line (using e.g., `geom_smooth(method=lm)`) in each scatter plot to ease interpretation.
+**Problem 4**. Write code to discretize year into five time periods (using the `cut` function with parameter `breaks=5`) and then make scatterplots showing mean winning percentage (y-axis) vs. mean payroll (x-axis) in each time period. You could add a regression line (using `geom_smooth(method=lm)`) in each scatter plot to ease interpretation.
 
-**Question 2**. What can you say about team payrolls across these periods? How good were teams at paying for wins across these time periods? What can you say about the Oakland A's spending efficiency across these time periods.
+**Question 2**. What can you say about team payrolls across these periods? Are there any teams that standout as being particularly good at paying for wins across these time periods? What can you say about the Oakland A's spending efficiency across these time periods.
 
 ## Data transformations
 
@@ -107,7 +108,7 @@ It looks like comparing payrolls across years is problematic so let's do a scali
 **Problem 5**. Write `dplyr` code to create a new variable in your dataset. It should contain the number (and direction) of standard deviations away from the average payroll in a given year for each team. So, this column for team $$i$$ in year $$j$$ should equal
 
 $$
-\mathrm{scaled_payroll}_{ij}=\frac{\mathrm{payroll}_{ij} - \overline{\mathrm{payroll}_{\cdot j}}}{s_{\cdot j}}
+\mathrm{scaled\_payroll}_{ij}=\frac{\mathrm{payroll}_{ij} - \overline{\mathrm{payroll}_{\cdot j}}}{s_{\cdot j}}
 $$
 
 where $$\overline{\mathrm{payroll}_{\cdot j}}$$ is the average payroll for year $$j$$, and $$s_{\cdot j}$$ is the
@@ -117,17 +118,17 @@ standard deviation of payroll for year $$j$$.
 
 **Question 3**. Answer Question 2 again, but based on these new plots.
 
-It's hard to compare across time periods using these multiple plots, so let's try to create a single plot that makes this comparison easier. The idea is to create a new measurement unit we can plot across time for each team that summarizes how efficient each team is in their spending. We'll use the number of wins a team got per standard deviation of payroll:
+It's hard to compare across time periods using these multiple plots, so let's try to create a single plot that makes this comparison easier. The idea is to create a new measurement unit for each team that we can plot across time summarizing how efficient each team is in their spending. We'll use the number of wins a team got per standard deviation of payroll:
 
 **Problem 4**. Calculate the  per dollar spent on payroll for each team in each year.
 
 $$
-efficiency_{ij} = \frac{\mathrm{wins}_{ij}}{\mathrm{scaled_payroll}_{ij}}
+\mathrm{efficiency}_{ij} = \frac{\mathrm{wins}_{ij}}{\mathrm{scaled\_payroll}_{ij}}
 $$
 
 for team $$i$$ in year $$j$$.
 
-Make a line plot with year on the x-axis and efficiency on the y-axis. A good set of teams to plot are Oakland, the two New York teams, Boston and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `PHI`, `TBA`). That plot can be hard to read, so a better options is to use `geom_smooth` instead of `geom_line`.
+Make a line plot with year on the x-axis and efficiency on the y-axis. A good set of teams to plot are Oakland, the New York Yankees, Boston, Atlanta and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `ATL`, `TBA`). That plot can be hard to read since there is so much season to season variation for each team. One way to improve is to use `geom_smooth` instead of `geom_line`.
 
 **Question 4**. What can you learn from this plot compared to the set of plots you looked at in Question 2 and 3?
 
