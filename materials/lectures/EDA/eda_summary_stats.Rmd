@@ -1,7 +1,7 @@
 ---
-title: "Data visualization for EDA"
+title: "EDA: summary statistics"
 author: "CMSC320"
-date: "February 25, 2016"
+date: "March 1, 2016"
 output: html_document
 ---
 
@@ -14,18 +14,10 @@ library(dplyr)
 ```
 
 
-We are now entering the last step of what we would want to do with a dataset before starting modeling using statistics or Machine Learning. We have seen manipulations and operations that prepare datasets into tidy (or normal form), compute summaries, remove or impute missing data and join tables to obtain organized, clean data tables that contain the observational units, or entities, we want to model. 
+Let's continue our discussion of Exploratory Data Analysis. In the previous section we saw ways of visualizing data (variables) using plots to start understanding properties of how data is distributed, an essential and preliminary step in data analysis. In this section, we start discussing statistical, or numerical, summaries of data to quantify properties that we observed using visual summaries and representations.
 
-At this point, we want to perform additional _Exploratory Data Analysis_ to better understand the data at hand, and help us make decisions about appropriate modeling methods, or data transformations that may be helpful to do. Moreover, there are many instances where data modeling is not required to tell a clear and convincing story with data. Many times an effective visualization can lead to convincing conclusions.
 
-### EDA (Exploratory Data Analysis)
-
-The goal of EDA is to perform an initial exploration of attributes/variables across entities/observations. In this section,
-we will concentrate on exploration of single or pairs of variables. Later on in the course we will see _dimensionality reduction_ methods that are useful in exploration of more than two variables at a time.
-
-We will concentrate on computing summary statistics, and how to interpret them in order to understand properties of variables. To go along with that, we will consider some data transformations we can apply to change properties of variables to help in visualization or modeling. But first, we will discuss how to use visualization for exploratory data analysis.
-
-Ultimately, the purpose of EDA is to spot problems in data (as part of data wrangling) and understand variable properties like:
+Remember that one purpose of EDA is to spot problems in data (as part of data wrangling) and understand variable properties like:
 
 - central trends (mean)
 - spread (variance)
