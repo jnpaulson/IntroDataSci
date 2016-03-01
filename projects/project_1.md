@@ -134,4 +134,4 @@ Make a line plot with year on the x-axis and efficiency on the y-axis. A good se
 
 ## What to turn in
 
-Create a pdf file with Rmarkdown containing all code and text to solve each problem and answer each question. Submit to ELMS at [LINK COMING SOON].
+Create a pdf file with Rmarkdown containing all code and text to solve each problem and answer each question. Submit to ELMS at [https://myelms.umd.edu/courses/1177854/assignments/4131990](https://myelms.umd.edu/courses/1177854/assignments/4131990).

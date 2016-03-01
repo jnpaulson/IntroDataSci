@@ -123,7 +123,7 @@
       link: { url: "lecture_notes/wrangling/wrangling_sql.html", insite: }
 -
   date: 2/25
-  status: present
+  status: done
   covers:
     -
       title: "Exploratory Data Analysis (1): Visualization"
@@ -134,11 +134,11 @@
       link: {url: "https://myelms.umd.edu/courses/1177854/assignments/4122288"}
 -
   date: 3/1
-  status:
+  status: present
   covers:
     -
       title: "Exploratory Data Analysis (2): summary statistics"
-      materials: { link: "lectures/EDA1.html", insite: }
+      materials: { link: "lecture_notes/eda/", insite: }
   readings:
     -
       title: "Zumen & Mount: Ch. 3"
@@ -149,21 +149,8 @@
     -
       title: "Data summarisation and aggregation at scale"
       materials: { link: "lectures/MapReduce.html", insite: }
-  workdue:
-    -
-      title: "Project I, Part 1"
-      link: { url: "homeworks/project1_part1.html", insite: }
-    -
-      title: "Project I, Part 2"
-      link: { url: "homeworks/project1_part2.html", insite: }
 -
   date: 3/8
-  status:
-  covers:
-    -
-      title: "Midterm Exam"
--
-  date: 3/10
   status:
   covers:
     -
@@ -179,6 +166,22 @@
     -
       title: "ISL Ch. 2 reading prep quiz"
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1081113" }
+-
+  date: 3/10
+  status:
+  covers:
+    -
+      title: "Introduction to Statistical Learning (2): Inference and testing"
+-
+  date: 3/11
+  status: present
+  covers:
+    -
+      title: "THIS IS NOT A LECTURE DAY"
+  workdue:
+    -
+      title: "Project 1: Wrangling and EDA"
+      link: { url: "projects/project_1.html"}
 -
   date: 3/15
   status: done
@@ -196,12 +199,6 @@
   status:
   covers:
     -
-      title: "Introduction to Statistical Learning (2): Inference and testing"
--
-  date: 3/24
-  status:
-  covers:
-    -
       title: "Linear models for regression (1)"
       materials: { link: "lectures/Regression.pdf", insite: }
   readings:
@@ -211,6 +208,12 @@
     -
       title: "ISL Ch. 3 reading prep quiz"
       link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082257" }
+-
+  date: 3/24
+  status:
+  covers:
+    -
+      title: "Midterm Exam"
 -
   date: 3/29
   status:
