@@ -134,7 +134,7 @@
       link: {url: "https://myelms.umd.edu/courses/1177854/assignments/4122288"}
 -
   date: 3/1
-  status: present
+  status: done
   covers:
     -
       title: "Exploratory Data Analysis (2): summary statistics"
@@ -144,11 +144,11 @@
       title: "Zumen & Mount: Ch. 3"
 -
   date: 3/3
-  status:
+  status: present
   covers:
     -
-      title: "Data summarisation and aggregation at scale"
-      materials: { link: "lectures/MapReduce.html", insite: }
+      title: "Data transformations"
+      materials: { link: "lectures_notes/eda/", insite: }
 -
   date: 3/8
   status:
