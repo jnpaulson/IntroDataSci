@@ -5,7 +5,7 @@ date: "March 1, 2016"
 output: html_document
 ---
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 knitr::opts_chunk$set(cache=TRUE)
 library(png)
 library(grid)
