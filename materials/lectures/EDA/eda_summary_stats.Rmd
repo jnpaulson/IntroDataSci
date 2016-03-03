@@ -42,6 +42,8 @@ library(dplyr)
 hist(diamonds$dept, main="Depth Histogram", xlab="Depth", nclass=200)
 ```
 
+(Here's some help interpreting these variables: [https://en.wikipedia.org/wiki/Diamond_(gemstone)#Gemological_characteristics](https://en.wikipedia.org/wiki/Diamond_(gemstone)#Gemological_characteristics)).
+
 Let's start using some notation to make talking about this a bit more efficient. We assume that we have data across $n$ entitites (or observational units) for $p$ attributes. In this dataset $n=`r nrow(diamonds)`$ and $p=`r ncol(diamonds)`$. However, let's consider a single attribute, and denote the data for that attribute (or variable) as $x_1, x_2, \ldots, x_n$. 
 
 Ok, so what's the first question we want to ask about how data is distributed? Since we want to understand how data is distributed across a _range_, we should first define the range. 
@@ -165,19 +167,19 @@ abline(v=median(diamonds$depth), lwd=2.3, col="red")
 Now that we have a measure of center, we can now discuss how data is _spread_ around that center. For the mean, we have a convenient way of describing this: the average distance (using squared difference) from the mean. We call this the _variance_ of the data:
 
 $$
-\frac{1}{n} \sum_{i=1}^n (x_i - \overline{x})^2
+\mathrm{var}(x) = \frac{1}{n} \sum_{i=1}^n (x_i - \overline{x})^2
 $$
 
 You will also see it with a slightly different constant in the front for technical reasons that we may discuss later on:
 
 $$
-\frac{1}{n-1} \sum_{i=1}^n (x_i - \overline{x})^2
+\mathrm{var}(x) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \overline{x})^2
 $$
 
 Variance is a commonly used statistic for spread but it has the disadvantage that its units are not easy to conceptualize (e.g., squared diamond depth). A spread statistic that is in the same units as the data is the _standard deviation_, which is just the squared root of variance:
 
 $$
-\sqrt{\frac{1}{n}\sum_{i=1}^n (x_i - \overline{x})^2}
+\mathrm{sd}(x) = \sqrt{\frac{1}{n}\sum_{i=1}^n (x_i - \overline{x})^2}
 $$
 
 We can also use _standard deviations_ as an interpretable unit of how far a given data point is from the mean:
@@ -227,7 +229,7 @@ This five-number summary are also all of the statistics used to construct a boxp
 
 ### Inter-quartile range
 
-One last value of interest is the _inter-quartile range_ which is defined as the difference between the third and first quartile: $IQR = x_{(3n/4)} - x_{(1/4)}. The interpretation here is that half the data is within the IQR around the median.
+One last value of interest is the _inter-quartile range_ which is defined as the difference between the third and first quartile: $\mathrm{IQR}(x) = x_{(3n/4)} - x_{(1/4)}. The interpretation here is that half the data is within the IQR around the median.
 
 ```{r}
 diamonds %>%
@@ -245,3 +247,35 @@ c(first_difference, third_difference)
 ```
 
 If one of these differences is larger than the other, then that indicates that this dataset might be skewed, that is, that the range of data on one side of the median is longer (or shorter) than the range of data on the other side of the median. Do you think our diamond depth dataset is skewed?
+
+## Covariance and correlation
+
+The scatter plot is a visual way of observing relationships between pairs of variables. Like descriptions of distributions of single variables, we would like to construct statistics that summarize the relationship between two variables quantitatively. To do this we will extend our notion of _spread_ (or variation of data around the mean) to the notion of _co-variation_: do pairs of variables vary around the mean in the same way.
+
+Consider now data for two variables over the same $n$ entities: $(x_1,y_1), (x_2,y_2), \ldots, (x_n,y_n)$. For example, for each diamond, we have `carat` and `price` as two variables:
+
+```{r}
+diamonds %>%
+  ggplot(aes(x=carat, y=price)) +
+    geom_point() +
+    geom_hline(aes(yintercept = mean(price)), color="blue", lty=2) +
+    geom_vline(aes(xintercept = mean(carat)), color="blue", lty=2)
+```
+
+We want to capture the relationship: $x_i$ varies in the same direction and scale away from its mean as $y_i$. This leads to _covariance_
+
+$$
+cov(x,y) = \frac{1}{n} \sum_{i=1}^n (x_i - \overline{x})(y_i - \overline{y})
+$$
+
+Think of what would the covariance for $x$ and $y$ be if $x_i$ varies in the _opposite_ direction as $y_i$?
+
+Just like variance, we have an issue with units and interpretation for covaraince, so we introduce _correlation_ (formally, Pearson's correlation coefficient) to summarize this relationship in a _unit-less_ way:
+
+$$
+cor(x,y) = \frac{cov(x,y)}{sd(x) sd(y)}
+$$
+
+As before, we can also use rank statistics to define a measure of how two variables are associated. One of these, _Spearman correlation_ is commonly used. It is defined as the Pearson correlation coefficient of the ranks (rather than actual values) of pairs of variables.
+
+
