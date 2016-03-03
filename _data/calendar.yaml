@@ -127,7 +127,7 @@
   covers:
     -
       title: "Exploratory Data Analysis (1): Visualization"
-      materials: { link: "lecture_note/eda/", insite: }
+      materials: { link: "lecture_notes/eda/", insite: }
   workdue:
     -
       title: "Wrangling exercise"
@@ -148,7 +148,7 @@
   covers:
     -
       title: "Data transformations"
-      materials: { link: "lectures_notes/eda/", insite: }
+      materials: { link: "lecture_notes/eda/", insite: }
 -
   date: 3/8
   status:
