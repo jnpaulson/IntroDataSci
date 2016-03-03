@@ -29,7 +29,7 @@
   url: "wrangling"
   hide: false
 -
-  title: "Exploratory Data Analaysis"
+  title: "Exploratory Data Analysis"
   excerpt: Data visualization and summarization
   url: "eda"
   hide: false
