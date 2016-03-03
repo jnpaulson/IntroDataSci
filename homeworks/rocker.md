@@ -81,6 +81,22 @@ docker stop ids
 docker rm ids
 {% endhighlight %}
 
+# Updating the image
+
+When the image is updated to include new data or software you can use the following commands to pull the updated image and restart the docker container:
+
+{% highlight bash %}
+# pull updated version of image
+docker pull hcorrada/idsdocker
+
+# stop and remove the running container
+docker stop ids
+docker rm ids
+
+# now restart the docker container with the updated image
+docker run -d -p 8787:8787 -v ${PWD}:/home/rstudio --name ids hcorrada/idsdocker
+{% endhighlight %}
+
 # Dockerfile
 
 The Dockerfile defining the class image is hosted on Github here: [https://github.com/hcorrada/idsDocker](https://github.com/hcorrada/idsDocker).
