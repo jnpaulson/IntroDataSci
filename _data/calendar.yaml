@@ -144,34 +144,25 @@
       title: "Zumen & Mount: Ch. 3"
 -
   date: 3/3
-  status: present
+  status: done
   covers:
     -
       title: "Data transformations"
       materials: { link: "lecture_notes/eda/", insite: }
 -
   date: 3/8
-  status:
+  status: present
   covers:
     -
       title: "Introduction to Statistical Learning (1): Distributions and Statistics"
-      materials: { link: "lectures/IntroStatLearn.html", insite: }
-    -
-      title: "Some background"
-      materials: { link: "lectures/StatLearnBackground.html", insite: }
-  readings:
-    -
-      title: "ISL Ch. 2"
-  workdue:
-    -
-      title: "ISL Ch. 2 reading prep quiz"
-      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1081113" }
+      materials: { link: "lecture_notes/statlearn/", insite: }
 -
   date: 3/10
-  status:
+  status: present
   covers:
     -
       title: "Introduction to Statistical Learning (2): Inference and testing"
+      materials: { link: "lectures_notes/statlearn/", insite: }
 -
   date: 3/11
   status: present

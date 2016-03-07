@@ -40,7 +40,8 @@
 -
   title: Introduction to Statistical Learning
   excerpt: Introduction to randomness, distributions, inference and testing
-  hide: true
+  url: "statlearn"
+  hide: false
 -
   title: Linear models for regression and classification
   excerpt: Basic models for regression and classification
