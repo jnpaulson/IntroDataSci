@@ -5,5 +5,5 @@ title: Introduction to Statistical Learning
 
 Introduction to randomness, distributions, inference and testing
 
-Lecture Notes: Distributions and statistics (COMING SOON)  
-Lecture Notes: Inference and testing (COMING SOON)
+[Lecture Notes: Preliminaries](IntroStatLearn_preliminaries.html)  
+Lecture Notes: Distributions, inference and testing (COMING SOON)

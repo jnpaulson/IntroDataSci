@@ -1,16 +1,31 @@
 ---
-title: "Introduction to Statistical Learning"
-author: 'CADi 2015'
+title: 'Introduction to Statistical Learning: Preliminaries'
+author: "CMSC320"
+date: "March 7, 2016"
 output: html_document
 ---
 
-```{r, echo=FALSE}
-knitr::opts_chunk$set(cache=TRUE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-The purpose of this lecture is to provide a brief overview of the statistical and machine learning techniques commonly used in data analysis. By the end of the term, you should be able to read papers that used these methods critically and analyze data using them. A common situation in applied sciences is that one has an independent variable or outcome $Y$ and one or more dependent variables or covariates $X_1,\ldots,X_p$. One usually observes these variables for multiple "subjects".  
+The purpose of this class is for you to learn Statistical and Machine Learning techniques commonly used in data analysis. By the end of the term, you should be able to read papers that used these methods critically and analyze data using them.
 
-Note: We use upper case to denote a random variable. To denote actual numbers we use lower case. One way to think about it: $Y$ has not happened yet, and when it does, we see $Y=y$.
+When using any of these tools we will be we will be asking ourselves if our findings are "statistically significant". For example, if we make use of a classification algorithm and find that we can correctly predict an outcome in 70 out of our 100 cases, how can we determine if this could have happened by chance alone? To be able to answer these questions, we need to understand some basic probabilistic and statistical principles. In this section we will review some of these principles.
+
+## Variation, randomness and stochasticity
+
+In the preceeding sections of the class we have not spoken too much about randomness and stochasticity. We have spoken about _variation_ though. When we discussed the notion of _spread_ in a given dataset, measured by the sample standard deviation, for example, we are referring to the fact that in a population of entities (e.g., images of cats) there is naturally occuring variation in measurements. Notice that we can discuss the notation of _variation_ without referring to any randomness, stochasticity or noise. 
+
+Why probability then? Because, we do want to distinguish, when possible, between natural occuring variation and randomness or stochasticity. For instance, suppose we want to learn something about education loan debt for 19-30 year olds in Maryland. We could find loan debt for **all** 19-30 year old Maryland residents, and calculate average and standard deviation. But that's difficult to do for all residents. So, instead we sample (say by randomly sending Twitter surveys), and _estimate_ the average and standard deviation of debt in this population from the sample. The issue is, we could do the same from a different random sample and get a different set of estimates. Why? Because there is naturally-occuring variation in this population.  
+
+So, a simple question to ask is, how good are our _estimates_ of debt mean and standard deviation from sample of 19-30 year old Marylanders? 
+
+Now, suppose we build a predictive model of loan debt for 19-30 year old Marylanders based on other variables (e.g., sex, income, education, wages, etc.) from our sample. How good will this model perform when predicting debt in general?
+
+We use probability and statistics to answer these questions. We use probability to capture stochasticity in the sampling process and model naturally occuring variation in measurements in a population of interest.
+
+One final word, the term _population_ which we use extensively here means **the entire** collection of entities we want to model. This could include people, but also images, text, GO positions, etc.
 
 One may be interested in various things: What effects do the covariates have on the outcome? How well can we describe these effects? Can we predict the outcome using the covariates?, etc...
 
@@ -205,7 +220,7 @@ Y = \beta_0 + \beta_1 X.
 $$
 However, we do not know what $\beta_0$ or $\beta_1$ are.
 
-We use the training data to *estimate* them. We can also say we train
+We use the a sample of training data to *estimate* them. We can also say we train
 the model on the data to get numeric coefficients. We will use the hat
 to denote the estimates: $\hat{\beta_0}$ and $\hat{\beta_1}$.
 
@@ -213,14 +228,14 @@ We will start using $\mathbf{\beta}$ to denote the vector
 $(\beta_0,\beta_1)'$. We would call these the _parameters_
 of the model.
 
-The most common way to  estimates $\beta$s is by least squares. In
+The most common way to estimates $\beta$s is by least squares. In
 this case, we choose the $\mathbf{\beta}$ that minimizes
 
 $$
 RSS(\mathbf{\beta}) = \sum_{i=1}^N \{y_i - (\beta_0 + \beta_1 X_i)\}^2.
 $$
 
-The value of $\beta$ can be found using mathematically. Notice we can predict $Y$ for any $X$:
+Remember our discussion of the sample mean? The value of $\beta$ can be found using mathematically. Notice we can predict $Y$ for any $X$:
 
 $$
 \hat{Y} = \hat{\beta_0} + \hat{\beta_1} X
@@ -343,6 +358,8 @@ legend("topright", c("train rss", "test rss"), lty=1, col=c("blue","red"))
 
 ### An illustration of the bias-variance tradeoff
 
+A general concern in applying these types of models is how we trade off _bias_ and _variance_. We will see that statistical models can be of more or less flexibility. Linear regression has little flexibility, so we say that it is a model with high _bias_. On the other hand, $k$-nearest neighbors is a model with high flexibility, or small _bias_. However there is a tradeoff because models with low bias tend to change the most when applied to different data samples, we say they have high _variance_. Alternatively, models with high _bias_ tend to have low _variance_.
+
 The next figure illustrates the bias/variance tradeoff. Here we make
 boxplots of $f(1)-\hat{f}(1)$, where $\hat{f}(1)$ is the estimate
 for each method trained on 1000 simulations. 
@@ -373,7 +390,7 @@ boxplot(simres-f(1), ylab="prediction - truth")
 ```
 
 We can see that the prediction from the linear model is consistently
-inaccurate. That is, it is biased, but stable (little variance). For $k=1$
+inaccurate. That is, it is _biased_, but stable (little variance). For $k=1$
 we get the opposite, there is a lot of variability, but once in a
 while it is very accurate (unbiased). For $k=15$ we get a decent
 tradeoff of the two.
@@ -394,4 +411,5 @@ when minimizing this loss function. That is, we can't do better than this, on av
 with any other predictor. This is called _irreducible error_.
 
 *Predictions are not always perfect.*
+
 
