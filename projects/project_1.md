@@ -103,27 +103,39 @@ Include the SQL code you used to create this relation in your writeup. Also, if 
 
 ## Data transformations
 
-It looks like comparing payrolls across years is problematic so let's do a scaling transformation that will help with these comparisons.
+It looks like comparing payrolls across years is problematic so let's do a transformation that will help with these comparisons.
 
-**Problem 5**. Write `dplyr` code to create a new variable in your dataset. It should contain the number (and direction) of standard deviations away from the average payroll in a given year for each team. So, this column for team $$i$$ in year $$j$$ should equal
+**Problem 5**. Write `dplyr` code to create a new variable in your dataset that standardizes payroll within each year. It will center and scale payrolls within each year by subtracting the average and dividing by the standard deviation of payroll for that year. So, this column for team $$i$$ in year $$j$$ should equal
 
 $$
-\mathrm{scaled\_payroll}_{ij}=\frac{\mathrm{payroll}_{ij} - \overline{\mathrm{payroll}_{\cdot j}}}{s_{\cdot j}}
+\mathrm{standardized\_payroll}_{ij}=\frac{\mathrm{payroll}_{ij} - \overline{\mathrm{payroll}_{\cdot j}}}{s_{\cdot j}}
 $$
 
 where $$\overline{\mathrm{payroll}_{\cdot j}}$$ is the average payroll for year $$j$$, and $$s_{\cdot j}$$ is the
 standard deviation of payroll for year $$j$$.
 
-**Problem 6**. Repeat the same plots as Problem 4, but use this new scaled payroll variable.
+**Problem 6**. Repeat the same plots as Problem 4, but use this new standardized payroll variable.
 
 **Question 3**. Answer Question 2 again, but based on these new plots.
 
-It's hard to compare across time periods using these multiple plots, so let's try to create a single plot that makes this comparison easier. The idea is to create a new measurement unit for each team that we can plot across time summarizing how efficient each team is in their spending. We'll use the number of wins a team got per standard deviation of payroll:
+It's hard to compare across time periods using these multiple plots, but now that we have standardized payrolls across time, we can look at the relationship between winning percentage and payroll across all time.
 
-**Problem 4**. Calculate the  per dollar spent on payroll for each team in each year.
+**Problem 7**. Make a single scatter plot of winning percentage (y-axis) vs. standardized payroll (x-axis). Add a regression line to highlight the relationship (again using `geom_smooth(method=lm)`).
+
+The regression line gives you expected winning percentage as a function of standardized payroll. Looking at the regression line, it looks like teams
+that spend the same as the average team in a given year they will win 50% of their games (i.e. `win_pct` is .5 when `standardized_payroll` is 0), and teams increase 5% wins for every 2 standard units of payroll (i.e., `win_pct` is .55 when `standardized_payroll` is 2). We will see how this is done in general using linear regression later in the course.
+
+From these observations we can calculate the _expected win percentage_ for team $$i$$ in year $$j$$ as
 
 $$
-\mathrm{efficiency}_{ij} = \frac{\mathrm{wins}_{ij}}{\mathrm{scaled\_payroll}_{ij}}
+\mathrm{expected_win_pct}_{ij} = 0.5 + 0.025 \times \mathrm{standardized_payroll}_{ij}
+$$
+
+Using this, we can now create a single plot that makes the comparison of how efficient teams are easier. The idea is to create a new measurement unit for each team based on their winning percentage and their expected winning percentage that we can plot across time summarizing how efficient each team is in their spending.
+
+**Problem 8**. Write `dplyr` code to calculate spending efficiency for each team
+$$
+\mathrm{efficiency}_{ij} = \mathrm{win_pct}_{ij} - \mathrm{expected_win_pct}_{ij}
 $$
 
 for team $$i$$ in year $$j$$.
