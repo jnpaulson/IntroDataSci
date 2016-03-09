@@ -3,6 +3,8 @@ layout: page
 title: "Wrangling/EDA Project"
 ---
 
+LAST UPDATE: March 9, 2016
+
 In this project you will apply your data wrangling and exploratory data analysis
 skills to baseball data. In particular, we want to know how well did Moneyball work
 for the Oakland A's. Was it worthy of a movie?
@@ -123,24 +125,25 @@ It's hard to compare across time periods using these multiple plots, but now tha
 **Problem 7**. Make a single scatter plot of winning percentage (y-axis) vs. standardized payroll (x-axis). Add a regression line to highlight the relationship (again using `geom_smooth(method=lm)`).
 
 The regression line gives you expected winning percentage as a function of standardized payroll. Looking at the regression line, it looks like teams
-that spend the same as the average team in a given year they will win 50% of their games (i.e. `win_pct` is .5 when `standardized_payroll` is 0), and teams increase 5% wins for every 2 standard units of payroll (i.e., `win_pct` is .55 when `standardized_payroll` is 2). We will see how this is done in general using linear regression later in the course.
+that spend roughly the average payroll in a given year will win 50% of their games (i.e. `win_pct` is .5 when `standardized_payroll` is 0), and teams increase 5% wins for every 2 standard units of payroll (i.e., `win_pct` is .55 when `standardized_payroll` is 2). We will see how this is done in general using linear regression later in the course.
 
 From these observations we can calculate the _expected win percentage_ for team $$i$$ in year $$j$$ as
 
 $$
-\mathrm{expected_win_pct}_{ij} = 0.5 + 0.025 \times \mathrm{standardized_payroll}_{ij}
+\mathrm{expected\_win\_pct}_{ij} = 0.5 + 0.025 \times \mathrm{standardized\_payroll}_{ij}
 $$
 
 Using this, we can now create a single plot that makes the comparison of how efficient teams are easier. The idea is to create a new measurement unit for each team based on their winning percentage and their expected winning percentage that we can plot across time summarizing how efficient each team is in their spending.
 
 **Problem 8**. Write `dplyr` code to calculate spending efficiency for each team
+
 $$
-\mathrm{efficiency}_{ij} = \mathrm{win_pct}_{ij} - \mathrm{expected_win_pct}_{ij}
+\mathrm{efficiency}_{ij} = \mathrm{win\_pct}_{ij} - \mathrm{expected\_win\_pct}_{ij}
 $$
 
 for team $$i$$ in year $$j$$.
 
-Make a line plot with year on the x-axis and efficiency on the y-axis. A good set of teams to plot are Oakland, the New York Yankees, Boston, Atlanta and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `ATL`, `TBA`). That plot can be hard to read since there is so much season to season variation for each team. One way to improve is to use `geom_smooth` instead of `geom_line`.
+Make a line plot with year on the x-axis and efficiency on the y-axis. A good set of teams to plot are Oakland, the New York Yankees, Boston, Atlanta and Tampa Bay (teamIDs `OAK`, `BOS`, `NYA`, `ATL`, `TBA`). That plot can be hard to read since there is so much year to year variation for each team. One way to improve it is to use `geom_smooth` instead of `geom_line`.
 
 **Question 4**. What can you learn from this plot compared to the set of plots you looked at in Question 2 and 3?
 
