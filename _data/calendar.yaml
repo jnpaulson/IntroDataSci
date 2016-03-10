@@ -162,7 +162,7 @@
   covers:
     -
       title: "Introduction to Statistical Learning (2): Inference and testing"
-      materials: { link: "lectures_notes/statlearn/", insite: }
+      materials: { link: "lecture_notes/statlearn/", insite: }
 -
   date: 3/11
   status: present
