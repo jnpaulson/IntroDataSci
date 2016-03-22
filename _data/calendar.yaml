@@ -187,18 +187,11 @@
       title: "No class, Spring Break"
 -
   date: 3/22
-  status:
+  status: present
   covers:
     -
-      title: "Linear models for regression (1)"
-      materials: { link: "lectures/Regression.pdf", insite: }
-  readings:
-    -
-      title: "ISL Ch. 3"
-  workdue:
-    -
-      title: "ISL Ch. 3 reading prep quiz"
-      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082257" }
+      title: "Introduction to Statistical Learning (3): Joint and conditional probability"
+      materials: { link: "lecture_notes/statlearn/", insite: }
 -
   date: 3/24
   status:
@@ -210,61 +203,43 @@
   status:
   covers:
     -
-      title: "Linear models for classification (2)"
-      materials: { link: "lectures/Classification.html", insite: }
-  readings:
-    -
-      title: "ISL Ch. 4"
-  workdue:
-    -
-      title: "ISL Ch. 4 reading prep quiz"
-      link: { url: "https://myelms.umd.edu/courses/1130499/quizzes/1082468" }
+      title: "Linear models for regression"
+      materials: { link: "lectures/Regression.pdf", insite: }
 -
   date: 3/31
   status:
   covers:
     -
-      title: "Evaluating performance via resampling"
-      materials: { link: "lectures/Evaluation.html", insite: }
-  readings:
-    -
-      title: "ISL Ch. 5"
+      title: "Linear models for classification"
+      materials: { link: "lectures/Classification.html", insite: }
 -
   date: 4/5
   status:
   covers:
     -
-      title: "Machine Learning I: tree-based methods"
-      materials: { link: "lectures/TreeMethods.html", insite: }
-  readings:
-    -
-      title: "ISL Ch. 8"
+      title: "Evaluating performance via resampling"
+      materials: { link: "lectures/Evaluation.html", insite: }
 -
   date: 4/7
   status:
   covers:
     -
-      title: "Machine Learning II: The Support Vector Machine"
-      materials: { link: "lectures/SVM.html", insite: }
-  readings:
-    -
-      title: "ISL Ch. 9"
+      title: "Machine Learning I: tree-based methods"
+      materials: { link: "lectures/TreeMethods.html", insite: }
 -
   date: 4/12
   status:
   covers:
     -
-      title: "Machine Learning III: clustering and unsupervised dimensionality reduction"
-      materials: { link: "lectures/Unsupervised.html", insite: }
-  readings:
-    -
-      title: "ISL Ch. 10"
+      title: "Machine Learning II: The Support Vector Machine"
+      materials: { link: "lectures/SVM.html", insite: }
 -
   date: 4/14
   status:
   covers:
     -
-      title: "Time series analysis and forecasting"
+      title: "Machine Learning III: clustering and unsupervised dimensionality reduction"
+      materials: { link: "lectures/Unsupervised.html", insite: }
 -
   date: 4/19
   status:
