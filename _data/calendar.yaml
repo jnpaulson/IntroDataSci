@@ -151,21 +151,21 @@
       materials: { link: "lecture_notes/eda/", insite: }
 -
   date: 3/8
-  status: present
+  status: done
   covers:
     -
       title: "Introduction to Statistical Learning (1): Distributions and Statistics"
       materials: { link: "lecture_notes/statlearn/", insite: }
 -
   date: 3/10
-  status: present
+  status: done
   covers:
     -
       title: "Introduction to Statistical Learning (2): Inference and testing"
       materials: { link: "lecture_notes/statlearn/", insite: }
 -
-  date: 3/11
-  status: present
+  date: 3/14
+  status: done
   covers:
     -
       title: "THIS IS NOT A LECTURE DAY"
@@ -194,7 +194,7 @@
       materials: { link: "lecture_notes/statlearn/", insite: }
 -
   date: 3/24
-  status:
+  status: present
   covers:
     -
       title: "Midterm Exam"
